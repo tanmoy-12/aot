@@ -8,6 +8,10 @@
 body{
     
     font-family: "Poppins", sans-serif !important;
+    /* background-image: url("https://cache.careers360.mobi/media/colleges/reviews/29092010264_2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .container{
@@ -32,19 +36,24 @@ a{
 }
 
 .navbar {
-    background-color: #a3bcff;
+    background-color: #ffeda3;
     color: #13008f;
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: space-between;
+    justify-content: center !important;
     align-items: center;
-    padding: 0;
-    padding-right: 30px;
+    padding: 20px !important;
 }
 
-.logo{
+.menu-toggler{
+    left:  12px;
+    top: 20px;
+    position: absolute;
+}
+
+#pc-view .logo{
     display: flex;
-    position: relative;
+    position: absolute;
     left: 20px;
 }
 
@@ -57,53 +66,72 @@ a{
     margin: 0 100px;
 } */
 
-.search{
+/* .search{
     display: flex;
 }
 
 .searchbar input{
     outline: none;
     border: none;
-    width: 28rem;
+    width: 22rem;
     font-size: large;
     border-radius: 6px 0 0 6px;
     height: 2.4rem;
     padding: 0.8rem;
-}
+} */
 
 .search-icon{
-    border-radius: 0 6px 6px 0;
-    background-color: #003d8c;
-    padding: 0.1rem 0.6rem;
-    font-size: 1.5rem;
-    color: #8cd5ff;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #000b36;
 }
 
 .nav-elements{
     display: flex;
     gap: 0.1rem;
-    height: 100%;
 }
 
 .nav-elements li{
     list-style: none;
     padding: 0;
-    transition: all ease 1s;
+    border: 2px solid transparent;
 }
 
 .nav-elements li a{
-    font-size: medium;
+    font-size: larger;
     font-weight: 600;
     color: #003d8c;
     cursor: pointer;
 }
 
-.nav-elements li:hover{
-    border-bottom: 2.4px solid #000721;
+/* .nav-elements li a::after{
+    content: "";
+    background-color: #333;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    width: 0;
+    transition: all ease 1s;
+}
+
+.nav-elements li a:hover::after{
+    width: 100%;
+} */
+
+#language{
+    position: absolute;
+    right: 20px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: transparent;
+    font-size: larger;
+    color: #00030f;
+    font-weight: 600;
 }
 
 .navigation{
-    background-color: #8cd5ff;
+    background-color: #ffc08c;
     justify-content: center;
     display: flex;
 }
@@ -149,8 +177,8 @@ a{
 /* Updated CSS for arrow transition and rotation */
 
 .arrow-icon {
-    margin-left: 5px;
-    transition: transform 1s ease; /* Apply transition for smooth rotation */
+    margin-left: 12px;
+    transition: transform 0.4s ease; /* Apply transition for smooth rotation */
 }
 
 .rotate-up {
@@ -191,7 +219,7 @@ a{
 }
 
 .dropdown-content li a:hover {
-    background-color: #ddd;
+    background-color: #ffdcb4;
 }
 
 .sub-dropdown {
@@ -320,6 +348,75 @@ a{
     
     font-size: 1.2rem;
 }
+
+.about-us{
+    display: flex;
+    background-color: #fcdcc1;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-about-us{
+    padding: 3rem 1.4rem;
+    width: 50%;
+}
+
+.left-about-us p{
+    text-align: justify;
+    font-size: large;
+    font-weight: 500;
+}
+
+.left-about-us h2{
+    font-weight: 600
+}
+
+.right-about-us{
+    padding: 3rem 1.5rem;
+    border: none;
+}
+
+iframe{
+    border-radius: 8px;
+    border: none;
+}
+
+
+.customer{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .customer-bg{
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.954), transparent), linear-gradient(to bottom, rgba(0, 0, 0, 0.937), transparent), url("https://th.bing.com/th/id/R.bd2f02898be015930a3dc4a56d0da41b?rik=38g5qD6IIih3mw&riu=http%3a%2f%2fwww.mywbut.com%2fcollege_photo%2faot%2faot+-+home.JPG&ehk=dybn04ph6%2f%2fT2XnEfr33ij3Ma%2fRA6xDwDzbTuCrGiw4%3d&risl=&pid=ImgRaw&r=0");
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 200px;
+    z-index: -1;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .customer-card{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .customer-card i{
+    color: #ff4800;
+    font-size: 48px;
+  }
+  
+  .customer-card h2{
+    font-size: 42px;
+    margin: 15px;
+  }
 
 /* Footer Container */
 
