@@ -12,8 +12,9 @@ body{
 
 .container{
     width: 100%;
+    max-width: 100%;
     height: 100vh;
-    background-color: rgba(0,0,0,0.4);
+    background:url("https://th.bing.com/th/id/R.bd2f02898be015930a3dc4a56d0da41b?rik=38g5qD6IIih3mw&riu=http%3a%2f%2fwww.mywbut.com%2fcollege_photo%2faot%2faot+-+home.JPG&ehk=dybn04ph6%2f%2fT2XnEfr33ij3Ma%2fRA6xDwDzbTuCrGiw4%3d&risl=&pid=ImgRaw&r=0"), rgba(0,0,0,0.4);
     display: flex;
     
 }
@@ -35,15 +36,16 @@ a{
     color: #13008f;
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0;
+    padding-right: 30px;
 }
 
 .logo{
     display: flex;
-    justify-self: center;
-    align-self: center;
+    position: relative;
+    left: 20px;
 }
 
 .logo h2{
@@ -54,6 +56,51 @@ a{
 /* .logo img{
     margin: 0 100px;
 } */
+
+.search{
+    display: flex;
+}
+
+.searchbar input{
+    outline: none;
+    border: none;
+    width: 28rem;
+    font-size: large;
+    border-radius: 6px 0 0 6px;
+    height: 2.4rem;
+    padding: 0.8rem;
+}
+
+.search-icon{
+    border-radius: 0 6px 6px 0;
+    background-color: #003d8c;
+    padding: 0.1rem 0.6rem;
+    font-size: 1.5rem;
+    color: #8cd5ff;
+}
+
+.nav-elements{
+    display: flex;
+    gap: 0.1rem;
+    height: 100%;
+}
+
+.nav-elements li{
+    list-style: none;
+    padding: 0;
+    transition: all ease 1s;
+}
+
+.nav-elements li a{
+    font-size: medium;
+    font-weight: 600;
+    color: #003d8c;
+    cursor: pointer;
+}
+
+.nav-elements li:hover{
+    border-bottom: 2.4px solid #000721;
+}
 
 .navigation{
     background-color: #8cd5ff;
@@ -67,12 +114,8 @@ a{
 
 .navigation .menu li{
     padding: 0.6rem;
-    border-right: 3px solid #000721;
 }
 
-.navigation .menu li:first-child{
-    border-left: 3px solid #000721;
-}
 
 .menu {
     display: flex;
@@ -102,6 +145,18 @@ a{
     font-size: 1.4rem;
     font-weight: 600;
 }
+
+/* Updated CSS for arrow transition and rotation */
+
+.arrow-icon {
+    margin-left: 5px;
+    transition: transform 1s ease; /* Apply transition for smooth rotation */
+}
+
+.rotate-up {
+    transform: rotate(180deg); /* Rotate arrow for upward direction */
+}
+
 
 .dropdown-content {
     display: none;
@@ -144,6 +199,8 @@ a{
     position: absolute;
     top: 0;
     left: 100%;
+    padding: 0;
+    margin-left: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
