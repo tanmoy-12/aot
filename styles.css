@@ -418,6 +418,10 @@ iframe{
     margin: 15px;
   }
 
+  #n{
+    display: flex;
+  }
+
 /* Footer Container */
 
 footer{
