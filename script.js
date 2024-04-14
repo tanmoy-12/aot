@@ -152,3 +152,66 @@ nextBtn.addEventListener("click",()=>{
     scrollcontainer.scrollLeft += 307;
 })
 
+
+
+function autoScroll() {
+    const container = document.querySelector('.event-slider');
+    const children = container.querySelectorAll('.event-content');
+
+    if (children.length === 0) {
+        return; // No content to scroll
+    }
+
+    let currentChildIndex = 0;
+    const totalChildren = children.length;
+    const scrollStep = 1; // Adjust this value for scroll speed
+    const intervalTime = 20; // Interval time for smooth scrolling (in milliseconds)
+    const pixelsPerInterval = 1; // Number of pixels to scroll per interval
+
+    let lastTimestamp = performance.now();
+    let accumulatedTime = 0;
+
+    function animateScroll(timestamp) {
+        const delta = timestamp - lastTimestamp;
+        accumulatedTime += delta;
+
+        if (accumulatedTime >= intervalTime) {
+            accumulatedTime = 0;
+
+            const currentChild = children[currentChildIndex];
+            const childHeight = currentChild.offsetHeight;
+            const containerHeight = container.offsetHeight;
+
+            container.scrollTop += pixelsPerInterval;
+
+            if (container.scrollTop >= childHeight) {
+                container.scrollTop = 0; // Reset to the top
+
+                currentChildIndex++;
+                if (currentChildIndex >= totalChildren) {
+                    currentChildIndex = 0; // Reset to the first child
+                }
+            }
+        }
+
+        lastTimestamp = timestamp;
+        requestAnimationFrame(animateScroll);
+    }
+
+    requestAnimationFrame(animateScroll);
+
+    // Pause scrolling when hovering over the container
+    container.addEventListener('mouseenter', () => {
+        accumulatedTime = 0; // Reset accumulated time
+    });
+
+    // Resume scrolling when not hovering
+    container.addEventListener('mouseleave', () => {
+        lastTimestamp = performance.now(); // Reset last timestamp
+    });
+}
+
+// Call the autoScroll function when the document is ready
+document.addEventListener('DOMContentLoaded', () => {
+    autoScroll();
+});
