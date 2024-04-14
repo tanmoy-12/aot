@@ -468,7 +468,7 @@ iframe{
     border-radius: 8px;
     margin: 25px 0;
     text-align: left;
-    filter: grayscale(40%);
+    /* filter: grayscale(40%); */
     transition: all ease 0.8s;
 }
 .news-image{
@@ -496,11 +496,7 @@ iframe{
     font-weight: 200;
     border: none;
 }
-.news:hover{
-    filter: grayscale(0);
-    cursor: pointer;
-    transform: scale(1.07);
-}
+
 /***Director's Corner***/
 .director-corner{
     text-align: center;
