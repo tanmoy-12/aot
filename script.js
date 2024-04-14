@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Final values for each category
   const finalStudentsCount = 2300;
-  const finalFacultyCount = 200;
-  const finalStaffCount = 500;
+  const finalFacultyCount = 80;
+  const finalStaffCount = 120;
 
   // Animation duration (in milliseconds)
   const animationDuration = 2000; // 2000 milliseconds (2 seconds)
@@ -89,4 +89,66 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+function startInfiniteScroll() {
+    const sliderTrack = document.querySelector('.slider-track');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const slideWidth = sliderItems[0].offsetWidth + parseInt(window.getComputedStyle(sliderItems[0]).marginRight);
+
+    // Clone only visible items (within the viewport)
+    const visibleItems = Array.from(sliderItems).slice(0, Math.ceil(window.innerWidth / slideWidth));
+    const clonedItems = visibleItems.map(item => item.cloneNode(true));
+
+    // Append cloned items to the end of the track
+    clonedItems.forEach(clone => sliderTrack.appendChild(clone));
+
+    // Set width of slider track to fit all items
+    sliderTrack.style.width = `${slideWidth * (sliderItems.length + clonedItems.length)}px`;
+
+    // Animation to continuously scroll the slider
+    let pos = 0;
+    function scroll() {
+        pos -= 1; // Adjust scroll speed here
+        sliderTrack.style.transform = `translateX(${pos}px)`;
+
+        // Reset position to start once first set of items is off-screen
+        if (pos <= -slideWidth * sliderItems.length) {
+            pos = 0;
+            sliderTrack.style.transition = 'none'; // Disable transition for immediate reset
+            requestAnimationFrame(() => {
+                sliderTrack.style.transform = `translateX(${pos}px)`;
+                sliderTrack.style.transition = ''; // Re-enable transition
+            });
+        }
+
+        requestAnimationFrame(scroll);
+    }
+
+    scroll(); // Start scrolling animation
+}
+
+// Start the infinite scrolling when the page loads
+window.addEventListener('load', () => {
+    startInfiniteScroll();
+});
+
+
+
+let scrollcontainer = document.querySelector(".slider-track-news");
+let backBtn = document.getElementById("backBtn");
+let nextBtn = document.getElementById("nextBtn");
+
+scrollcontainer.addEventListener("wheel",(evt => {
+    evt.preventDefault();
+    scrollcontainer.scrollLeft += evt.deltaY;
+}))
+
+backBtn.addEventListener("click",()=>{
+    scrollcontainer.style.scrollBehavior = "smooth";
+    scrollcontainer.scrollLeft -= 307;
+})
+
+nextBtn.addEventListener("click",()=>{
+    scrollcontainer.style.scrollBehavior = "smooth";
+    scrollcontainer.scrollLeft += 307;
+})
 
