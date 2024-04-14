@@ -36,7 +36,7 @@ a{
 }
 
 .navbar {
-    background-color: #ffeda3;
+    background-color: #ffffff;
     color: #13008f;
     font-family: Arial, sans-serif;
     display: flex;
@@ -133,7 +133,7 @@ a{
 }
 
 .navigation{
-    background-color: #ffc08c;
+    background-color: #cfcfcf;
     justify-content: center;
     display: flex;
 }
