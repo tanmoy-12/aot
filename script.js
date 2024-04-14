@@ -218,3 +218,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const questionToggles = document.querySelectorAll(".question-toggle");
+
+    questionToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+            const parent = toggle.parentNode;
+            const answerText = parent.querySelector(".answer-text");
+            const isActive = parent.classList.contains("active");
+
+            // Close all other questions
+            closeAllQuestions();
+
+            if (!isActive) {
+                parent.classList.add("active");
+                toggle.textContent = "-";
+            } else {
+                parent.classList.remove("active");
+                toggle.textContent = "+";
+            }
+        });
+    });
+
+    function closeAllQuestions() {
+        const allQuestions = document.querySelectorAll(".faq-question");
+        allQuestions.forEach((question) => {
+            question.classList.remove("active");
+            const toggle = question.querySelector(".question-toggle");
+            toggle.textContent = "+";
+        });
+    }
+});

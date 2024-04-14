@@ -593,6 +593,95 @@ iframe{
     font-size: 42px;
     margin: 15px;
   }
+.container-faq-gallery{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 3rem;
+    height: 650px;
+    background: linear-gradient(to right, #cccccc7f , #dfdede , #eaeaea , #cfcfcfaf);
+}
+/***faq container***/
+.faq-container {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    position: relative; /* Ensure positioning context for absolute positioning */
+}
+.faq-parent{
+    width: 50%;
+    padding: 1rem;
+}
+.faq-question {
+    padding: 10px 0;
+    position: relative; /* Establish positioning context for pseudo-element */
+}
+
+/* Apply dashed line to all but the last .faq-question */
+.faq-question:not(:last-child):before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 1.6%; /* Position line at the middle of the .faq-question */
+    transform: translateX(-50%); /* Center the line horizontally */
+    width: 1px;
+    height: 100%; /* Full height of the .faq-question */
+    border-left: 2px dashed #383838;
+    z-index: -1;
+}
+
+.question-toggle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+    background-color: #000829;
+    color: #fff;
+    font-weight: 600;
+}
+.active .question-toggle {
+    background-color: #00030f !important;
+    color: #fff;
+    font-weight: 600;
+}
+.question-text {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 1.8rem;
+}
+.answer-text {
+    display: none;
+    margin: 10px 0 0 46px;
+}
+.active .question-toggle {
+    background-color: #ccc;
+}
+.active .answer-text {
+    display: block;
+}
+
+.gallery{
+    width: 50%;
+    text-align: center;
+}
+.photos{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto auto auto;
+}
+.photos img{
+    width: 165px;
+    height: 110px;
+    border-radius: 8px;
+    margin: 1rem 1rem 1rem 0;
+}
 
 /***Top Recruiters***/
 .recruiters{
@@ -734,7 +823,11 @@ footer{
     color: #000721;
 }
 
-
+@media (max-width:1366px){
+    .photos{
+        grid-template-columns: auto auto auto;
+    }
+}
 @media (max-width:1070px){
 
     .navbar{
