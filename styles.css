@@ -33,6 +33,9 @@ a{
     justify-content: center !important;
     align-items: center;
     padding: 20px !important;
+    position: fixed !important;
+    z-index: 1000 !important;
+    width: 100% !important;
 }
 
 .menu-toggler{
@@ -61,11 +64,6 @@ a{
     margin: 0;
     font-weight: 600;
 }
-
-/* .logo img{
-    margin: 0 100px;
-} */
-
 .search-icon{
     position: absolute;
     right: 1rem;
@@ -73,7 +71,14 @@ a{
     text-align: center;
     color: #000b36;
 }
-
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    width: 0%;
+    height: 6px;
+    background: linear-gradient(to right,  #7b84ff , #83d5fa , #3a43c3 , #986ef2 , #6af8d7 );
+    z-index: 10000;
+  }
 .nav-elements{
     display: flex;
     gap: 0.1rem;
@@ -89,21 +94,6 @@ a{
     color: #003d8c;
     cursor: pointer;
 }
-
-/* .nav-elements li a::after{
-    content: "";
-    background-color: #333;
-    width: 0%;
-    height: 3px;
-    left: 0;
-    width: 0;
-    transition: all ease 1s;
-}
-
-.nav-elements li a:hover::after{
-    width: 100%;
-} */
-
 #language{
     position: absolute;
     right: 20px;
@@ -116,9 +106,18 @@ a{
     font-weight: 600;
 }
 .navigation{
-    background-color: #cfcfcf;
+    background-color: #b5b5b5;
     justify-content: center;
     display: flex;
+    position: fixed;
+    z-index: 1000;
+    margin-bottom: 3rem;
+    width: 100%;
+    top: 74px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.gap{
+    height: 8rem;
 }
 .navigation .menu li a{
     color: #000721;
@@ -257,7 +256,7 @@ a{
 .event{
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(to right, #cbcbcb , #c7c7c7 , rgb(222, 222, 222) , #f5f5f5 );
+    background: linear-gradient(to right, #cbcbcb , #d8d8d8 , rgb(222, 222, 222) , #f5f5f5 );
 }
 .events{
     width: 50%;
@@ -273,7 +272,7 @@ a{
 }
 .event-content{
     border-radius: 6px;
-    background-color: #bababa;
+    background-color: #d7d5d5;
     padding: 1.5rem;
     margin: 1.6rem 0.4rem;
     box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
@@ -495,16 +494,20 @@ iframe{
     margin: 12px auto;
 }
 .director-image{
-    width: 50%;
-    padding: 12px;
+    width: 45%;
+    padding: 12px 6px;
+    align-items: center;
+    justify-content: center;
+    display: grid;
 }
 .director-image img{
     width: 250px
 }
 .message-text{
     width: 50%;
-    padding: 1.4rem;
+    padding: 1.4rem 0.4rem;
     text-align: left;
+    text-align: justify;
 }
 
 .customer{
