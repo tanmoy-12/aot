@@ -1,0 +1,39 @@
+[
+    {
+      "date": "April 16, 2024",
+      "title": "Breaking News: New Discovery",
+      "text": "Lorem ipsum dolor sit amet conit. Tempore, voluptatibus! Fugit eos tempore unde ea debitis similique voluptas obcaecati esse, ullam ut ducimus accusantium cum mollitia, saepe nemo quas voluptate?",
+      "image": "news_image/1.jpeg"
+    },
+    {
+      "date": "April 17, 2024",
+      "title": "Exciting Update: Scientific Breakthrough",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, voluptatibus! Fugit eos tempore unde ea debitis similique voluptas obcaecati esse, , saepe nemo quas voluptate?",
+      "image": "news_image/2.jpeg"
+    },
+    {
+      "date": "April 18, 2024",
+      "title": "New Study Reveals Surprising Results",
+      "text": "Researchers uncover unexpected findings that challenge conventional wisdom.",
+      "image": "news_image/3.jpeg"
+    },
+    {
+      "date": "April 19, 2024",
+      "title": "Exclusive Interview: Renowned Scientist Speaks Out",
+      "text": "Insightful conversation with a leading expert in the field.",
+      "image": "news_image/4.jpeg"
+    },
+    {
+      "date": "April 20, 2024",
+      "title": "Latest Developments in Technology",
+      "text": "Advancements in technology promise to reshape industries.",
+      "image": "news_image/5.jpeg"
+    },
+    {
+      "date": "April 21, 2024",
+      "title": "Innovative Solutions for Environmental Challenges",
+      "text": "Initiatives aimed at tackling environmental issues gain traction.",
+      "image": "news_image/6.jpeg"
+    }
+  ]
+  

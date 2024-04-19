@@ -106,7 +106,7 @@ a{
     font-weight: 600;
 }
 .navigation{
-    background-color: #b5b5b5;
+    background-color: #3361b6;
     justify-content: center;
     display: flex;
     position: fixed;
@@ -120,7 +120,10 @@ a{
     height: 8rem;
 }
 .navigation .menu li a{
-    color: #000721;
+    color: #ffffff;
+}
+.navigation .menu ul li a{
+    color: #000000;
 }
 .navigation .menu li{
     padding: 0.6rem;
@@ -413,38 +416,74 @@ iframe{
     grid-gap: 25px;
     padding: 10px;
 }
+.news-div{
+    width: 60%;
+    margin: 40px auto;
+    display: flex;
+}
 .news{
-    width: 300px;
+    display: flex;
     border-radius: 8px;
     margin: 25px 0;
+    height: 300px;
+    align-self: center;
+    margin: 0 auto;
     text-align: left;
     /* filter: grayscale(40%); */
     transition: all ease 0.8s;
 }
 .news-image{
-    height: 19rem;
+    width: 50%;
 }
 .news-image img{
     width: 100%;
     height: 100%;
+    border-radius: 6px 0 0 6px;
 }
 .news-text{
     padding: 0.8rem 1.4rem;
+    border-radius: 0 6px 6px 0;
     background-color: #d9d8d8;
-    border-radius: 0 0 8px 8px;
-    height: 8rem;
     font-weight: 700;
+    width: 50%;
+}
+.news-text p{
+    font-weight: 500;
 }
 #backBtn,#nextBtn{
-    margin: 40px;
     cursor: pointer;
     background-color: transparent;
     color: #010024;
-    padding: 0.3rem 0.5rem 0.6rem 0.5rem;
-    font-size: 80px;
+    padding: 4px;
+    font-size: 50px;
     font-style: normal;
     font-weight: 200;
     border: none;
+    z-index: 3 !important;
+}
+#backBtn{
+    left: 0;
+}
+#nextBtn{
+    right: 0;
+}
+
+/* Updated CSS for smoother animations */
+.news-text, .news-image img {
+    opacity: 0;
+}
+
+.news-text, .news-image img {
+    transition: opacity 0.5s ease;
+}
+
+#backBtn, #nextBtn {
+    /* Other styles remain unchanged */
+    transition: transform 0.3s ease;
+}
+
+#backBtn:hover, #nextBtn:hover {
+    transform: scale(1.1);
 }
 
 /***Director's Corner***/
@@ -487,26 +526,51 @@ iframe{
 }
 .director-message{
     display: flex;
-    background-color: #cdcccce7;
-    width: 700px;
-    border-radius: 8px;
-    box-shadow: 4px 4px 4px 2px rgba(140, 114, 114, 0.2);
     margin: 12px auto;
 }
 .director-image{
-    width: 45%;
-    padding: 12px 6px;
+    width: 40%;
     align-items: center;
     justify-content: center;
     display: grid;
+    height: 400px;
 }
-.director-image img{
-    width: 250px
+.dcard{
+    position: relative;
+    width: 280px;
+    height: 290px;
+}
+.backcard{
+    background: linear-gradient(to right, #86a7f0 , #68ecdb , #b181f0 , #6c8fc2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    transform: perspective(1000px) rotateY(30deg);
+}
+.frontcard{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    margin: 30px;
+    background: #009938;
+    transform: perspective(1000px) rotateY(30deg);
+}
+.frontcard img{
+    width: 100%;
+    height: 100%;
 }
 .message-text{
-    width: 50%;
-    padding: 1.4rem 0.4rem;
-    text-align: left;
+    width: 60%;
+    padding: 1.4rem 2rem 1.4rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: justify;
 }
 
@@ -695,6 +759,15 @@ iframe{
   .contact-text p{
     margin: 0;
     font-weight: 500;
+  }
+
+  .campus-image{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+  .campus-image img{
+    width: 100%;
   }
 
 
@@ -959,7 +1032,15 @@ footer{
 
 
 
-
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    width: 0%;
+    height: 6px;
+    background:linear-gradient(to right, #a2caff , #81d4fa , #4c95f5 , #2c425a);
+    z-index: 10000;
+    border-radius: 6px;
+  }
 
 
 
