@@ -106,7 +106,7 @@ a{
     font-weight: 600;
 }
 .navigation{
-    background-color: #3361b6;
+    background-color: #d6d6d6;
     justify-content: center;
     display: flex;
     position: fixed;
@@ -120,7 +120,7 @@ a{
     height: 8rem;
 }
 .navigation .menu li a{
-    color: #ffffff;
+    color: #0052bd;
 }
 .navigation .menu ul li a{
     color: #000000;
@@ -141,7 +141,6 @@ a{
     position: relative;
 }
 .menu li a:hover {
-    color: #000229f6;
     border-radius: 5px;
     transition: 0.3s ease;
 }
@@ -164,12 +163,11 @@ a{
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     padding: 0;
     z-index: 1;
-    margin-top: 0.5rem;
-    border-radius: 0.5rem;
+    margin-top: 0.6rem;
     width: 12rem;
+    border-radius: 0 0 6px 6px;
 }
 .dropdown-services:hover .dropdown-content {
     display: block;
@@ -179,6 +177,11 @@ a{
     padding: 0px;
     text-align: left;
     list-style: none;
+    border-bottom: 1px dashed #bdbdbd;
+}
+.dropdown-content li:last-child{
+    border-bottom: 0;
+    border-radius: 0 0 6px 6px;
 }
 .dropdown-content li a {
     color: #006686;
@@ -186,23 +189,46 @@ a{
     display: block;
     font-size: medium;
     font-weight: 500;
-    padding: 5px 12px;
+    padding: 5px  0;
     cursor: pointer;
+    transition: all ease 0.3s;
 }
 .dropdown-content li a:hover {
-    background-color: #b9b9b9;
-}
-.sub-dropdown {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    padding: 0;
-    margin-left: 1px;
-    background-color: #c4c4c4;
+    color: #ff5e00 !important;
 }
 .dropdown-content li:hover .sub-dropdown {
     display: block;
+}
+#academics{
+    width: 800px;
+    margin: 0.5rem auto;
+    padding: 0.6rem;
+}
+.dropdown-services:hover #academics {
+    display: flex;
+}
+#academics ul li:first-child{
+    background-color: #0052bd !important;
+    padding: 5px 15px;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    font-size: large;
+    font-weight: 500;
+    border-bottom: 0px;
+}
+#academics ul li:last-child{
+    border-bottom: 0px;
+}
+#academics li{
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem;
+    background-color: transparent !important;
+    border-bottom: 1px dashed #bdbdbd;
+}
+#academics li a{
+    font-size: 1rem;
 }
 .navbar a{
     display: flex;
@@ -1031,16 +1057,6 @@ footer{
 }
 
 
-
-#scroll-progress {
-    position: fixed;
-    top: 0;
-    width: 0%;
-    height: 6px;
-    background:linear-gradient(to right, #a2caff , #81d4fa , #4c95f5 , #2c425a);
-    z-index: 10000;
-    border-radius: 6px;
-  }
 
 
 
