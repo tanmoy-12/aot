@@ -387,127 +387,126 @@
     <img src="campus.png">
    </div>
    <script>
-    // Function to animate scrolling and reveal content
-    function animateSlider(timestamp, slider, itemHeight) {
-        const { scrollTop, scrollHeight, clientHeight } = slider;
+        // Function to animate scrolling and reveal content
+        function animateSlider(slider, itemHeight) {
+            const eventContents = slider.querySelectorAll('.event-content');
+            const totalHeight = eventContents.length * itemHeight;
+            let scrollTop = 0;
+            let currentIndex = 0;
 
-        // Calculate new scrollTop based on timestamp
-        const newScrollTop = (timestamp / 10) % (scrollHeight - clientHeight);
+            // Show the first content item
+            eventContents[currentIndex].classList.add('visible');
 
-        // Update the scrollTop position
-        slider.scrollTop = newScrollTop;
+            // Interval for scrolling
+            setInterval(() => {
+                // Update scroll position
+                scrollTop += 1;
+                if (scrollTop >= totalHeight) {
+                    // Reset scroll position
+                    scrollTop = 0;
+                }
+                slider.scrollTop = scrollTop;
 
-        // Show/hide event contents based on position
-        const eventContents = document.querySelectorAll('.event-content');
-        eventContents.forEach((content, index) => {
-            const contentOffset = index * itemHeight;
-            const isVisible = (contentOffset >= newScrollTop - clientHeight) && (contentOffset <= newScrollTop + clientHeight * 2);
-            content.classList.toggle('visible', isVisible);
-        });
-
-        // Request next frame
-        requestAnimationFrame(newTimestamp => {
-            animateSlider(newTimestamp, slider, itemHeight);
-        });
-    }
-
-    // Start animation when the DOM is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-        const slider = document.querySelector('.event-slider');
-        const firstChild = slider.firstElementChild;
-        const itemHeight = firstChild.offsetHeight;
-
-        // Clone the first event-content element and append to the end for looping effect
-        const clone = firstChild.cloneNode(true);
-        slider.appendChild(clone);
-
-        // Animate the slider
-        requestAnimationFrame(timestamp => {
-            animateSlider(timestamp, slider, itemHeight);
-        });
-    });
-</script>
-   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const backBtn = document.getElementById("backBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const newsText = document.querySelector(".news-text");
-    const newsImage = document.querySelector(".news-image img");
-    let currentSlideIndex = 0;
-    let newsData = [];
-    let autoScrollInterval;
-
-    // Fetch news data from JSON file
-    fetch("news.json")
-        .then(response => response.json())
-        .then(data => {
-            newsData = data;
-            displayCurrentSlide();
-            startAutoScroll(); // Start autoscroll after fetching data
-        })
-        .catch(error => console.error("Error fetching news:", error));
-
-    // Display current slide based on currentSlideIndex
-    function displayCurrentSlide() {
-        const slide = newsData[currentSlideIndex];
-        if (slide) {
-            animateSlideOut(() => {
-                newsText.innerHTML = `
-                    <h6>${slide.date}</h6>
-                    <h5>${slide.title}</h5>
-                    <p>${slide.text}</p>
-                    <a href="#">Read More</a>
-                `;
-                newsImage.src = slide.image;
-                animateSlideIn();
-            });
+                // Show/hide event contents based on position
+                eventContents.forEach((content, index) => {
+                    const contentOffset = index * itemHeight;
+                    const isVisible = (contentOffset >= scrollTop - slider.clientHeight) && (contentOffset <= scrollTop + slider.clientHeight * 2);
+                    content.classList.toggle('visible', isVisible);
+                });
+            }, 90); // Adjust scroll speed here (lower value for slower scroll)
         }
-    }
 
-    // Function to animate slide out
-    function animateSlideOut(callback) {
-        newsText.style.opacity = "0";
-        newsText.style.transform = "translateX(-100%)";
-        newsImage.style.opacity = "0";
-        newsImage.style.transform = "translateX(100%)";
-        setTimeout(callback, 400); // Delay before callback (animation duration)
-    }
+        // Start animation when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.event-slider');
+            const firstChild = slider.firstElementChild;
+            const itemHeight = firstChild.offsetHeight;
 
-    // Function to animate slide in
-    function animateSlideIn() {
-        newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-        newsText.style.opacity = "1";
-        newsText.style.transform = "translateX(0)";
-        newsImage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-        newsImage.style.opacity = "1";
-        newsImage.style.transform = "translateX(0)";
-    }
+            // Clone the first event-content element and append to the end for looping effect
+            const clone = firstChild.cloneNode(true);
+            slider.appendChild(clone);
 
-    // Function to start autoscroll
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(() => {
+            // Animate the slider
+            animateSlider(slider, itemHeight);
+        });
+    </script>
+   <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const backBtn = document.getElementById("backBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const newsText = document.querySelector(".news-text");
+        const newsImage = document.querySelector(".news-image img");
+        let currentSlideIndex = 0;
+        let newsData = [];
+        let autoScrollInterval;
+
+        // Fetch news data from JSON file
+        fetch("news.json")
+            .then(response => response.json())
+            .then(data => {
+                newsData = data;
+                displayCurrentSlide();
+                startAutoScroll(); // Start autoscroll after fetching data
+            })
+            .catch(error => console.error("Error fetching news:", error));
+        // Display current slide based on currentSlideIndex
+        function displayCurrentSlide() {
+            const slide = newsData[currentSlideIndex];
+            if (slide) {
+                animateSlideOut(() => {
+                    newsText.innerHTML = `
+                        <h6>${slide.date}</h6>
+                        <h5>${slide.title}</h5>
+                        <p>${slide.text}</p>
+                        <a href="#">Read More</a>
+                    `;
+                    newsImage.src = slide.image;
+                    animateSlideIn();
+                });
+            }
+        }
+        // Function to animate slide out
+        function animateSlideOut(callback) {
+            newsText.style.opacity = "0";
+            newsText.style.transform = "translateX(-100%)";
+            newsImage.style.opacity = "0";
+            newsImage.style.transform = "translateX(100%)";
+            setTimeout(callback, 400); // Delay before callback (animation duration)
+        }
+        // Function to animate slide in
+        function animateSlideIn() {
+            newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            newsText.style.opacity = "1";
+            newsText.style.transform = "translateX(0)";
+            newsImage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            newsImage.style.opacity = "1";
+            newsImage.style.transform = "translateX(0)";
+        }
+
+        // Function to start autoscroll
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                currentSlideIndex = (currentSlideIndex + 1) % newsData.length;
+                displayCurrentSlide();
+            }, 5000); // Autoscroll interval (5000 milliseconds = 5 seconds)
+        }
+
+        // Event listener for next button
+        nextBtn.addEventListener("click", function () {
+            clearInterval(autoScrollInterval); // Pause autoscroll on manual navigation
             currentSlideIndex = (currentSlideIndex + 1) % newsData.length;
             displayCurrentSlide();
-        }, 5000); // Autoscroll interval (5000 milliseconds = 5 seconds)
-    }
+            startAutoScroll(); // Restart autoscroll after manual navigation
+        });
 
-    // Event listener for next button
-    nextBtn.addEventListener("click", function () {
-        clearInterval(autoScrollInterval); // Pause autoscroll on manual navigation
-        currentSlideIndex = (currentSlideIndex + 1) % newsData.length;
-        displayCurrentSlide();
-        startAutoScroll(); // Restart autoscroll after manual navigation
+        // Event listener for back button
+        backBtn.addEventListener("click", function () {
+            clearInterval(autoScrollInterval); // Pause autoscroll on manual navigation
+            currentSlideIndex = (currentSlideIndex - 1 + newsData.length) % newsData.length;
+            displayCurrentSlide();
+            startAutoScroll(); // Restart autoscroll after manual navigation
+        });
     });
-
-    // Event listener for back button
-    backBtn.addEventListener("click", function () {
-        clearInterval(autoScrollInterval); // Pause autoscroll on manual navigation
-        currentSlideIndex = (currentSlideIndex - 1 + newsData.length) % newsData.length;
-        displayCurrentSlide();
-        startAutoScroll(); // Restart autoscroll after manual navigation
-    });
-});
-
 </script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
