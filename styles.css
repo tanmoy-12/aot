@@ -1147,7 +1147,20 @@ footer{
         padding: 0;
     }
 }
-
+@media (max-width:450px){
+    .director-message{
+        flex-direction: column;
+    }
+    .director-image{
+        width: 100%;
+    }
+    .message-text h3{
+        text-align: center;
+    }
+    .message-text{
+        width: 100%;
+    }
+}
 
 
 
