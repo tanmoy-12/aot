@@ -261,7 +261,7 @@
             AOT actively promotes innovation through various initiatives, and its team, Buzz 6, secured the first rank in the AICTE Smart India Hackathon (SIH) 2023.</p>
         </div>
         <div class="right-about-us">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/eiNOyQRfMtA?si=8r6fKzHra3qu_qdB&amp;start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'rel': 0," referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/eiNOyQRfMtA?si=8r6fKzHra3qu_qdB&amp;start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'rel': 0," referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
     <h1 style="text-align: center; margin-top: 2rem;">Latest News</h1>
@@ -282,20 +282,22 @@
     </div>
     <div class="customer">
         <div class="customer-bg"></div>
-        <div class="customer-card">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <h2 id="studentsCount">2300+</h2>
-            <h3 style="color: #ff5500;">Students</h3>
-        </div>
-        <div class="customer-card">
-            <i class="fa-solid fa-user-tie"></i>
-            <h2 id="facultyCount">200+</h2>
-            <h3 style="color: #ff5500;">Faculty</h3>
-        </div>
-        <div class="customer-card">
-            <i class="fa-solid fa-users"></i>
-            <h2 id="staffCount">500+</h2>
-            <h3 style="color: #ff5500;">Staffs</h3>
+        <div class="number">
+            <div class="customer-card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2 id="studentsCount">2300+</h2>
+                <h3 style="color: #ff5500;">Students</h3>
+            </div>
+            <div class="customer-card">
+                <i class="fa-solid fa-user-tie"></i>
+                <h2 id="facultyCount">200+</h2>
+                <h3 style="color: #ff5500;">Faculty</h3>
+            </div>
+            <div class="customer-card">
+                <i class="fa-solid fa-users"></i>
+                <h2 id="staffCount">500+</h2>
+                <h3 style="color: #ff5500;">Staffs</h3>
+            </div>
         </div>
     </div>
     <div class="director-corner">
@@ -310,8 +312,7 @@
             </div>
             <div class="message-text">
                 <h3>Prof. Dilip Bhattacharya</h3>
-                <p>Welcome to Academy of Technology! I'm Prof. Dilip Bhattacharya, Director of this esteemed institution. With a distinguished background in Electronics & Electrical Communication Engineering from IIT Kharagpur, I lead a team of 111 highly qualified faculty members dedicated to academic excellence. At Academy of Technology, we prioritize a student-centric approach, ensuring optimal learning experiences and holistic development. Join us on this transformative journey where innovation meets education.</p>
-                <div class="btn-dark p1 "><a href="" style="font-size: large; font-weight: 600;">Read More</a></div>
+                <p>"Welcome to Academy of Technology! As the Director, I am committed to fostering a culture of academic excellence and innovation. Join us in our mission to provide exceptional education and empower students for success in a rapidly evolving world."</p>
             </div>
         </div>
     </div>
@@ -345,7 +346,7 @@
                     <div class="question-text">What extracurricular activities are offered?</div>
                     <div class="answer-text">The college offers a diverse range of extracurricular activities such as clubs, student organizations, sports teams, cultural events, and community service programs. Students can explore and participate in these activities to enrich their college experience.</div>
                 </div>
-                <div class="faq-question">
+                <div class="faq-question ">
                     <div class="question-toggle">+</div>
                     <div class="question-text">How can I contact the college for more information?</div>
                     <div class="answer-text">For more information about the college, its programs, admissions process, or any other inquiries, you can contact the college administration or admissions office directly. Contact details are available on the college's official website.</div>
@@ -450,38 +451,73 @@
             })
             .catch(error => console.error("Error fetching news:", error));
         // Display current slide based on currentSlideIndex
+        
         function displayCurrentSlide() {
-            const slide = newsData[currentSlideIndex];
-            if (slide) {
-                animateSlideOut(() => {
-                    newsText.innerHTML = `
-                        <h6>${slide.date}</h6>
-                        <h5>${slide.title}</h5>
-                        <p>${slide.text}</p>
-                        <a href="#">Read More</a>
-                    `;
-                    newsImage.src = slide.image;
-                    animateSlideIn();
-                });
-            }
+    const slide = newsData[currentSlideIndex];
+    if (slide) {
+        if (window.innerWidth > 650) {
+            // Animation for screens wider than 650px
+            animateSlideOut(() => {
+                newsText.innerHTML = `
+                    <h6>${slide.date}</h6>
+                    <h5>${slide.title}</h5>
+                    <p>${slide.text}</p>
+                    <a href="#">Read More</a>
+                `;
+                newsImage.src = slide.image;
+                animateSlideIn();
+            });
+        } else {
+            // Animation for screens 650px or narrower
+            animateSlideFadeInUp(() => {
+                newsText.innerHTML = `
+                    <h6>${slide.date}</h6>
+                    <h5>${slide.title}</h5>
+                    <p>${slide.text}</p>
+                    <a href="#">Read More</a>
+                `;
+                newsImage.src = slide.image;
+            });
         }
-        // Function to animate slide out
-        function animateSlideOut(callback) {
-            newsText.style.opacity = "0";
-            newsText.style.transform = "translateX(-100%)";
-            newsImage.style.opacity = "0";
-            newsImage.style.transform = "translateX(100%)";
-            setTimeout(callback, 400); // Delay before callback (animation duration)
-        }
-        // Function to animate slide in
-        function animateSlideIn() {
-            newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-            newsText.style.opacity = "1";
-            newsText.style.transform = "translateX(0)";
-            newsImage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-            newsImage.style.opacity = "1";
-            newsImage.style.transform = "translateX(0)";
-        }
+    }
+}
+
+// Function to animate slide out (for wider screens)
+function animateSlideOut(callback) {
+    newsText.style.opacity = "0";
+    newsText.style.transform = "translateX(-100%)";
+    newsImage.style.opacity = "0";
+    newsImage.style.transform = "translateX(100%)";
+    setTimeout(callback, 400); // Delay before callback (animation duration)
+}
+
+// Function to animate slide in (for wider screens)
+function animateSlideIn() {
+    newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    newsText.style.opacity = "1";
+    newsText.style.transform = "translateX(0)";
+    newsImage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    newsImage.style.opacity = "1";
+    newsImage.style.transform = "translateX(0)";
+}
+
+// Function to animate fade-in and slide-up (for narrower screens)
+function animateSlideFadeInUp(callback) {
+    newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    newsText.style.opacity = "0";
+    newsText.style.transform = "translateY(50px)";
+    newsImage.style.transition = "opacity 0.5s ease";
+    newsImage.style.opacity = "0";
+
+    setTimeout(() => {
+        newsText.style.opacity = "1";
+        newsText.style.transform = "translateY(0)";
+        newsImage.style.opacity = "1";
+        callback(); // Execute callback after animation
+    }, 400); // Delay before fade-in effect
+}
+
+
 
         // Function to start autoscroll
         function startAutoScroll() {
@@ -528,8 +564,8 @@
             <div class="logo ">
                 <img src="logo.png">
             </div>
-            <a href="#" class="logo"><span></span>Academy Of Technology</a>
-            <p class="fw-bold">AEDCONAGAR, HOOGHLY-712121 <br>WEST BENGAL, INDIA</p>
+            <a href="#" class="logo"><span>Academy Of Technology</span></a>
+            <p class="fw-bold d-flex flex-column"><span>AEDCONAGAR, HOOGHLY-712121</span> <span>WEST BENGAL, INDIA</span></p>
             <li><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;<a class="fs-6" >+91-9564324510</a></li>
             <li><i class="fa-regular fa-envelope"></i>&nbsp;&nbsp;<a class="fs-6">support@aot.edu.in</a></li>
             <div class="footer-social">
@@ -539,26 +575,28 @@
                 <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
             </div>
         </div>
-        <div class="footer-link-box" style="width: 8%;">
-            <strong>Quick Links</strong>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Digital Library</a></li>
-                <li><a href="#">Moodle</a></li>
-                <li><a href="#">Fee Structure</a></li>
-            </ul>
-        </div>  
-        <div class="footer-link-box">
-            <strong>Important Links</strong>
-            <ul>
-                <li><a href="">Teaching Learning Cntre</a></li>
-                <li><a href="#">Anti-Ragging Cell</a></li>
-                <li><a href="#">Placement Cell</a></li>
-                <li><a href="#">Talent Transformation Cell</a></li>
-                <li><a href="#">Placed Students List</a></li>
-            </ul>
-        </div>        
+        <div class="d-flex">
+            <div class="footer-link-box">
+                <strong>Quick Links</strong>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Digital Library</a></li>
+                    <li><a href="#">Moodle</a></li>
+                    <li><a href="#">Fee Structure</a></li>
+                </ul>
+            </div>  
+            <div class="footer-link-box">
+                <strong>Important Links</strong>
+                <ul>
+                    <li><a href="">Teaching Learning Cntre</a></li>
+                    <li><a href="#">Anti-Ragging Cell</a></li>
+                    <li><a href="#">Placement Cell</a></li>
+                    <li><a href="#">Talent Transformation Cell</a></li>
+                    <li><a href="#">Placed Students List</a></li>
+                </ul>
+            </div>       
+        </div> 
     </div>
 </footer>
 </html>
