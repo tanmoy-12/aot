@@ -1,3 +1,4 @@
+//JS Function to control dropdown services
 document.addEventListener('DOMContentLoaded', function() {
     const dropdownServices = document.querySelectorAll('.dropdown-services');
   
@@ -9,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 arrowIcon.classList.add('rotate-up');
             }
         });
-  
         dropdown.addEventListener('mouseleave', function() {
             if (arrowIcon) {
                 arrowIcon.classList.remove('rotate-up');
@@ -18,30 +18,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  
+  //JS Function to show incremental animation for number of faculties,students & staffs
   document.addEventListener('DOMContentLoaded', function() {
     const studentsCountElement = document.getElementById('studentsCount');
     const facultyCountElement = document.getElementById('facultyCount');
     const staffCountElement = document.getElementById('staffCount');
-  
     // Final values for each category
     const finalStudentsCount = 2300;
     const finalFacultyCount = 80;
     const finalStaffCount = 120;
-  
     // Animation duration (in milliseconds)
     const animationDuration = 2000; // 2000 milliseconds (2 seconds)
-  
     // Calculate increment step for each category
     const studentsIncrement = finalStudentsCount / animationDuration;
     const facultyIncrement = finalFacultyCount / animationDuration;
     const staffIncrement = finalStaffCount / animationDuration;
-  
     // Function to update the count gradually with formatting
     function updateCount(element, finalValue, increment) {
         let currentValue = 0;
         const startTime = performance.now();
-  
         function update() {
             const currentTime = performance.now();
             const elapsedTime = currentTime - startTime;
@@ -58,11 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 requestAnimationFrame(update);
             }
         }
-  
         // Start the animation
         requestAnimationFrame(update);
     }
-  
     // Intersection Observer to trigger animation when element comes into view
     const options = {
         threshold: 0.5 // Trigger animation when 50% of the element is in view
@@ -80,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, options);
-  
     // Observe the target element (e.g., .customer) when it comes into view
     const targetElement = document.querySelector('.customer');
     if (targetElement) {
@@ -89,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 
-
+//JS Function to animate scrolling top recruiters logos
   function startInfiniteScroll() {
       const sliderTrack = document.querySelector('.slider-track');
       const sliderItems = document.querySelectorAll('.slider-item');
@@ -123,25 +115,21 @@ document.addEventListener('DOMContentLoaded', function() {
   
           requestAnimationFrame(scroll);
       }
-  
       scroll(); // Start scrolling animation
   }
-  
   // Start the infinite scrolling when the page loads
   window.addEventListener('load', () => {
       startInfiniteScroll();
   });
   
-  
+  //JS Function to show answers of FAQ question on clicking '+' icon
   document.addEventListener("DOMContentLoaded", function () {
       const questionToggles = document.querySelectorAll(".question-toggle");
-  
       questionToggles.forEach((toggle) => {
           toggle.addEventListener("click", () => {
               const parent = toggle.parentNode;
               const answerText = parent.querySelector(".answer-text");
               const isActive = parent.classList.contains("active");
-  
               // Close all other questions
               closeAllQuestions();
   
@@ -154,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           });
       });
-  
       function closeAllQuestions() {
           const allQuestions = document.querySelectorAll(".faq-question");
           allQuestions.forEach((question) => {
@@ -165,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
   
-  
+  //JS Function to control functionality of the progress bar
   const scrollProgress = document.getElementById('scroll-progress');
   const height =
     document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -177,32 +164,27 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  // Function to handle scroll event
+// Function to handle scroll event to decrease grayscale of the campus image on scrolling
 function handleScroll() {
     // Calculate the scroll position relative to the viewport
     const scrollPosition = window.scrollY;
     // Get the height of the viewport
     const viewportHeight = window.innerHeight;
-    
     // Calculate the distance from the top of the image to the bottom of the viewport
     const imageOffsetTop = document.querySelector('.campus-image').offsetTop;
     const distanceToImage = imageOffsetTop - scrollPosition;
-    
     // Calculate the maximum grayscale value (100%)
     const maxGrayscale = 100;
-    
     // Calculate the grayscale percentage based on the distance to the image
     let grayscalePercentage = (distanceToImage / viewportHeight) * maxGrayscale;
     grayscalePercentage = Math.min(Math.max(grayscalePercentage, 0), maxGrayscale)-20; // Clamp between 0% and 100%
-    
     // Apply the grayscale filter to the image
     const imgElement = document.querySelector('.campus-image');
     imgElement.style.filter = `grayscale(${grayscalePercentage}%)`;
 }
-
 // Attach scroll event listener to the window
 window.addEventListener('scroll', handleScroll);
-
 // Initial call to handleScroll function to set the initial grayscale based on page load position
 handleScroll();
 
+//To scroll upcoming events infinitely

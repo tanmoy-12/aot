@@ -18,6 +18,10 @@ body{
 }
 a{
     text-decoration: none !important;
+    color: #000721 !important;
+}
+li{
+    list-style: none;
 }
 .wrapper-main{
     width: 100%;
@@ -168,6 +172,12 @@ a{
     margin-top: 0.6rem;
     width: 12rem;
     border-radius: 0 0 6px 6px;
+    box-shadow: 10px 8px 7px 2px rgba(0, 0, 0, 0.2);
+    left: 0; /* Position the left edge at the horizontal center */
+}
+.s{
+    left: 0%;
+    transform: translateX(-50%); 
 }
 .dropdown-services:hover .dropdown-content {
     display: block;
@@ -297,7 +307,8 @@ a{
 }
 .event-slider{
     height: 300px;
-    overflow-y: hidden;
+    overflow: hidden;
+    position: relative;
 }
 .event-content{
     border-radius: 6px;
@@ -305,6 +316,14 @@ a{
     padding: 1.5rem;
     margin: 1.6rem 0.4rem;
     box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+}
+.event-content.visible {
+    opacity: 1; /* Make the event content visible */
+}
+.event-content.visible {
+    opacity: 1;
 }
 .carousel{
     position: relative;
@@ -803,18 +822,18 @@ footer{
     position: relative;
     width: 100%;
     max-width: 100%;
-    background-color: #f2f2f2;
 }
 .footer-container {
     display: flex;
     justify-content: center;
     padding:40px ;
-    background-color: #f2f2f2;
+    background-color: #cfcfcf;
 }
 /* Footer Company Box */
 .footer-company-box {
-    width: 30%;
+    width: 20%;
     margin-right: 30px;
+    border-right: 1px dashed #777777;
 }
 .footer-company-box .logo {
     font-size: 24px;
@@ -833,12 +852,15 @@ footer{
 }
 .footer-link-box {
     width: 15%;
+    margin-left: 0.6rem;
+    padding-top: 1rem;
 }
 .footer-link-box strong {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
+    font-size: large;
+    color: #004b88;
 }
 .footer-link-box ul {
     list-style-type: none;
@@ -867,6 +889,19 @@ footer{
 }
 .footer-bottom .copyright {
     font-size: 14px;
+}
+.footer-social{
+    display: flex;
+}
+.footer-social li {
+    list-style: none;
+    border-radius: 50%;
+    border: 1px solid #0000 !important;
+}
+.footer-social i{
+    font-size: larger;
+    margin-top: 1rem;
+
 }
 .footer-social i:hover{
     color: #000721;
