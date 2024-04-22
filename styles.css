@@ -295,7 +295,7 @@ li{
 .event{
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(to right, #cbcbcb , #d8d8d8 , rgb(222, 222, 222) , #f5f5f5 );
+    background: linear-gradient(to right, #96c3ed , #97e8eb , rgb(147, 178, 245) , #a0f5f5 );
 }
 .events{
     width: 50%;
@@ -312,7 +312,7 @@ li{
 }
 .event-content{
     border-radius: 6px;
-    background-color: #d7d5d5;
+    background-color: #5bc5e8;
     padding: 1.5rem;
     margin: 1.6rem 0.4rem;
     box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
