@@ -123,34 +123,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   //JS Function to show answers of FAQ question on clicking '+' icon
-  document.addEventListener("DOMContentLoaded", function () {
-      const questionToggles = document.querySelectorAll(".question-toggle");
-      questionToggles.forEach((toggle) => {
-          toggle.addEventListener("click", () => {
-              const parent = toggle.parentNode;
-              const answerText = parent.querySelector(".answer-text");
-              const isActive = parent.classList.contains("active");
-              // Close all other questions
-              closeAllQuestions();
-  
-              if (!isActive) {
-                  parent.classList.add("active");
-                  toggle.textContent = "-";
-              } else {
-                  parent.classList.remove("active");
-                  toggle.textContent = "+";
-              }
-          });
-      });
-      function closeAllQuestions() {
-          const allQuestions = document.querySelectorAll(".faq-question");
-          allQuestions.forEach((question) => {
-              question.classList.remove("active");
-              const toggle = question.querySelector(".question-toggle");
-              toggle.textContent = "+";
-          });
-      }
-  });
+  const items = document.querySelectorAll('.faq button');
+
+function togglefaq() {
+  const itemToggle = this.getAttribute('aria-expanded');
+
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach((item) => item.addEventListener('click', togglefaq));
+
+
+
+
   
   //JS Function to control functionality of the progress bar
   const scrollProgress = document.getElementById('scroll-progress');
