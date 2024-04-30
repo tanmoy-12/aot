@@ -27,7 +27,6 @@
                 <h5>ACADEMY OF TECHNOLOGY</h5>
                 <h6>Translate Your Vision Into Reality</h6>
             </div>
-
         </div>
         <div class="nav-elements">
             <li><a>Home</a></li>
@@ -35,6 +34,9 @@
             <li><a>Faculty</a></li>
             <li><a>Contact Us</a></li>
         </div>
+        <!-- <div class="toggle-container">
+            <button id="toggleButton" onclick="toggleTheme()">Dark Mode</button>
+        </div> -->
         <div class="search-icon">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -100,14 +102,14 @@
                     </ul>
                     <ul>
                         <li>UG Syllabus</li>
-                        <li class="d-flex flex-row"><a href="http://makautexam.net/aicte_details/CourseStructure/CSE.pdf">CSE |</a>  <a href=" https://makautexam.net/aicte_details/CourseStructure/CSBS20.pdf">&nbsp;CSBS</a></li>
-                        <li class="d-flex flex-row"><a href="http://makautexam.net/aicte_details/CourseStructure/ECE.pdf">ECE |</a><a href="http://makautexam.net/aicte_details/CourseStructure/EEE.pdf">&nbsp;EEE |</a><a href="http://makautexam.net/aicte_details/CourseStructure/EE.pdf">&nbsp;EE</a></li>
-                        <li><a href="http://makautexam.net/aicte_details/CourseStructure/ME.pdf">ME</a></li>
+                        <li class="d-flex flex-row"><a href="CSE.pdf">CSE&nbsp; <a>|</a>  <a href="CSBS20.pdf">&nbsp;CSBS</a></li>
+                        <li class="d-flex flex-row"><a href="ECE.pdf">ECE&nbsp; <a>|</a> </a><a href="EEE.pdf">&nbsp;EEE |</a><a href="EE.pdf">&nbsp;EE</a></li>
+                        <li><a href="ME.pdf">ME</a></li>
                     </ul>
                     <ul>
                         <li>PG Syllabus</li>
-                        <li><a href="http://makautexam.net/aicte_details/CourseStructure/MCA20.pdf">MCA</a></li>
-                        <li><a href="http://makautexam.net/aicte_details/Syllabus/MBAF/AllSem.pdf">MBA</a></li>
+                        <li><a href="MCA20.pdf">MCA</a></li>
+                        <li><a href="MBA.pdf">MBA</a></li>
                     </ul>
                     <ul>
                         <li>Career Services</li>
@@ -118,7 +120,7 @@
                         <li><a href="#">Industry 4.0 Centre</a></li>
                         <li><a href="#">Campus Facilities</a></li>
                     </ul>
-            </ul>
+                </ul>
             </li>
             <li class="dropdown-services">
                 <a href="#">Faculty<i class="fas fa-angle-down arrow-icon"></i></a>
@@ -131,24 +133,81 @@
         </div>
     </div>
     <div id="scroll-progress"></div>
-    <div class="gap"></div>
+    <div id="pc-view" class="gap"></div>
     <!-- Mobile Navbar Toggle Button -->
     <nav id="mobile-view">
         <div class="navbar">
             <div class="menu-toggler">
                 <h2 onclick="showSidebar()"><i class="fa-solid fa-bars"></i></h2>
             </div>
-            <div class="logo_mobile">
-                <img src="logo.png" height="60px" width="130px">
-                <!-- <h1>Logo</h1> -->
+            <div class="logo">
+                <img src="logo.png">
+                <div class="logo-text">
+                    <h5>ACADEMY OF TECHNOLOGY</h5>
+                    <h6>Translate Your Vision Into Reality</h6>
+                </div>
             </div>
         </div>
         <ul class="sidebar" id="mobile-view">
             <li id="exit" onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="faculty.html">Employees</a></li>
+            <li><a>Home</a></li>
+            <li><a>About us</a></li>
+            <li><a>Faculty</a></li>
+            <li><a>Contact Us</a></li>
+            <li class="dropdown" id="academic">
+                <a href="#">Faculty<i class="fas fa-angle-down arrow-icon"></i></a>
+                <ul class="dropdowns" id="academics">
+                        <ul>
+                            <li><a href="#" style="color: aliceblue !important">Faculty Data</a></li>
+                            <li><a href="#" >Faculty List</a></li>
+                            <li><a href="#">Faculty Positions</a></li>
+                            <li><a href="#">Career Benefits@AOT</a></li>
+                        </ul>
+                </ul>
+            </li>    
+            <li class="dropdown" id="academic">
+                <a href="#">Academics<i class="fas fa-angle-down arrow-icon"></i></a>
+                <ul class="dropdowns" id="academics">
+                        <ul>
+                            <li>Admission</li>
+                            <li><a href="#">UG Admission</a></li>
+                            <li><a href="#">PG Admission</a></li>
+                            <li><a href="#">Regulations</a></li>
+                            <li><a href="#">Curriculum</a></li>  
+                            <li><a href="https://aot.edu.in/b-tech-fees-structure/">Fee Structure</a></li>
+                            <li><a href="https://aot.edu.in/documents-for-admission/">Documents</a></li>
+                            <li><a href="#">Program Structure</a></li>
+                        </ul>
+                        <ul>
+                            <li>Resources</li>
+                            <li><a href="https://aot.edu.in/library/">Library</a></li>
+                            <li><a href=" http://182.74.215.198/moodle/">Moodle</a></li>
+                            <li><a href="Academic Calendar-Feb-2024  to 16-May-2024 (1).pdf">Academic Calendar</a></li>
+                            <li><a href="https://aot.edu.in/library/">MAR List</a></li>
+                        </ul>
+                        <ul>
+                            <li>Department</li>
+                            <li><a href="#">Computer Science & Engineeering</a></li>
+                            <li><a href="#">Computer Science & Business System</a></li>
+                            <li><a href="#">Electronics & Communication Engineeering</a></li>
+                            <li><a href="#">Electronics & Electrical Engineeering</a></li>
+                            <li><a href="#">Electrical Engineeering</a></li>
+                            <li><a href="#">Mechanical Engineeering</a></li>
+                            <li><a href="#">Engineeering Science</a></li>
+                        </ul>
+                        <ul>
+                            <li>Clubs@AOT</li>
+                            <li><a href="https://aot.edu.in/ardour/">Ardour</a></li>
+                            <li><a href="https://aot.edu.in/analects/">Analects</a></li>
+                            <li><a href="https://aot.edu.in/agile/">Agile</a></li>
+                            <li><a href="https://aot.edu.in/acuity/">Acuity</a></li>
+                            <li><a href="https://aot.edu.in/acclivities/">Acclivities</a></li>
+                        </ul>
+                </ul>
+            </li>
         </ul>
     </nav>
+    <div class="gap"></div>
     <div class="main">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">

@@ -41,13 +41,22 @@ li{
     z-index: 1000 !important;
     width: 100% !important;
 }
-
 .menu-toggler{
     left:  12px;
     top: 20px;
     position: absolute;
 }
-
+/* Additional custom styles for the toggle button */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* #toggleButton {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+} */
 #pc-view .logo{
     display: flex;
     position: absolute;
@@ -121,7 +130,7 @@ li{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .gap{
-    height: 8rem;
+    height: 4rem;
 }
 .navigation .menu li a{
     color: #0052bd;
@@ -218,7 +227,7 @@ li{
     display: flex;
 }
 #academics ul li:first-child{
-    background-color: #0052bd !important;
+    background-color: #0052bd;
     padding: 5px 15px;
     border-radius: 8px;
     text-align: center;
@@ -234,7 +243,7 @@ li{
     display: flex;
     flex-direction: column;
     padding: 0.3rem;
-    background-color: transparent !important;
+    background-color: transparent;
     border-bottom: 1px dashed #bdbdbd;
 }
 #academics li a{
@@ -252,9 +261,6 @@ li{
 .sidebar ul:first-child{
     right: 0;
 }
-.sidebar li:hover{
-    background-color: #4b4b4b;
-}
 .sidebar{
     position: fixed;
     top: 80px;
@@ -262,26 +268,26 @@ li{
     height: 100vh;
     width: 50%;
     z-index: 999;
-    background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(15px);
+    background-color: rgb(255, 255, 255);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     display: none;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1.3rem;
     align-items: flex-start;
     justify-content: flex-start;
 }
 .sidebar li{
     width: 100%;
     list-style: none;
-    padding: 5px 0 5px 20px;
+    padding: 8px 0 8px 20px;
+    border-bottom: 1px dashed #9e9e9e;
 }
 .sidebar a{
     width: 100%;
     font-size: large;
     color: #000721;
-    font-weight: 700;
+    font-weight: 500;
 }
 #exit{
     text-align: right;
@@ -1048,14 +1054,57 @@ footer{
 }
 
 @media (max-width:950px){
+    #mobile-view{
+        display: block;
+    }
     .navigation{
         display: none;
     }
     .gap{
-        height: 5rem;
+        height: 4rem;
+    }
+    #pc-view {
+        display: none !important;
     }
     .navbar{
-        background-color: #b9b9b9;
+        background-color: #acacac;
+    }
+    .logo{
+        display: flex;
+        left: 50px !important;
+    }
+    .logo img{
+        height: 50px;
+    }
+    .logo-text{
+        top: 8px;
+    }
+    .sidebar{
+        top: 74px;
+        width: 100%;
+        height: 400px;
+        overflow-y: scroll; 
+    }
+    .dropdowns ul{
+        padding-left: 0 !important;
+    }
+    #academics{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: 0.5rem 0;
+        padding: 0.6rem 0;
+    }
+    #academics:hover{
+        background-color: transparent;
+    }
+    .dropdown-content{
+        box-shadow: none;
+        background-color: transparent;
+    }
+    #academic i{
+        right: 1.3rem;
+        position: absolute;
     }
     .event{
         flex-direction: column;
@@ -1160,6 +1209,9 @@ footer{
     .message-text p{
         font-size: smaller !important;
     }
+    .dcard{
+        margin-bottom: 20px;
+    }
     .backcard{
         display: none;
     }
@@ -1167,6 +1219,9 @@ footer{
         transform: none;
         position: relative;
         margin: 10px 0;
+    }
+    .frontcard img{
+        filter: drop-shadow(3px 2px 12px #000) !important;
     }
     .message-text{
         padding: 1rem;
