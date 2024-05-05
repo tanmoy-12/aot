@@ -809,7 +809,7 @@ iframe{
     transform: translate(-50%, -50%) rotate(0deg); /* Initial rotation angle */
     height: 150px;
     width: 1000px;
-    background-color: #8f8f8f;
+    background-color: var(--primary-color);
     animation: rotator 2s linear infinite; /* Apply the rotation animation */
   }
   
