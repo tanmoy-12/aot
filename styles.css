@@ -3,11 +3,20 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
+    color: #000721;
 }
 body{
     font-family: "Poppins", sans-serif !important;
 }
-
+:root {
+    --primary-color: #0052bd;  /* Define a primary color variable */
+    --hover-imp:#ff5e00 ;
+    --bg-color-ligt: #ffff;
+    --bg-color-dark: #c3c3c3;
+    --text:#01002b;
+    --dark: #333;
+    --light: #f4f4f4;
+  }
 .container{
     width: 100%;
     max-width: 100%;
@@ -18,7 +27,11 @@ body{
 }
 a{
     text-decoration: none !important;
-    color: #000721 !important;
+    cursor: pointer;
+    color: var(--text) !important;
+}
+a:hover{
+    color: var(--primary-color) !important;
 }
 li{
     list-style: none;
@@ -30,8 +43,7 @@ li{
     display: none;
 }
 .navbar {
-    background-color: #ffffff;
-    color: #13008f;
+    background-color: var(--bg-color-ligt);
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center !important;
@@ -82,7 +94,7 @@ li{
     right: 1rem;
     font-size: 1.4rem;
     text-align: center;
-    color: #000b36;
+    color: var(--text);
 }
 #scroll-progress {
     position: fixed;
@@ -104,22 +116,11 @@ li{
 .nav-elements li a{
     font-size: larger;
     font-weight: 600;
-    color: #003d8c;
+    color: var(--text);
     cursor: pointer;
 }
-#language{
-    position: absolute;
-    right: 20px;
-    border: none;
-    border-radius: 8px;
-    padding: 8px;
-    background-color: transparent;
-    font-size: larger;
-    color: #00030f;
-    font-weight: 600;
-}
 .navigation{
-    background-color: #d6d6d6;
+    background-color: var(--bg-color-dark);
     justify-content: center;
     display: flex;
     position: fixed;
@@ -133,10 +134,10 @@ li{
     height: 4rem;
 }
 .navigation .menu li a{
-    color: #0052bd;
+    color: var(--text);
 }
 .navigation .menu ul li a{
-    color: #000000;
+    color: var(--text);
 }
 .navigation .menu li{
     padding: 0.6rem;
@@ -158,7 +159,7 @@ li{
     transition: 0.3s ease;
 }
 .menu li a {
-    color: #006686;
+    color: var(--text);
     text-decoration: none;
     padding: 5px 14px;
     cursor: pointer;
@@ -175,7 +176,7 @@ li{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: var(--bg-color-ligt);
     padding: 0;
     z-index: 1;
     margin-top: 0.6rem;
@@ -192,18 +193,18 @@ li{
     display: block;
 }
 .dropdown-content li {
-    background-color: #e4e4e4;
+    background-color: var(--bg-color-ligt);
     padding: 0px;
     text-align: left;
     list-style: none;
-    border-bottom: 1px dashed #bdbdbd;
+    border-bottom: 1px dashed var(--bg-color-dark);
 }
 .dropdown-content li:last-child{
     border-bottom: 0;
     border-radius: 0 0 6px 6px;
 }
 .dropdown-content li a {
-    color: #006686;
+    color: var(--primary-color);
     text-decoration: none;
     display: block;
     font-size: medium;
@@ -213,7 +214,7 @@ li{
     transition: all ease 0.3s;
 }
 .dropdown-content li a:hover {
-    color: #ff5e00 !important;
+    color: var(--hover-imp) !important;
 }
 .dropdown-content li:hover .sub-dropdown {
     display: block;
@@ -227,11 +228,11 @@ li{
     display: flex;
 }
 #academics ul li:first-child{
-    background-color: #0052bd;
+    background-color: var(--primary-color);
     padding: 5px 15px;
     border-radius: 8px;
     text-align: center;
-    color: #fff;
+    color: var(--bg-color-ligt);
     font-size: large;
     font-weight: 500;
     border-bottom: 0px;
@@ -244,14 +245,14 @@ li{
     flex-direction: column;
     padding: 0.3rem;
     background-color: transparent;
-    border-bottom: 1px dashed #bdbdbd;
+    border-bottom: 1px dashed var(--bg-color-dark);
 }
 #academics li a{
     font-size: 1rem;
 }
 .navbar a{
     display: flex;
-    color:#000d1a;
+    color:var(--text);
     text-decoration: none;
     font-size: larger;
     font-weight: 600;
@@ -268,8 +269,8 @@ li{
     height: 100vh;
     width: 50%;
     z-index: 999;
-    background-color: rgb(255, 255, 255);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-color-ligt);
+    box-shadow: -10px 0 10px var(--text);
     flex-direction: column;
     display: none;
     margin: 0 auto;
@@ -281,12 +282,12 @@ li{
     width: 100%;
     list-style: none;
     padding: 8px 0 8px 20px;
-    border-bottom: 1px dashed #9e9e9e;
+    border-bottom: 1px dashed var(--bg-color-dark);
 }
 .sidebar a{
     width: 100%;
     font-size: large;
-    color: #000721;
+    color: var(--text);
     font-weight: 500;
 }
 #exit{
@@ -306,7 +307,7 @@ li{
 .events{
     width: 50%;
     padding: 3rem 3rem 1rem 3rem;
-    border-right: 2px dashed #4b4b4b;
+    border-right: 2px dashed var(--bg-color-dark);
 }
 .events h1{
     margin-bottom: 20px;
@@ -318,7 +319,7 @@ li{
 }
 .event-content{
     border-radius: 6px;
-    background-color: #a3a7a9;
+    background-color: var(--bg-color-dark);
     padding: 1.5rem;
     margin: 1.6rem 0.4rem;
     box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
@@ -345,7 +346,7 @@ li{
     padding: 0 0 2rem 0;
 }
 .feature{
-    color: #fff;
+    color: var(--bg-color-ligt);
     width: 280px;
     height: 280px;
     text-align: center;
@@ -396,7 +397,7 @@ li{
     border-right: 0px;
 }
 .announcement-content-l{
-    color: #13008f;
+    color: var(--text);
     font-size: larger;
     font-weight: 500;
     padding-right: 0.6rem;
@@ -409,7 +410,7 @@ li{
 /***About Us***/
 .about-us{
     display: flex;
-    background-color: #e5e5e5;
+    background-color: var(--light);
     justify-content: center;
     align-items: center;
 }
@@ -496,7 +497,7 @@ iframe{
 .news-text{
     padding: 0.8rem 1.4rem;
     border-radius: 0 6px 6px 0;
-    background-color: #d9d8d8;
+    background-color: var(--bg-color-dark);
     font-weight: 700;
     width: 50%;
 }
@@ -506,7 +507,7 @@ iframe{
 #backBtn,#nextBtn{
     cursor: pointer;
     background-color: transparent;
-    color: #010024;
+    color: var(--text);
     padding: 4px;
     font-size: 50px;
     font-style: normal;
@@ -555,7 +556,7 @@ iframe{
     position: relative;
 }
 .line::before{
-    background-color: #000721;
+    background-color: var(--text);
     bottom: 0;
     content: "";
     height: 6px;
@@ -568,7 +569,7 @@ iframe{
     border-radius: 8px;
 }
 .line::after{
-    background-color: #000721;
+    background-color: var(--text);
     bottom: 0;
     content: "";
     height: 2px;
@@ -655,11 +656,11 @@ iframe{
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: #fff;
+    color: var(--bg-color-ligt);
     width: 173px;
   }
   .customer-card i{
-    color: #ff4800;
+    color: var(--hover-imp);
     font-size: 48px;
   }
   .customer-card h2{
@@ -686,11 +687,11 @@ iframe{
     padding: 1rem;
 }
 .faq .faq-item {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--bg-color-dark);
   }
   
   .faq .faq-item button[aria-expanded='true'] {
-    border-bottom: 1px solid #0052bd;
+    border-bottom: 1px solid var(--primary-color);
   }
   
   .faq button {
@@ -699,7 +700,7 @@ iframe{
     text-align: left;
     width: 100%;
     padding: 1em 0;
-    color: #7288a2;
+    color: var(--bg-color-dark);
     font-size: 1.15rem;
     font-weight: 400;
     border: none;
@@ -710,14 +711,14 @@ iframe{
   .faq button:hover,
   .faq button:focus {
     cursor: pointer;
-    color: #002662;
+    color: var(--primary-color);
   }
   
   .faq button:hover::after,
   .faq button:focus::after {
     cursor: pointer;
-    color: #0052bd;
-    border: 1px solid #0052bd;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
   }
   
   .faq button .faq-title {
@@ -756,11 +757,11 @@ iframe{
     background: currentColor;
   }
   .faq button span{
-    color: #001a45;
+    color: var(--text);
     font-weight: 500;
   }
   .faq button[aria-expanded='true'] {
-    color: #0052bd;
+    color: var(--primary-color);
   }
   .faq button[aria-expanded='true'] .icon::after {
     width: 0;
@@ -810,7 +811,7 @@ iframe{
 /***Top Recruiters***/
 .recruiters{
     padding: 20px 0;
-    background-color: #ffffff;
+    background-color: var(--bg-color-ligt);
     text-align: center;
 }
 .recruiters h2{
@@ -836,7 +837,7 @@ iframe{
     width: auto; /* Adjust width of each item */
     height: 100px;
     padding: 20px;
-    background-color: #e0e0e0;
+    background-color: var(--bg-color-dark);
     margin-right: 20px;
 }
 .slider-item img{
@@ -844,32 +845,7 @@ iframe{
 }
 
 /**Find Us**/
-.find-us-content{
-    max-width: 50%;
-    padding: 40px;
-    background-color: #ffffff;
-  }
-  .find-us-content p{
-    margin: 20px 0;
-    letter-spacing: 0.01rem;
-    font-size: larger;
-    font-weight: 700;
-    color: #000829;
-  }
-  .contacts{
-    display: flex;
-    margin: 12px 0;
-    font-weight: 600;
-    font-size: medium;
-    color: #441300;
-  }
-  .contact-logo{
-    margin-right: 15px;
-  }
-  .contact-text p{
-    margin: 0;
-    font-weight: 500;
-  }
+
 
   .campus-image{
     width: 100%;
@@ -892,27 +868,27 @@ footer{
     display: flex;
     justify-content: center;
     padding:40px ;
-    background-color: #cfcfcf;
+    background-color: var(--bg-color-ligt);
 }
 /* Footer Company Box */
 .footer-company-box {
     padding-right: 40px;
     margin-right: 30px;
-    border-right: 1px dashed #777777;
+    border-right: 1px dashed var(--bg-color-dark);
 }
 .footer-company-box .logo {
     font-size: 24px;
-    color: #333;
+    color: var(--dark);
     text-decoration: none;
     font-weight: bold;
 }
 .footer-company-box p {
     margin-top: 10px;
-    color: #666;
+    color: var(--dark);
 }
 .footer-company-box .footer-social a {
     margin-right: 10px;
-    color: #666;
+    color: var(--dark);
     text-decoration: none;
 }
 .footer-link-box {
@@ -924,7 +900,7 @@ footer{
     margin-bottom: 10px;
     font-weight: bold;
     font-size: large;
-    color: #004b88;
+    color: var(--primary-color);
 }
 .footer-link-box ul {
     list-style-type: none;
@@ -934,17 +910,17 @@ footer{
     margin-bottom: 5px;
 }
 .footer-link-box ul li a {
-    color: #666;
+    color: var(--dark);
     font-weight: 600;
     text-decoration: none;
     transition: all ease 0.2s;
 }
 .footer-link-box ul li a:hover{
-    color: #000d1a;
+    color: var(--text);
 }
 .footer-bottom {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--dark);
+    color: var(--bg-color-ligt);
     text-align: center;
     padding: 10px 0;
 }
@@ -968,7 +944,7 @@ footer{
 
 }
 .footer-social i:hover{
-    color: #000721;
+    color: var(--text);
 }
 @media (max-width:1600px){
     .logo{
@@ -1088,8 +1064,10 @@ footer{
     .dropdowns ul{
         padding-left: 0 !important;
     }
+    .dropdowns{
+        display: none;
+    }
     #academics{
-        display: flex;
         flex-direction: column;
         width: 95%;
         margin: 0.5rem 0;

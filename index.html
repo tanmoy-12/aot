@@ -148,26 +148,25 @@
                 </div>
             </div>
         </div>
-        <ul class="sidebar" id="mobile-view">
+        <ul class="sidebar">
             <li id="exit" onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
             <li><a>Home</a></li>
             <li><a>About us</a></li>
             <li><a>Faculty</a></li>
             <li><a>Contact Us</a></li>
             <li class="dropdown" id="academic">
-                <a href="#">Faculty<i class="fas fa-angle-down arrow-icon"></i></a>
-                <ul class="dropdowns" id="academics">
-                        <ul>
-                            <li><a href="#" style="color: aliceblue !important">Faculty Data</a></li>
-                            <li><a href="#" >Faculty List</a></li>
-                            <li><a href="#">Faculty Positions</a></li>
-                            <li><a href="#">Career Benefits@AOT</a></li>
-                        </ul>
+                <a href="#" onclick="showMenu()">Faculty <i class="fas fa-angle-down arrow-icon"></i></a>
+                <ul3
+                 id="academics">
+                    <li><a href="#" style="color: aliceblue !important">Faculty Data</a></li>
+                    <li><a href="#">Faculty List</a></li>
+                    <li><a href="#">Faculty Positions</a></li>
+                    <li><a href="#">Career Benefits@AOT</a></li>
                 </ul>
-            </li>    
+            </li>
             <li class="dropdown" id="academic">
-                <a href="#">Academics<i class="fas fa-angle-down arrow-icon"></i></a>
-                <ul class="dropdowns" id="academics">
+                <a href="#" onclick="showMenu()">Academics<i class="fas fa-angle-down arrow-icon"></i></a>
+                <ul class="dropdowns" id="academics"style="display: none;">
                         <ul>
                             <li>Admission</li>
                             <li><a href="#">UG Admission</a></li>
@@ -628,19 +627,8 @@ function animateSlideFadeInUp(callback) {
         });
     });
 </script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <script>
-        function showSidebar() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.display = 'flex';
-        }
-
-        function hideSidebar() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.display = 'none';
-        }
-    </script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 </body>
 <footer>
     <div class="footer-container">
