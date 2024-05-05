@@ -784,12 +784,90 @@ iframe{
     font-weight: 500;
     color: #000b36;
     margin: 2em 0;
+  }
 
+  .rotating-border {
+    height: 580px;
+    width: 480px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border: 2px solid var(--dark); */
+    background-color: var(--bg-color-dark);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure the overflow is hidden to contain the rotating border */
   }
   
+  /* Styling for the pseudo-element creating the rotating border */
+  .rotating-border::after {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg); /* Initial rotation angle */
+    height: 150px;
+    width: 1000px;
+    background-color: #8f8f8f;
+    animation: rotator 2s linear infinite; /* Apply the rotation animation */
+  }
   
+  /* Keyframes for the rotating animation */
+  @keyframes rotator {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg); /* Full rotation */
+    }
+  }
   
-  
+  .contact-form{
+    width: 450px;
+    background-color: var(--light);
+    padding: 1rem;
+    margin: 20px auto;
+    position: relative;
+    z-index: 3;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  #input-field{
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+    gap: 15px;
+  }
+  input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--bg-color-dark);
+    transition: all ease 0.5s;
+  }
+  input:focus{
+    border-bottom: 1px solid var(--primary-color);
+    background-color: var(--light);
+  }
+  textarea{
+    height: 150px;
+    padding: 15px;
+    outline: none;
+    border: none;
+  }
+  .submit{
+    margin: 1rem auto;
+    justify-self: center;
+    display: flex;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--light);
+    font-size: large;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+  }
 
 .gallery{
     width: 50%;
@@ -868,7 +946,7 @@ footer{
     display: flex;
     justify-content: center;
     padding:40px ;
-    background-color: var(--bg-color-ligt);
+    background-color: var(--light);
 }
 /* Footer Company Box */
 .footer-company-box {
