@@ -31,12 +31,13 @@
         <div class="nav-elements">
             <li><a>Home</a></li>
             <li><a>About us</a></li>
-            <li><a>Faculty</a></li>
             <li><a>Contact Us</a></li>
         </div>
-        <!-- <div class="toggle-container">
-            <button id="toggleButton" onclick="toggleTheme()">Dark Mode</button>
-        </div> -->
+        <div class="toggle-container">
+            <button class="theme-toggle-btn" onclick="toggleTheme()">
+                <i class="fas fa-solid fa-moon"></i>
+            </button>
+        </div>
         <div class="search-icon">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -48,8 +49,8 @@
                 <ul class="dropdown-content" id="academics">
                         <ul>
                             <li>Admission</li>
-                            <li><a href="#">UG Admission</a></li>
-                            <li><a href="#">PG Admission</a></li>
+                            <li><a href="https://aot.edu.in/admission-procedure/">UG Admission</a></li>
+                            <li><a href="https://aot.edu.in/admission-procedure/">PG Admission</a></li>
                             <li><a href="#">Regulations</a></li>
                             <li><a href="#">Curriculum</a></li>  
                             <li><a href="https://aot.edu.in/b-tech-fees-structure/">Fee Structure</a></li>
@@ -117,7 +118,7 @@
                         <li><a href="#">Talent Transformation Cell</a></li>
                         <li><a href="#">Placement & Training Cell</a></li>
                         <li><a href="#">Life@AOT</a></li>
-                        <li><a href="#">Industry 4.0 Centre</a></li>
+                        <li><a href="https://aot.edu.in/industry-4-0-2/">Industry 4.0 Centre</a></li>
                         <li><a href="#">Campus Facilities</a></li>
                     </ul>
                 </ul>
@@ -132,6 +133,7 @@
             </li>
         </div>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-angles-up"></i></button>
     <div id="scroll-progress"></div>
     <div id="pc-view" class="gap"></div>
     <!-- Mobile Navbar Toggle Button -->
@@ -322,7 +324,7 @@
             <iframe src="https://www.youtube.com/embed/eiNOyQRfMtA?si=8r6fKzHra3qu_qdB&amp;start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'rel': 0," referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
-    <h1 style="text-align: center; margin-top: 2rem;">Latest News</h1>
+    <h1 style="text-align: center; margin-top: 2rem; color: var(--text);">Latest News</h1>
     <div class="news-div">
         <button id="backBtn"><i class="fas fa-caret-left"></i></button>
         <div class="news">
@@ -494,6 +496,113 @@
    <!-- <div class="campus-image">
     <img src="campus.png">
    </div> -->
+   <script>
+    let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// Function to toggle between light and dark themes and rotate icon
+function toggleTheme() {
+    const root = document.querySelector(':root');
+    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+    const icon = themeToggleBtn.querySelector('i');
+
+    // Retrieve the current theme preference from localStorage
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'dark') {
+        // Switch to light mode
+        root.style.setProperty('--primary-color', '#0052bd');
+        root.style.setProperty('--hover-imp', '#ff5e00');
+        root.style.setProperty('--bg-color-ligt', '#ececec');
+        root.style.setProperty('--bg-color-dark', '#c3c3c3');
+        root.style.setProperty('--text', '#01002b');
+        root.style.setProperty('--dark', '#333');
+        root.style.setProperty('--light', '#f4f4f4');
+        root.style.setProperty('--bg', '#ffffff');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light'); // Update localStorage
+    } else {
+        // Switch to dark mode
+        root.style.setProperty('--primary-color', '#0052bd');
+        root.style.setProperty('--hover-imp', '#ff5e00');
+        root.style.setProperty('--bg-color-ligt', '#676767');
+        root.style.setProperty('--bg-color-dark', '#2c2c2c');
+        root.style.setProperty('--text', '#ffffff');
+        root.style.setProperty('--dark', '#ffffff');
+        root.style.setProperty('--light', '#000000');
+        root.style.setProperty('--bg', '#1a1a1a');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark'); // Update localStorage
+    }
+
+    // Add rotating animation to the icon
+    icon.style.transform = 'rotate(360deg)';
+
+    // Reset rotation after animation completes
+    setTimeout(() => {
+        icon.style.transform = 'rotate(0deg)';
+    }, 300); // Adjust duration to match CSS transition duration
+}
+
+// Function to initialize the theme based on the saved preference
+function initializeTheme() {
+    const root = document.querySelector(':root');
+    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+    const icon = themeToggleBtn.querySelector('i');
+
+    // Retrieve the saved theme preference from localStorage
+    const savedTheme = localStorage.getItem('theme');
+
+    // Set the initial theme based on the saved preference
+    if (savedTheme === 'dark') {
+        // Dark mode
+        root.style.setProperty('--primary-color', '#0052bd');
+        root.style.setProperty('--hover-imp', '#ff5e00');
+        root.style.setProperty('--bg-color-ligt', '#676767');
+        root.style.setProperty('--bg-color-dark', '#2c2c2c');
+        root.style.setProperty('--text', '#ffffff');
+        root.style.setProperty('--dark', '#ffffff');
+        root.style.setProperty('--light', '#000000');
+        root.style.setProperty('--bg', '#1a1a1a');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        // Light mode (default)
+        root.style.setProperty('--primary-color', '#0052bd');
+        root.style.setProperty('--hover-imp', '#ff5e00');
+        root.style.setProperty('--bg-color-ligt', '#ececec');
+        root.style.setProperty('--bg-color-dark', '#c3c3c3');
+        root.style.setProperty('--text', '#01002b');
+        root.style.setProperty('--dark', '#333');
+        root.style.setProperty('--light', '#f4f4f4');
+        root.style.setProperty('--bg', '#ffffff');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+}
+
+// Call initializeTheme() to set the initial theme on page load
+initializeTheme();
+
+   </script>
    <script>
         // Function to animate scrolling and reveal content
         function animateSlider(slider, itemHeight) {

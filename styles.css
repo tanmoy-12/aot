@@ -1,22 +1,35 @@
+:root {
+    --primary-color: #0052bd;
+    --hover-imp:#ff5e00 ;
+    --bg-color-ligt: #ececec;
+    --bg-color-dark: #c3c3c3;
+    --text:#01002b;
+    --dark: #333;
+    --light: #f4f4f4;
+    --bg: #ffff;
+    --c: #fff;
+  }
+  /* :root {
+    --primary-color: #0052bd; 
+    --hover-imp:#ff5e00 ;
+    --bg-color-ligt: #676767;
+    --bg-color-dark: #2c2c2c;
+    --text:#ffffff;
+    --dark: #ffffff;
+    --light: #000000;
+    --bg: #1a1a1a;
+  }  */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
-    color: #000721;
+    color: var(--text);
 }
 body{
     font-family: "Poppins", sans-serif !important;
+    background-color: var(--bg) !important;
 }
-:root {
-    --primary-color: #0052bd;  /* Define a primary color variable */
-    --hover-imp:#ff5e00 ;
-    --bg-color-ligt: #ffff;
-    --bg-color-dark: #c3c3c3;
-    --text:#01002b;
-    --dark: #333;
-    --light: #f4f4f4;
-  }
 .container{
     width: 100%;
     max-width: 100%;
@@ -58,17 +71,20 @@ li{
     top: 20px;
     position: absolute;
 }
+.theme-toggle-btn{
+    border: none;
+    font-size: xx-large;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
 /* Additional custom styles for the toggle button */
 .toggle-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    right: 120px;
+    position: absolute;
 }
-/* #toggleButton {
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-} */
 #pc-view .logo{
     display: flex;
     position: absolute;
@@ -101,8 +117,9 @@ li{
     top: 0;
     width: 0%;
     height: 6px;
-    background: linear-gradient(to right,  #7b84ff , #83d5fa , #3a43c3 , #986ef2 , #6af8d7 );
+    background: linear-gradient(to right, var(--dark),var(--bg-color-dark),var(--dark) );
     z-index: 10000;
+    border-radius: 0 8px 8px 0;
   }
 .nav-elements{
     display: flex;
@@ -232,7 +249,7 @@ li{
     padding: 5px 15px;
     border-radius: 8px;
     text-align: center;
-    color: var(--bg-color-ligt);
+    color: var(--text);
     font-size: large;
     font-weight: 500;
     border-bottom: 0px;
@@ -302,7 +319,8 @@ li{
 .event{
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(to right, #cbcbcb , #d8d8d8 , rgb(222, 222, 222) , #f5f5f5 );
+    /* background: linear-gradient(to right, #cbcbcb , #d8d8d8 , rgb(222, 222, 222) , #f5f5f5 ); */
+    background: linear-gradient(to right, var(--bg-color-dark), var(--bg-color-ligt), var(--bg-color-dark));
 }
 .events{
     width: 50%;
@@ -656,7 +674,7 @@ iframe{
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: var(--bg-color-ligt);
+    color: var(--c);
     width: 173px;
   }
   .customer-card i{
@@ -673,7 +691,7 @@ iframe{
     justify-content: center;
     padding: 3rem;
     height: 650px;
-    background: linear-gradient(to right, #cccccc7f , #dfdede , #eaeaea , #cfcfcfaf);
+    background: linear-gradient(to right, var(--bg-color-dark),var(--bg-color-ligt));
 }
 /***faq container***/
 .faq-container {
@@ -794,23 +812,22 @@ iframe{
     justify-content: center;
     align-items: center;
     position: relative;
-    /* border: 2px solid var(--dark); */
     background-color: var(--bg-color-dark);
     border-radius: 8px;
-    overflow: hidden; /* Ensure the overflow is hidden to contain the rotating border */
+    overflow: hidden; 
   }
   
   /* Styling for the pseudo-element creating the rotating border */
   .rotating-border::after {
-    content: ''; /* Required for the pseudo-element */
+    content: ''; 
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg); /* Initial rotation angle */
+    transform: translate(-50%, -50%) rotate(0deg); 
     height: 150px;
     width: 1000px;
-    background-color: var(--primary-color);
-    animation: rotator 2s linear infinite; /* Apply the rotation animation */
+    background-color: var(--primary-color); 
+    animation: rotator 6s linear infinite; 
   }
   
   /* Keyframes for the rotating animation */
@@ -822,7 +839,28 @@ iframe{
       transform: translate(-50%, -50%) rotate(360deg); /* Full rotation */
     }
   }
-  
+  #myBtn {
+  display: none; 
+  position: fixed;
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 99; 
+  border: none; 
+  outline: none;
+  background-color: var(--primary-color); 
+  cursor: pointer; 
+  padding: 4px 10px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: x-large; 
+  font-weight: 600;
+  translate: all ease 1.6s;
+}
+#myBtn i{
+    color: var(--light);
+}
+#myBtn:hover {
+  background-color: var(--dark); /* Add a dark-grey background on hover */
+}
   .contact-form{
     width: 450px;
     background-color: var(--light);
@@ -889,7 +927,7 @@ iframe{
 /***Top Recruiters***/
 .recruiters{
     padding: 20px 0;
-    background-color: var(--bg-color-ligt);
+    background-color: var(--light);
     text-align: center;
 }
 .recruiters h2{
@@ -946,7 +984,7 @@ footer{
     display: flex;
     justify-content: center;
     padding:40px ;
-    background-color: var(--light);
+    background-color: var(--bg-color-ligt);
 }
 /* Footer Company Box */
 .footer-company-box {
@@ -978,7 +1016,7 @@ footer{
     margin-bottom: 10px;
     font-weight: bold;
     font-size: large;
-    color: var(--primary-color);
+    color: var(--text);
 }
 .footer-link-box ul {
     list-style-type: none;
