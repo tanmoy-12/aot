@@ -73,7 +73,7 @@ li{
 }
 .theme-toggle-btn{
     border: none;
-    font-size: xx-large;
+    font-size: x-large;
     padding: 0;
     margin: 0;
     background-color: transparent;
@@ -82,7 +82,9 @@ li{
 .toggle-container {
     display: flex;
     justify-content: center;
-    right: 120px;
+    right: 70px;
+    height: 100%;
+    align-items: center;
     position: absolute;
 }
 #pc-view .logo{
