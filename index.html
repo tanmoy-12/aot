@@ -30,7 +30,7 @@
         </div>
         <div class="nav-elements">
             <li><a>Home</a></li>
-            <li><a>About us</a></li>
+            <li><a href="">About us</a></li>
             <li><a>Contact Us</a></li>
         </div>
         <div class="toggle-container">
@@ -646,6 +646,42 @@ initializeTheme();
             // Animate the slider
             animateSlider(slider, itemHeight);
         });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Get the navigation links
+    const aboutLink = document.querySelector('.nav-elements li:nth-child(2) a');
+    const contactLink = document.querySelector('.nav-elements li:nth-child(3) a');
+    
+    if (aboutLink && contactLink) {
+        aboutLink.addEventListener('click', function (event) {
+            // Scroll to the about us section
+            const aboutSection = document.querySelector('.about-us');
+            if (aboutSection) {
+                aboutSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            // Prevent default link behavior
+            event.preventDefault();
+        });
+
+        contactLink.addEventListener('click', function (event) {
+            // Scroll to the footer
+            const footerSection = document.querySelector('footer');
+            if (footerSection) {
+                footerSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            // Prevent default link behavior
+            event.preventDefault();
+        });
+    } else {
+        console.error('Navigation links not found.');
+    }
+});
+
     </script>
    <script>
         document.addEventListener("DOMContentLoaded", function () {

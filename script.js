@@ -197,6 +197,3 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll);
 // Initial call to handleScroll function to set the initial grayscale based on page load position
 handleScroll();
-
-//To scroll upcoming events infinitely
-
