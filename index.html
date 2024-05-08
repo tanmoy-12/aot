@@ -38,8 +38,16 @@
                 <i class="fas fa-solid fa-moon"></i>
             </button>
         </div>
-        <div class="search-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="search-icon"  onclick="openSearchPopup()">
+            <i class="fa-solid fa-magnifying-glass"  onclick="openSearchPopup()"></i>
+        </div>
+        <div class="search-popup" id="searchPopup">
+            <button class="close-button" onclick="closeSearchPopup()"><i class="fa-solid fa-xmark"></i></button>
+            <h1>Type Anything to Search</h1>
+            <div class="search-content">
+                <input type="text" placeholder="Search...">
+                <button onclick="">Search</button>
+            </div>
         </div>
     </div>
     <div class="navigation">
@@ -497,6 +505,23 @@
     <img src="campus.png">
    </div> -->
    <script>
+    function openSearchPopup() {
+  var searchPopup = document.getElementById('searchPopup');
+  searchPopup.style.display = 'block';
+}
+
+function closeSearchPopup() {
+  var searchPopup = document.getElementById('searchPopup');
+  searchPopup.style.display = 'none';
+}
+function search() {
+    // Add your search functionality here
+    // For example, fetch search results based on input value
+    var searchInput = document.querySelector('.search-content input').value;
+    console.log('Performing search for:', searchInput);
+}
+   </script>
+   <script>
     let mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -547,7 +572,7 @@ function toggleTheme() {
         root.style.setProperty('--text', '#ffffff');
         root.style.setProperty('--dark', '#ffffff');
         root.style.setProperty('--light', '#000000');
-        root.style.setProperty('--bg', '#1a1a1a');
+        root.style.setProperty('--bg', '#071e3f');
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
         localStorage.setItem('theme', 'dark'); // Update localStorage
@@ -580,8 +605,8 @@ function initializeTheme() {
         root.style.setProperty('--bg-color-dark', '#2c2c2c');
         root.style.setProperty('--text', '#ffffff');
         root.style.setProperty('--dark', '#ffffff');
-        root.style.setProperty('--light', '#000000');
-        root.style.setProperty('--bg', '#1a1a1a');
+        root.style.setProperty('--light', '#000001');
+        root.style.setProperty('--bg', '#191c20');
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
     } else {
@@ -652,9 +677,7 @@ initializeTheme();
     // Get the navigation links
     const aboutLink = document.querySelector('.nav-elements li:nth-child(2) a');
     const contactLink = document.querySelector('.nav-elements li:nth-child(3) a');
-    
-    if (aboutLink && contactLink) {
-        aboutLink.addEventListener('click', function (event) {
+    aboutLink.addEventListener('click', function (event) {
             // Scroll to the about us section
             const aboutSection = document.querySelector('.about-us');
             if (aboutSection) {
@@ -665,6 +688,8 @@ initializeTheme();
             // Prevent default link behavior
             event.preventDefault();
         });
+    if (aboutLink && contactLink) {
+        
 
         contactLink.addEventListener('click', function (event) {
             // Scroll to the footer
