@@ -184,9 +184,11 @@ li{
 
 .search-content button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--c);
     border: none;
+    font-size: larger;
+    font-weight: 600;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
@@ -1091,7 +1093,7 @@ footer{
     display: flex;
     justify-content: center;
     padding:40px ;
-    background-color: var(--bg-color-ligt);
+    background-color: var(--bg-color-dark);
 }
 /* Footer Company Box */
 .footer-company-box {
