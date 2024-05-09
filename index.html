@@ -565,6 +565,7 @@ function toggleTheme() {
         root.style.setProperty('--dark', '#333');
         root.style.setProperty('--light', '#f4f4f4');
         root.style.setProperty('--bg', '#ffffff');
+        root.style.setProperty('--overlay', '#9a9999e5');
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
         localStorage.setItem('theme', 'light'); // Update localStorage
@@ -579,6 +580,7 @@ function toggleTheme() {
         root.style.setProperty('--dark', '#ffffff');
         root.style.setProperty('--light', '#000000');
         root.style.setProperty('--bg', '#0001');
+        root.style.setProperty('--overlay', '#161616e5');
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
         localStorage.setItem('theme', 'dark'); // Update localStorage
@@ -613,6 +615,7 @@ function initializeTheme() {
         root.style.setProperty('--dark', '#ffffff');
         root.style.setProperty('--light', '#000001');
         root.style.setProperty('--bg', '#1c1c1c');
+        root.style.setProperty('--overlay', '#161616e5');
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
     } else {
@@ -625,6 +628,7 @@ function initializeTheme() {
         root.style.setProperty('--dark', '#333');
         root.style.setProperty('--light', '#f4f4f4');
         root.style.setProperty('--bg', '#ffffff');
+        root.style.setProperty('--overlay', '#9a9999e5');
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
     }
