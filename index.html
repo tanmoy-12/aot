@@ -332,21 +332,23 @@
             <iframe src="https://www.youtube.com/embed/eiNOyQRfMtA?si=8r6fKzHra3qu_qdB&amp;start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'rel': 0," referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
-    <h1 style="text-align: center; margin-top: 2rem; color: var(--text);">Latest News</h1>
-    <div class="news-div">
-        <button id="backBtn"><i class="fas fa-caret-left"></i></button>
-        <div class="news">
-            <div class="news-image">
-                <img src="" alt="News Image">
+    <div class="news-parent">
+        <h1 style="text-align: center; margin-top: 2rem; color: var(--text);">Latest News</h1>
+        <div class="news-div">
+            <button id="backBtn"><i class="fas fa-caret-left"></i></button>
+            <div class="news">
+                <div class="news-image">
+                    <img src="" alt="News Image">
+                </div>
+                <div class="news-text">
+                    <h6></h6>
+                    <h5></h5>
+                    <p></p>
+                    <a href="#">Read More</a>
+                </div>
             </div>
-            <div class="news-text">
-                <h6></h6>
-                <h5></h5>
-                <p></p>
-                <a href="#">Read More</a>
-            </div>
+            <button id="nextBtn"><i class="fas fa-caret-right"></i></button>
         </div>
-        <button id="nextBtn"><i class="fas fa-caret-right"></i></button>
     </div>
     <div class="customer">
         <div class="customer-bg"></div>
@@ -504,6 +506,9 @@
    <!-- <div class="campus-image">
     <img src="campus.png">
    </div> -->
+   <canvas id="particleCanvas"></canvas>
+   <div class="overlay"></div>
+   <script src="app.js"></script>
    <script>
     function openSearchPopup() {
   var searchPopup = document.getElementById('searchPopup');
