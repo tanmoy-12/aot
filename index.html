@@ -563,6 +563,7 @@ function toggleTheme() {
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
         localStorage.setItem('theme', 'light'); // Update localStorage
+        location.reload();
     } else {
         // Switch to dark mode
         root.style.setProperty('--primary-color', '#0052bd');
@@ -576,6 +577,7 @@ function toggleTheme() {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
         localStorage.setItem('theme', 'dark'); // Update localStorage
+        location.reload();
     }
 
     // Add rotating animation to the icon
@@ -595,7 +597,6 @@ function initializeTheme() {
 
     // Retrieve the saved theme preference from localStorage
     const savedTheme = localStorage.getItem('theme');
-
     // Set the initial theme based on the saved preference
     if (savedTheme === 'dark') {
         // Dark mode
