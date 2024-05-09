@@ -574,6 +574,7 @@ iframe{
     width: 60%;
     margin: 40px auto;
     display: flex;
+    margin-bottom: 70px;
 }
 .news{
     display: flex;
