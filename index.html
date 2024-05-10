@@ -17,7 +17,11 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Home : Academy Of Technology</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="60x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <div id="pc-view" class="navbar">
@@ -239,24 +243,6 @@
               <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <!-- <div class="features">
-            <div class="feature" id="f1">
-                <i class="fa-solid fa-leaf"></i>
-                <h3>Clean Campus Area</h3>
-            </div>
-            <div class="feature" id="f2">
-                <i class="fa-solid fa-rocket"></i>
-                <h3>Academic Based Curriculum</h3>
-            </div>
-            <div class="feature" id="f3">
-                <i class="fa-solid fa-user-tie"></i>
-                <h3>100% Placement</h3>
-            </div>
-            <div class="feature" id="f4">
-                <img src="https://th.bing.com/th/id/R.21becf513bc065826c9f125a90b948d1?rik=uZdF3C6ZTCwoXQ&riu=http%3a%2f%2fkanchikrishnacollege.com%2fwp-content%2fuploads%2f2021%2f10%2fanti-raging.png&ehk=WNKkr4mUkYNn03gsgijtlYFPCtO4ZNjMGeyntiGPw3c%3d&risl=&pid=ImgRaw&r=0" height="70px">
-                <h3>Ragging Free Campus</h3>
-            </div>
-        </div> -->
     </div>
     <div class="event">
         <div class="events">
@@ -329,7 +315,7 @@
             AOT actively promotes innovation through various initiatives, and its team, Buzz 6, secured the first rank in the AICTE Smart India Hackathon (SIH) 2023.</p>
         </div>
         <div class="right-about-us">
-            <iframe src="https://www.youtube.com/embed/eiNOyQRfMtA?si=8r6fKzHra3qu_qdB&amp;start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'rel': 0," referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/eiNOyQRfMtA?si=8r6fKzHra3qu_qdB&amp;start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'rel': 0," referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
     <div class="news-parent">
@@ -503,140 +489,128 @@
             </div>
         </div>
    </div>
-   <!-- <div class="campus-image">
-    <img src="campus.png">
-   </div> -->
    <canvas id="particleCanvas"></canvas>
    <div class="overlay"></div>
    <script src="app.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   <script src="script.js"></script>
    <script>
-    function openSearchPopup() {
-  var searchPopup = document.getElementById('searchPopup');
-  searchPopup.style.display = 'block';
-}
+        function openSearchPopup() {
+            var searchPopup = document.getElementById('searchPopup');
+            searchPopup.style.display = 'block';
+        }
 
-function closeSearchPopup() {
-  var searchPopup = document.getElementById('searchPopup');
-  searchPopup.style.display = 'none';
-}
-function search() {
-    // Add your search functionality here
-    // For example, fetch search results based on input value
-    var searchInput = document.querySelector('.search-content input').value;
-    console.log('Performing search for:', searchInput);
-}
-   </script>
+        function closeSearchPopup() {
+            var searchPopup = document.getElementById('searchPopup');
+            searchPopup.style.display = 'none';
+        }
+        function search() {
+            // Add your search functionality here
+            // For example, fetch search results based on input value
+            var searchInput = document.querySelector('.search-content input').value;
+            console.log('Performing search for:', searchInput);
+        }
+    </script>
    <script>
-    let mybutton = document.getElementById("myBtn");
+        let mybutton = document.getElementById("myBtn");
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+        // Function to toggle between light and dark themes and rotate icon
+        function toggleTheme() {
+            const root = document.querySelector(':root');
+            const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+            const icon = themeToggleBtn.querySelector('i');
+            // Retrieve the current theme preference from localStorage
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'dark') {
+                // Switch to light mode
+                root.style.setProperty('--primary-color', '#0052bd');
+                root.style.setProperty('--hover-imp', '#ff5e00');
+                root.style.setProperty('--bg-color-ligt', '#ececec');
+                root.style.setProperty('--bg-color-dark', '#c3c3c3');
+                root.style.setProperty('--text', '#01002b');
+                root.style.setProperty('--dark', '#333');
+                root.style.setProperty('--light', '#f4f4f4');
+                root.style.setProperty('--bg', '#ffffff');
+                root.style.setProperty('--overlay', '#9a9999e5');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light'); // Update localStorage
+                location.reload();
+            } else {
+                // Switch to dark mode
+                root.style.setProperty('--primary-color', '#0052bd');
+                root.style.setProperty('--hover-imp', '#ff5e00');
+                root.style.setProperty('--bg-color-ligt', '#676767');
+                root.style.setProperty('--bg-color-dark', '#2c2c2c');
+                root.style.setProperty('--text', '#ffffff');
+                root.style.setProperty('--dark', '#ffffff');
+                root.style.setProperty('--light', '#000000');
+                root.style.setProperty('--bg', '#0001');
+                root.style.setProperty('--overlay', '#161616e5');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark'); // Update localStorage
+                location.reload();
+            }
+            // Add rotating animation to the icon
+            icon.style.transform = 'rotate(360deg)';
+            // Reset rotation after animation completes
+            setTimeout(() => {
+                icon.style.transform = 'rotate(0deg)';
+            }, 300); // Adjust duration to match CSS transition duration
+        }
+        // Function to initialize the theme based on the saved preference
+        function initializeTheme() {
+            const root = document.querySelector(':root');
+            const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+            const icon = themeToggleBtn.querySelector('i');
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
-// Function to toggle between light and dark themes and rotate icon
-function toggleTheme() {
-    const root = document.querySelector(':root');
-    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
-    const icon = themeToggleBtn.querySelector('i');
-
-    // Retrieve the current theme preference from localStorage
-    const currentTheme = localStorage.getItem('theme');
-
-    if (currentTheme === 'dark') {
-        // Switch to light mode
-        root.style.setProperty('--primary-color', '#0052bd');
-        root.style.setProperty('--hover-imp', '#ff5e00');
-        root.style.setProperty('--bg-color-ligt', '#ececec');
-        root.style.setProperty('--bg-color-dark', '#c3c3c3');
-        root.style.setProperty('--text', '#01002b');
-        root.style.setProperty('--dark', '#333');
-        root.style.setProperty('--light', '#f4f4f4');
-        root.style.setProperty('--bg', '#ffffff');
-        root.style.setProperty('--overlay', '#9a9999e5');
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'light'); // Update localStorage
-        location.reload();
-    } else {
-        // Switch to dark mode
-        root.style.setProperty('--primary-color', '#0052bd');
-        root.style.setProperty('--hover-imp', '#ff5e00');
-        root.style.setProperty('--bg-color-ligt', '#676767');
-        root.style.setProperty('--bg-color-dark', '#2c2c2c');
-        root.style.setProperty('--text', '#ffffff');
-        root.style.setProperty('--dark', '#ffffff');
-        root.style.setProperty('--light', '#000000');
-        root.style.setProperty('--bg', '#0001');
-        root.style.setProperty('--overlay', '#161616e5');
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'dark'); // Update localStorage
-        location.reload();
-    }
-
-    // Add rotating animation to the icon
-    icon.style.transform = 'rotate(360deg)';
-
-    // Reset rotation after animation completes
-    setTimeout(() => {
-        icon.style.transform = 'rotate(0deg)';
-    }, 300); // Adjust duration to match CSS transition duration
-}
-
-// Function to initialize the theme based on the saved preference
-function initializeTheme() {
-    const root = document.querySelector(':root');
-    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
-    const icon = themeToggleBtn.querySelector('i');
-
-    // Retrieve the saved theme preference from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    // Set the initial theme based on the saved preference
-    if (savedTheme === 'dark') {
-        // Dark mode
-        root.style.setProperty('--primary-color', '#0052bd');
-        root.style.setProperty('--hover-imp', '#ff5e00');
-        root.style.setProperty('--bg-color-ligt', '#676767');
-        root.style.setProperty('--bg-color-dark', '#2c2c2c');
-        root.style.setProperty('--text', '#ffffff');
-        root.style.setProperty('--dark', '#ffffff');
-        root.style.setProperty('--light', '#000001');
-        root.style.setProperty('--bg', '#1c1c1c');
-        root.style.setProperty('--overlay', '#161616e5');
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        // Light mode (default)
-        root.style.setProperty('--primary-color', '#0052bd');
-        root.style.setProperty('--hover-imp', '#ff5e00');
-        root.style.setProperty('--bg-color-ligt', '#ececec');
-        root.style.setProperty('--bg-color-dark', '#c3c3c3');
-        root.style.setProperty('--text', '#01002b');
-        root.style.setProperty('--dark', '#333');
-        root.style.setProperty('--light', '#f4f4f4');
-        root.style.setProperty('--bg', '#ffffff');
-        root.style.setProperty('--overlay', '#9a9999e5');
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    }
-}
-
-// Call initializeTheme() to set the initial theme on page load
-initializeTheme();
-
+            // Retrieve the saved theme preference from localStorage
+            const savedTheme = localStorage.getItem('theme');
+            // Set the initial theme based on the saved preference
+            if (savedTheme === 'dark') {
+                // Dark mode
+                root.style.setProperty('--primary-color', '#0052bd');
+                root.style.setProperty('--hover-imp', '#ff5e00');
+                root.style.setProperty('--bg-color-ligt', '#676767');
+                root.style.setProperty('--bg-color-dark', '#2c2c2c');
+                root.style.setProperty('--text', '#ffffff');
+                root.style.setProperty('--dark', '#ffffff');
+                root.style.setProperty('--light', '#000001');
+                root.style.setProperty('--bg', '#1c1c1c');
+                root.style.setProperty('--overlay', '#161616e5');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                // Light mode (default)
+                root.style.setProperty('--primary-color', '#0052bd');
+                root.style.setProperty('--hover-imp', '#ff5e00');
+                root.style.setProperty('--bg-color-ligt', '#ececec');
+                root.style.setProperty('--bg-color-dark', '#c3c3c3');
+                root.style.setProperty('--text', '#01002b');
+                root.style.setProperty('--dark', '#333');
+                root.style.setProperty('--light', '#f4f4f4');
+                root.style.setProperty('--bg', '#ffffff');
+                root.style.setProperty('--overlay', '#9a9999e5');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+        // Call initializeTheme() to set the initial theme on page load
+        initializeTheme();
    </script>
    <script>
         // Function to animate scrolling and reveal content
@@ -683,42 +657,41 @@ initializeTheme();
         });
     </script>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    // Get the navigation links
-    const aboutLink = document.querySelector('.nav-elements li:nth-child(2) a');
-    const contactLink = document.querySelector('.nav-elements li:nth-child(3) a');
-    aboutLink.addEventListener('click', function (event) {
-            // Scroll to the about us section
-            const aboutSection = document.querySelector('.about-us');
-            if (aboutSection) {
-                aboutSection.scrollIntoView({
-                    behavior: 'smooth'
+        document.addEventListener('DOMContentLoaded', function () {
+            const aboutLink = document.querySelector('.nav-elements li:nth-child(2) a');
+            const contactLink = document.querySelector('.nav-elements li:nth-child(3) a');
+            aboutLink.addEventListener('click', function (event) {
+                    // Scroll to the about us section
+                    const aboutSection = document.querySelector('.about-us');
+                    if (aboutSection) {
+                        aboutSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                    // Prevent default link behavior
+                    event.preventDefault();
                 });
-            }
-            // Prevent default link behavior
-            event.preventDefault();
-        });
-    if (aboutLink && contactLink) {
-        
+            if (aboutLink && contactLink) {
+                
 
-        contactLink.addEventListener('click', function (event) {
-            // Scroll to the footer
-            const footerSection = document.querySelector('footer');
-            if (footerSection) {
-                footerSection.scrollIntoView({
-                    behavior: 'smooth'
+                contactLink.addEventListener('click', function (event) {
+                    // Scroll to the footer
+                    const footerSection = document.querySelector('footer');
+                    if (footerSection) {
+                        footerSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                    // Prevent default link behavior
+                    event.preventDefault();
                 });
+            } else {
+                console.error('Navigation links not found.');
             }
-            // Prevent default link behavior
-            event.preventDefault();
         });
-    } else {
-        console.error('Navigation links not found.');
-    }
-});
 
     </script>
-   <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
         const backBtn = document.getElementById("backBtn");
         const nextBtn = document.getElementById("nextBtn");
@@ -727,7 +700,6 @@ initializeTheme();
         let currentSlideIndex = 0;
         let newsData = [];
         let autoScrollInterval;
-
         // Fetch news data from JSON file
         fetch("news.json")
             .then(response => response.json())
@@ -738,74 +710,68 @@ initializeTheme();
             })
             .catch(error => console.error("Error fetching news:", error));
         // Display current slide based on currentSlideIndex
-        
         function displayCurrentSlide() {
-    const slide = newsData[currentSlideIndex];
-    if (slide) {
-        if (window.innerWidth > 650) {
-            // Animation for screens wider than 650px
-            animateSlideOut(() => {
-                newsText.innerHTML = `
-                    <h6>${slide.date}</h6>
-                    <h5>${slide.title}</h5>
-                    <p>${slide.text}</p>
-                    <a href="#">Read More</a>
-                `;
-                newsImage.src = slide.image;
-                animateSlideIn();
-            });
-        } else {
-            // Animation for screens 650px or narrower
-            animateSlideFadeInUp(() => {
-                newsText.innerHTML = `
-                    <h6>${slide.date}</h6>
-                    <h5>${slide.title}</h5>
-                    <p>${slide.text}</p>
-                    <a href="#">Read More</a>
-                `;
-                newsImage.src = slide.image;
-            });
+            const slide = newsData[currentSlideIndex];
+            if (slide) {
+                if (window.innerWidth > 650) {
+                    // Animation for screens wider than 650px
+                    animateSlideOut(() => {
+                        newsText.innerHTML = `
+                            <h6>${slide.date}</h6>
+                            <h5>${slide.title}</h5>
+                            <p>${slide.text}</p>
+                            <a href="#">Read More</a>
+                        `;
+                        newsImage.src = slide.image;
+                        animateSlideIn();
+                    });
+                } 
+                else {
+                    // Animation for screens 650px or narrower
+                    animateSlideFadeInUp(() => {
+                        newsText.innerHTML = `
+                            <h6>${slide.date}</h6>
+                            <h5>${slide.title}</h5>
+                            <p>${slide.text}</p>
+                            <a href="#">Read More</a>
+                        `;
+                        newsImage.src = slide.image;
+                    });
+                }
+            }
         }
-    }
-}
+        // Function to animate slide out (for wider screens)
+        function animateSlideOut(callback) {
+            newsText.style.opacity = "0";
+            newsText.style.transform = "translateX(-100%)";
+            newsImage.style.opacity = "0";
+            newsImage.style.transform = "translateX(100%)";
+            setTimeout(callback, 400); // Delay before callback (animation duration)
+        }
+        // Function to animate slide in (for wider screens)
+        function animateSlideIn() {
+            newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            newsText.style.opacity = "1";
+            newsText.style.transform = "translateX(0)";
+            newsImage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            newsImage.style.opacity = "1";
+            newsImage.style.transform = "translateX(0)";
+        }
+        // Function to animate fade-in and slide-up (for narrower screens)
+        function animateSlideFadeInUp(callback) {
+            newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            newsText.style.opacity = "0";
+            newsText.style.transform = "translateY(50px)";
+            newsImage.style.transition = "opacity 0.5s ease";
+            newsImage.style.opacity = "0";
 
-// Function to animate slide out (for wider screens)
-function animateSlideOut(callback) {
-    newsText.style.opacity = "0";
-    newsText.style.transform = "translateX(-100%)";
-    newsImage.style.opacity = "0";
-    newsImage.style.transform = "translateX(100%)";
-    setTimeout(callback, 400); // Delay before callback (animation duration)
-}
-
-// Function to animate slide in (for wider screens)
-function animateSlideIn() {
-    newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    newsText.style.opacity = "1";
-    newsText.style.transform = "translateX(0)";
-    newsImage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    newsImage.style.opacity = "1";
-    newsImage.style.transform = "translateX(0)";
-}
-
-// Function to animate fade-in and slide-up (for narrower screens)
-function animateSlideFadeInUp(callback) {
-    newsText.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    newsText.style.opacity = "0";
-    newsText.style.transform = "translateY(50px)";
-    newsImage.style.transition = "opacity 0.5s ease";
-    newsImage.style.opacity = "0";
-
-    setTimeout(() => {
-        newsText.style.opacity = "1";
-        newsText.style.transform = "translateY(0)";
-        newsImage.style.opacity = "1";
-        callback(); // Execute callback after animation
-    }, 400); // Delay before fade-in effect
-}
-
-
-
+            setTimeout(() => {
+                newsText.style.opacity = "1";
+                newsText.style.transform = "translateY(0)";
+                newsImage.style.opacity = "1";
+                callback(); // Execute callback after animation
+            }, 400); // Delay before fade-in effect
+        }
         // Function to start autoscroll
         function startAutoScroll() {
             autoScrollInterval = setInterval(() => {
@@ -813,7 +779,6 @@ function animateSlideFadeInUp(callback) {
                 displayCurrentSlide();
             }, 5000); // Autoscroll interval (5000 milliseconds = 5 seconds)
         }
-
         // Event listener for next button
         nextBtn.addEventListener("click", function () {
             clearInterval(autoScrollInterval); // Pause autoscroll on manual navigation
@@ -821,7 +786,6 @@ function animateSlideFadeInUp(callback) {
             displayCurrentSlide();
             startAutoScroll(); // Restart autoscroll after manual navigation
         });
-
         // Event listener for back button
         backBtn.addEventListener("click", function () {
             clearInterval(autoScrollInterval); // Pause autoscroll on manual navigation
@@ -829,10 +793,8 @@ function animateSlideFadeInUp(callback) {
             displayCurrentSlide();
             startAutoScroll(); // Restart autoscroll after manual navigation
         });
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+        });
+    </script>
 </body>
 <footer>
     <div class="footer-container">

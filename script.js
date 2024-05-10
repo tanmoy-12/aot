@@ -174,26 +174,3 @@ items.forEach((item) => item.addEventListener('click', togglefaq));
         scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
   });
 
-
-// Function to handle scroll event to decrease grayscale of the campus image on scrolling
-function handleScroll() {
-    // Calculate the scroll position relative to the viewport
-    const scrollPosition = window.scrollY;
-    // Get the height of the viewport
-    const viewportHeight = window.innerHeight;
-    // Calculate the distance from the top of the image to the bottom of the viewport
-    const imageOffsetTop = document.querySelector('.campus-image').offsetTop;
-    const distanceToImage = imageOffsetTop - scrollPosition;
-    // Calculate the maximum grayscale value (100%)
-    const maxGrayscale = 100;
-    // Calculate the grayscale percentage based on the distance to the image
-    let grayscalePercentage = (distanceToImage / viewportHeight) * maxGrayscale;
-    grayscalePercentage = Math.min(Math.max(grayscalePercentage, 0), maxGrayscale)-20; // Clamp between 0% and 100%
-    // Apply the grayscale filter to the image
-    const imgElement = document.querySelector('.campus-image');
-    imgElement.style.filter = `grayscale(${grayscalePercentage}%)`;
-}
-// Attach scroll event listener to the window
-window.addEventListener('scroll', handleScroll);
-// Initial call to handleScroll function to set the initial grayscale based on page load position
-handleScroll();
