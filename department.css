@@ -31,8 +31,9 @@
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
-    margin: 0 auto;
+    margin: 3rem auto;
     max-width: 1200px;
+    margin-bottom: 8rem;
 }
 .latest-banner{
     display: flex;
@@ -67,4 +68,75 @@
     font-weight: 400;
     margin: 8px 12px 4px 4px;
     color: var(--primary-color);
+}
+.talks{
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 25px auto;
+}
+.talk{
+    display: flex;
+    margin: 2rem;
+    background-color: var(--bg-color-ligt);
+    padding: 12px;
+    width: 50%;
+    max-width: 500px;
+    border-radius: 8px;
+    height: 100px;
+    align-items: center;
+}
+.talk-date-time{
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+    border-radius: 6px;
+    padding: 16px 10px;
+    position: absolute;
+}
+.dash{
+    content: '';
+    height: 10px;
+    background-color: var(--c) !important;
+    display: block;
+}
+.talks .talk .talk-date-time h4 {
+    color: var(--c) !important;
+}
+.talks .talk .talk-date-time h5 {
+    color: var(--c) !important;
+}
+.talk-data{
+    display: flex;
+}
+.talk-data h5{
+    color: var(--text) !important;
+}
+.about{
+    width: 70%;
+    display: grid;
+    margin: 5rem auto;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    text-align: justify;
+    font-weight: 400;
+}
+.dept-image{
+    height: 300px;
+}
+.dept-image img{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.about p{
+    margin: 1.3rem auto;
 }

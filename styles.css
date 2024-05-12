@@ -2,7 +2,7 @@
 /* For webkit-based browsers (e.g., Chrome, Safari) */
 /* Change scrollbar track (background) color */
 ::-webkit-scrollbar {
-    background-color: var(--c); /* Set your desired background color */
+    background-color: var(--scroll); /* Set your desired background color */
     border-radius: 12px;
 }
 
@@ -42,6 +42,7 @@ scrollbar-thumb {
     --bg: #ffff;
     --c: #fff;
     --overlay: #9a9999e5;
+    --scroll: #c2c2c2;
   }
   /* :root {
     --primary-color: #0052bd; 
