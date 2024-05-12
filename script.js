@@ -38,6 +38,85 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
   });
+
+// Array of event data
+const events = [
+    {
+        time: "7:00 PM, April 24th",
+        description: "Connect with employers looking to hire students for internships and full-time positions. Bring your resume!"
+    },
+    {
+        time: "6:30 PM, May 5th",
+        description: "Join us for a networking session with industry professionals. Expand your professional network."
+    },
+    {
+        time: "8:00 AM, June 10th",
+        description: "Kickstart your day with a wellness seminar. Learn practical tips for maintaining work-life balance."
+    },
+    {
+        time: "12:00 PM, June 20th",
+        description: "Lunch and learn session on the latest trends in technology. Free pizza for attendees!"
+    }
+];
+
+// Access the event slider container
+const eventSlider = document.querySelector('.event-slider');
+
+// Loop through the events array to create event content
+events.forEach((event) => {
+    // Create a new event content div
+    const eventContent = document.createElement('div');
+    eventContent.classList.add('event-content');
+
+    // Create and set the time (h5 element)
+    const timeHeading = document.createElement('h5');
+    timeHeading.textContent = event.time;
+    eventContent.appendChild(timeHeading);
+
+    // Create and set the description (p element)
+    const descriptionParagraph = document.createElement('p');
+    descriptionParagraph.textContent = event.description;
+    eventContent.appendChild(descriptionParagraph);
+
+    // Append the event content to the event slider
+    eventSlider.appendChild(eventContent);
+});
+
+
+const announcements = [
+    "Stay tuned for upcoming events and promotions.",
+    "Career Services is hosting a resume workshop on March 20th to help you prepare for job hunting.",
+    "Join our environmental club and help make our campus more sustainable.",
+    "Need tutoring assistance? Visit the Student Learning Center for free tutoring services in various subjects.",
+    "The campus gym will have extended hours during finals week to accommodate student schedules.",
+    "The library will be closed for renovations from June 1st to June 15th."
+];
+
+const announcementContainer = document.getElementById('announcementContainer');
+
+// Function to populate announcements
+function populateAnnouncements() {
+    announcementContainer.innerHTML = ''; // Clear existing content
+    announcements.forEach(announcement => {
+        const announcementContent = document.createElement('div');
+        announcementContent.classList.add('announcement-content');
+
+        const arrowIcon = document.createElement('div');
+        arrowIcon.classList.add('announcement-content-l');
+        arrowIcon.innerHTML = '<i class="fas fa-arrow-right"></i>'; // Font Awesome arrow icon
+        announcementContent.appendChild(arrowIcon);
+
+        const announcementText = document.createElement('div');
+        announcementText.classList.add('announcement-content-r');
+        announcementText.innerHTML = `<p>${announcement}</p>`;
+        announcementContent.appendChild(announcementText);
+
+        announcementContainer.appendChild(announcementContent);
+    });
+}
+
+// Call function to populate announcements on page load
+populateAnnouncements();
   
   //JS Function to show incremental animation for number of faculties,students & staffs
   document.addEventListener('DOMContentLoaded', function() {
@@ -174,3 +253,144 @@ items.forEach((item) => item.addEventListener('click', togglefaq));
         scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
   });
 
+
+
+
+  const eventTableBody = document.getElementById('eventTableBody');
+  const announcementTableBody = document.getElementById('announcementTableBody');
+  const captchaContainer = document.getElementById('captchaContainer');
+  const captchaInput = document.getElementById('captchaInput');
+
+  // Generate random CAPTCHA
+  function generateCaptcha() {
+      const captcha = Math.floor(1000 + Math.random() * 9000); // Generate a 4-digit random number
+      captchaContainer.textContent = `Enter CAPTCHA: ${captcha}`;
+      return captcha.toString();
+  }
+
+  // Function to populate events table
+  function populateEventsTable() {
+      eventTableBody.innerHTML = '';
+      events.forEach((event, index) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+              <td>${event.time}</td>
+              <td>${event.description}</td>
+              <td><button onclick="removeEvent(${index}, 'event')">Remove</button></td>
+          `;
+          eventTableBody.appendChild(row);
+      });
+  }
+
+  // Function to populate announcements table
+  function populateAnnouncementsTable() {
+      announcementTableBody.innerHTML = '';
+      announcements.forEach((announcement, index) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+              <td>${announcement}</td>
+              <td><button onclick="removeEvent(${index}, 'announcement')">Remove</button></td>
+          `;
+          announcementTableBody.appendChild(row);
+      });
+  }
+
+  // Function to remove event (either event or announcement) from array and update table
+  function removeEvent(index, type) {
+      if (type === 'event') {
+          events.splice(index, 1);
+          populateEventsTable();
+      } else if (type === 'announcement') {
+          announcements.splice(index, 1);
+          populateAnnouncementsTable();
+      }
+  }
+
+  // Function to add event (either event or announcement) to array and update table
+  function addEvent(content, type) {
+      if (type === 'event') {
+          events.push(content);
+          populateEventsTable();
+      } else if (type === 'announcement') {
+          announcements.push(content);
+          populateAnnouncementsTable();
+      }
+  }
+
+  // Show admin popup on button click
+  document.getElementById('adminButton').addEventListener('click', function() {
+      document.getElementById('adminPopup').style.display = 'flex';
+      generateCaptcha(); // Generate new CAPTCHA on popup display
+  });
+
+        
+
+  // Handle admin login and show admin actions
+document.getElementById('loginButton').addEventListener('click', function() {
+    const enteredPassword = document.getElementById('adminPassword').value;
+    const enteredCaptcha = captchaInput.value;
+    const expectedCaptcha = captchaContainer.textContent.split(':')[1].trim();
+    
+    if (enteredPassword === 'admin' && enteredCaptcha === expectedCaptcha) {
+        // Store logged-in state in localStorage
+        localStorage.setItem('isAdminLoggedIn', 'true');
+
+        // Hide login section and show admin actions
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('adminActions').style.display = 'block';
+        populateEventsTable();
+        populateAnnouncementsTable();
+    } else {
+        alert('Incorrect password or CAPTCHA. Please try again.');
+        generateCaptcha(); // Regenerate CAPTCHA on incorrect input
+        captchaInput.value = ''; // Clear input fields
+    }
+});
+
+// Handle logout button click to clear logged-in state
+document.getElementById('logoutButton').addEventListener('click', function() {
+    // Remove logged-in state from localStorage
+    localStorage.removeItem('isAdminLoggedIn');
+
+    // Show login section and hide admin actions
+    document.getElementById('loginSection').style.display = 'flex';
+    document.getElementById('adminActions').style.display = 'none';
+    document.getElementById('adminPopup').style.display = 'none'; // Hide admin popup
+    document.getElementById('adminPassword').value = ''; // Clear password input
+    captchaInput.value = ''; // Clear CAPTCHA input
+});
+
+  // Handle add event button click
+  document.getElementById('addEventButton').addEventListener('click', function() {
+      const newEventTime = prompt('Enter event time:');
+      const newEventDescription = prompt('Enter event description:');
+      if (newEventTime && newEventDescription) {
+          const newEvent = { time: newEventTime, description: newEventDescription };
+          addEvent(newEvent, 'event');
+      }
+  });
+
+  // Handle add announcement button click
+  document.getElementById('addAnnouncementButton').addEventListener('click', function() {
+      const newAnnouncement = prompt('Enter new announcement:');
+      if (newAnnouncement) {
+          addEvent(newAnnouncement, 'announcement');
+      }
+  });
+
+  // Handle save events button click (if needed)
+  document.getElementById('saveEventsButton').addEventListener('click', function() {
+      // Implement logic to save events (if needed)
+      alert('Events saved successfully!');
+  });
+
+  // Handle save announcements button click (if needed)
+  document.getElementById('saveAnnouncementsButton').addEventListener('click', function() {
+      // Implement logic to save announcements (if needed)
+      alert('Announcements saved successfully!');
+  });
+
+
+
+
+  

@@ -55,6 +55,93 @@ body{
 textarea{
     background-color: var(--bg-color-ligt);
 }
+/* Styling for popup overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.815); /* Semi-transparent black background */
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+/* Styling for popup content */
+.popup-content {
+    background-color: var(--bg);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    min-width: 280px;
+    height: 500px;
+    overflow-y: auto;
+}
+.popup-content button{
+    background-color: var(--primary-color);
+    color: var(--c);
+    border: none;
+    border-radius: 6px;
+    padding: 6px 8px;
+}
+#loginSection{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
+    gap: 15px;
+}
+#loginSection button{
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--c);
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+#captchaContainer{
+    background-color: var(--primary-color);
+    color: var(--c);
+    padding: 8px;
+    border-radius: 8px;
+    text-shadow: 5px 5px 8px #000;
+    font-weight: 600;
+}
+.events-section{
+    margin: 12px 0;
+}
+.announcements-section{
+    margin: 12px 0;
+}
+/* Styling for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Styling for buttons */
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container button {
+    margin: 0 10px;
+}
+th, td{
+    border-left: 1px dashed var(--dark) !important;
+}
+tr{
+    border: 1px dashed var(--dark) !important;
+}
+
 .container{
     width: 100%;
     max-width: 100%;
@@ -89,7 +176,7 @@ li{
     align-items: center;
     padding: 20px !important;
     position: fixed !important;
-    z-index: 1000 !important;
+    z-index: 5 !important;
     width: 100% !important;
 }
 .menu-toggler{
@@ -164,7 +251,7 @@ li{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.958);
-    z-index: 1001;
+    z-index: 10;
     color: var(--c);
     text-align: center;
     padding: 50px;
@@ -222,7 +309,7 @@ li{
     height: 6px;
     /* background: linear-gradient(to right, var(--dark),var(--bg-color-dark),var(--dark) ); */
     background-color: var(--primary-color);
-    z-index: 10000;
+    z-index: 11;
     border-radius: 0 8px 8px 0;
   }
 .nav-elements{
@@ -245,7 +332,7 @@ li{
     justify-content: center;
     display: flex;
     position: fixed;
-    z-index: 900;
+    z-index: 3;
     margin-bottom: 3rem;
     width: 100%;
     top: 74px;
@@ -389,7 +476,7 @@ li{
     left: 0;
     height: 100vh;
     width: 50%;
-    z-index: 999;
+    z-index: 10;
     background-color: var(--bg-color-ligt);
     box-shadow: -10px 0 10px var(--text);
     flex-direction: column;
@@ -499,7 +586,7 @@ li{
     padding: 3rem;
     width: 50%;
 }
-.announcemnt{
+.announcement{
     width: 100%;
     margin: 0 auto;
     width: 100%;
@@ -667,7 +754,7 @@ iframe{
     font-style: normal;
     font-weight: 200;
     border: none;
-    z-index: 3 !important;
+    z-index: 1 !important;
 }
 #backBtn{
     left: 0;
@@ -768,7 +855,7 @@ iframe{
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 1;
     margin: 30px;
     background: #009938;
     transform: perspective(1000px) rotateY(30deg);
@@ -982,7 +1069,7 @@ iframe{
   position: fixed;
   bottom: 20px; 
   right: 30px; 
-  z-index: 99; 
+  z-index: 3; 
   border: none; 
   outline: none;
   background-color: var(--primary-color); 
@@ -1005,7 +1092,7 @@ iframe{
     padding: 1rem;
     margin: 20px auto;
     position: relative;
-    z-index: 3;
+    z-index: 1;
     border-radius: 8px;
     overflow: hidden;
   }

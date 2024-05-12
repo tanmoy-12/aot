@@ -39,6 +39,10 @@
                 <li><a>Home</a></li>
                 <li><a href="">About us</a></li>
                 <li><a>Contact Us</a></li>
+                <!-- <button style="border: none; font-size: larger; background-color: transparent; color: var(--text); font-weight: 500;" id="adminButton">Admin</button> -->
+                <div class="admin-panel">
+                    <button style="border: none; font-size: larger; background-color: transparent; color: var(--text); font-weight: 500;" id="adminButton">Admin</button>
+                </div>
             </div>
             <div class="toggle-container">
                 <button class="theme-toggle-btn" onclick="toggleTheme()">
@@ -247,67 +251,99 @@
                 </button>
             </div>
         </div>
+        
+        
+        <!-- Popup overlay and content for admin actions -->
+        <div class="popup-overlay" id="adminPopup">
+            <div class="popup-content">
+                <div id="loginSection">
+                    <h2>Admin Login</h2>
+                    <input type="password" id="adminPassword" placeholder="Enter Password">
+                    <div id="captchaContainer"></div>
+                    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA">
+                    <button id="loginButton">Login</button>
+                    <button id="exitAdmin" onclick="exitLogin()">Exit</button>
+                </div>
+                <script>
+                    // JavaScript function to hide the button when clicked
+                    function exitLogin() {
+                        // Get the button element by ID
+                        var exitButton = document.getElementById('adminPopup');
+                
+                        // Check if the button element was found
+                        if (exitButton) {
+                            // Set the display style of the button to 'none'
+                            exitButton.style.display = 'none';
+                        }
+                    }
+                </script>
+                <div id="adminActions" style="display: none;">
+                    <div class="admin-data">
+                        <div class="admin-image" >
+                            <img src="https://cdn.kibrispdr.org/data/768/logo-user-png-3.png" style="border-radius: 50%; width: 100px; height: 100px;">
+                        </div>
+                        <div class="admin-text m-3">
+                            <h3>Admin</h3>
+                        </div>
+                        <button id="logoutButton">Logout</button>
+                    </div>
+                    <div class="user" style="display: flex; background-color: rgb(151, 211, 191); justify-content: space-between; padding: 6px 10px; align-items: center; margin: 1.5rem 0; border-radius: 6px; color: #000;">
+                        <h5>Welcome Back Admin !! </h5>
+                        <button class="border-0 bg-transparent d-flex" onclick="closeWelcome()"><i class="fa-solid fa-xmark" style="color: #ff0000;font-weight: 700;font-size: larger;"></i></button>
+                    </div>
+        
+                    <div class="events-section">
+                        <h3>Manage Events</h3>
+                        <table id="eventTable">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="eventTableBody">
+                                <!-- Event rows will be populated here -->
+                            </tbody>
+                        </table>
+                        <div class="button-container">
+                            <button id="addEventButton">Add Event</button>
+                            <button id="saveEventsButton">Save Events</button>
+                        </div>
+                    </div>
+        
+                    <div class="announcements-section">
+                        <h3>Manage Announcements</h3>
+                        <table id="announcementTable">
+                            <thead>
+                                <tr>
+                                    <th>Announcement</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="announcementTableBody">
+                                <!-- Announcement rows will be populated here -->
+                            </tbody>
+                        </table>
+                        <div class="button-container">
+                            <button id="addAnnouncementButton">Add Announcement</button>
+                            <button id="saveAnnouncementsButton">Save Announcements</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="event">
             <div class="events">
                 <h1>Upcoming Events</h1>
                 <div class="event-slider">
-                    <div class="event-content">
-                        <h5>7:00 PM, April 24th</h5>
-                        <p>Connect with employers looking to hire students for internships and full-time positions. Bring your resume!</p>
-                    </div>
-                    <div class="event-content">
-                        <h5>7:00 PM, April 24th</h5>
-                        <p>Connect with employers looking to hire students for internships and full-time positions. Bring your resume!</p>
-                    </div>
-                    <div class="event-content">
-                        <h5>7:00 PM, April 24th</h5>
-                        <p>Connect with employers looking to hire students for internships and full-time positions. Bring your resume!</p>
-                    </div>
-                    <div class="event-content">
-                        <h5>7:00 PM, April 24th</h5>
-                        <p>Connect with employers looking to hire students for internships and full-time positions. Bring your resume!</p>
-                    </div>
+                    <!-- JavaScript will populate event-content here -->
                 </div>
             </div>
             <div class="announcements">
                 <h1>Announcements</h1>
-                <div class="announcemnt">
-                    <div class="announcement-content">
-                        <div class="announcement-content-l"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="announcement-content-r">
-                            <p>Stay tuned for upcoming events and promotions.</p>
-                        </div>
-                    </div>
-                    <div class="announcement-content">
-                        <div class="announcement-content-l"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="announcement-content-r">
-                            <p>Career Services is hosting a resume workshop on March 20th to help you prepare for job hunting.</p>
-                        </div>
-                    </div>
-                    <div class="announcement-content">
-                        <div class="announcement-content-l"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="announcement-content-r">
-                            <p>Join our environmental club and help make our campus more sustainable.</p>
-                        </div>
-                    </div>
-                    <div class="announcement-content">
-                        <div class="announcement-content-l"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="announcement-content-r">
-                            <p>Need tutoring assistance? Visit the Student Learning Center for free tutoring services in various subjects.</p>
-                        </div>
-                    </div>
-                    <div class="announcement-content">
-                        <div class="announcement-content-l"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="announcement-content-r">
-                            <p>The campus gym will have extended hours during finals week to accommodate student schedules.</p>
-                        </div>
-                    </div>
-                    <div class="announcement-content">
-                        <div class="announcement-content-l"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="announcement-content-r">
-                            <p>The library will be closed for renovations from June 1st to June 15th.</p>
-                        </div>
-                    </div>
+                <div class="announcement" id="announcementContainer">
+                    <!-- Announcements will be populated here -->
                 </div>
             </div>
         </div>
@@ -497,6 +533,17 @@
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+        function closeWelcome() {
+            // Get the parent div element
+            var welcomeDiv = document.querySelector('.user');
+
+            // Set the display property to 'none'
+            if (welcomeDiv) {
+                welcomeDiv.style.display = 'none';
+            }
+        }
+    </script>
     <script>
             function openSearchPopup() {
                 var searchPopup = document.getElementById('searchPopup');
