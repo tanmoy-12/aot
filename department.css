@@ -19,11 +19,43 @@
     min-width: 280px;
     margin: 1.3rem;
 }
+.feature.active {
+    background-color: rgb(109, 179, 253);
+}
+.hidden {
+    display: none;
+}
 .features i{
     color: var(--primary-color);
     font-size: 3.3rem;
     font-weight: 600;
     margin-right: 1.2rem;
+}
+.hod{
+    max-width: 1050px;
+    margin: 4rem auto;
+}
+.hod-details{
+    display: flex;
+    background-color: var(--bg-color-ligt);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 4px 4px 3px var(--bg-color-dark);
+}
+.hodimage{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hodimage img{
+    margin: auto auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+.hod-content{
+    width: 70%;
 }
 .cs-events{
     display: grid;
@@ -139,4 +171,32 @@
 }
 .about p{
     margin: 1.3rem auto;
+}
+.f3{
+    width: 80%;
+    margin: 4rem auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+}
+.lab-info{
+    width: 80%;
+    border-collapse: collapse;
+    font-size: large;
+    margin: 0 auto;
+    text-align: center;
+}
+.lab-info td{
+    border: 1px solid black;
+    padding: 8px;
+}
+.lab-info th {
+    border: 1px solid black;
+}
+.lab-info tr:nth-child(even) td {
+    background-color: var(--bg-color-ligt);
+}
+.overview{
+    margin: 4rem;
+    text-align: center;
 }

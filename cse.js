@@ -34,3 +34,40 @@
             })
             .catch(error => console.error('Error fetching news data:', error));
     });
+
+    //To control behavior of f1,f2,f3
+    var c=document.getElementById('f3');
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show the default div (f1) and highlight the corresponding button
+        showContent('f1');
+
+        // Attach click event listeners to each button
+        document.getElementById('f1').addEventListener('click', function() {
+            showContent('f1');
+        });
+
+        document.getElementById('f2').addEventListener('click', function() {
+            showContent('f2');
+        });
+
+        document.getElementById('f3').addEventListener('click', function() {
+            showContent('f3');
+            c.style.display='flex';
+        });
+
+        function showContent(id) {
+            // Hide all content divs
+            document.querySelectorAll('.features .feature').forEach(function(button) {
+                button.classList.remove('active');
+            });
+            document.querySelectorAll('.f1, .f2, .f3').forEach(function(div) {
+                div.classList.add('hidden');
+            });
+
+            // Show the selected content div
+            document.querySelector(`.${id}`).classList.remove('hidden');
+
+            // Highlight the corresponding button
+            document.getElementById(id).classList.add('active');
+        }
+    });

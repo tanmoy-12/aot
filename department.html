@@ -7,8 +7,8 @@
         <meta name="HandheldFriendly" content="True">
 
         <meta name="description" content="Explore cutting-edge technology, business strategies, health insights, and more at the Academy Of Technology. Stay informed with our engaging articles and expert resources. Join our community today!">
-        <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="department.css">
+        <link rel="stylesheet" href="styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="manifest" href="/site.webmanifest">
         <!-- Font Awesome -->
@@ -122,20 +122,43 @@
             </div>
         </div>
         <div class="features">
-            <div class="feature">
+            <button class="feature active" id="f1">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <h5>Academic Programmes</h5>
-            </div>
-            <div class="feature">
+            </button>
+            <button class="feature" id="f2">
                 <i class="fa-solid fa-users"></i>
                 <h5>Faculty Members</h5>
-            </div>
-            <div class="feature">
+            </button>
+            <button class="feature" id="f3">
                 <i class="fa-solid fa-book-open"></i>
-                <h5>Programme Structure</h5>
-            </div>
+                <h5>Infrastructure</h5>
+            </button>
         </div>
         <div class="f1">
+            <div class="hod">
+                <div style="border-radius: 8px; background-color: var(--primary-color); margin: 8px 0;padding: 8px;">
+                    <h3 style="color: var(--c); text-align: center;">Head Of The Department</h3>
+                </div>
+                <div class="hod-details">
+                    <div class="hodimage">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg">
+                    </div>
+                    <div class="hod-content">
+                        <h4>Prof. Prosenjit Das</h4>
+                        <hr class="hr w-100" style="color: var(--dark); margin: 1rem 0; height: 5px;">
+                        <h5>Qualification: Ph.D in Computer Science</h5>
+                        <hr class="hr w-100" style="color: var(--dark); margin: 1rem 0; height: 5px;">
+                        <h5>COntact Details :- </h5>
+                        <h5><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;hod_cse@aot.edu.in</h5>
+                        <h5><i class="fa-solid fa-building"></i>&nbsp;&nbsp;CSE Building, AOT</h5>
+                        <h5><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;+91 12345678</h5>
+                        <hr class="hr w-100" style="color: var(--dark); margin: 1rem 0; height: 5px;">
+                        <h5>Message From HOD</h5>
+                        <h5 style="margin: 0.8rem 0;">"Embrace Innovation, Engineer the Future! Together, let's shape tomorrow's technology."</h5>
+                    </div>
+                </div>
+            </div>
             <h1 class="text-center" style="color: var(--text);">Recent News</h1>
             <div class="cs-events">
                 <div class="latest-banner">
@@ -191,8 +214,137 @@
                     The Department of Computer Science & Engineering at AOT University, established in July 2003 under the leadership of Prof. Prosenjit Das, offers a dynamic 4-year B.Tech programme focusing on data science, artificial intelligence, and cybersecurity. Our department boasts modern facilities including dedicated class and tutorial rooms, seminar spaces, faculty rooms, and specialized laboratories equipped with high-performance HP computers. We provide hands-on learning experiences in areas such as Data Structures, Computer Architecture, Google Innovation, Network & Cyber Security, and System Engineering. Our infrastructure includes Sun Ultrasparc IIIi and IBM X-Series servers, complemented by licensed software like Oracle, MATLAB, Java JDK, and Adobe Creative Suite. For inquiries and collaborations, please contact us at hod_cse@aot.edu.in.</p>
             </div>
         </div>
-        <script src="cse.js"></script>
-        <script>
+        <div class="f2 hidden">
+            <div class="hod">
+                <div style="border-radius: 8px; background-color: var(--primary-color); margin: 8px 0;padding: 8px;">
+                    <h3 style="color: var(--c); text-align: center;">Head Of The Department</h3>
+                </div>
+                <div class="hod-details">
+                    <div class="hodimage">
+                        <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg">
+                    </div>
+                    <div class="hod-content">
+                        <h4>Prof. Prosenjit Das</h4>
+                        <hr class="hr w-100" style="color: var(--dark); margin: 1rem 0; height: 5px;">
+                        <h5>Qualification: Ph.D in Computer Science</h5>
+                        <hr class="hr w-100" style="color: var(--dark); margin: 1rem 0; height: 5px;">
+                        <h5>COntact Details :- </h5>
+                        <h5><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;hod_cse@aot.edu.in</h5>
+                        <h5><i class="fa-solid fa-building"></i>&nbsp;&nbsp;CSE Building, AOT</h5>
+                        <h5><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;+91 12345678</h5>
+                        <hr class="hr w-100" style="color: var(--dark); margin: 1rem 0; height: 5px;">
+                        <h5>Message From HOD</h5>
+                        <h5 style="margin: 0.8rem 0;">"Embrace Innovation, Engineer the Future! Together, let's shape tomorrow's technology."</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="f3 hidden">
+            <div style="border-radius: 8px; background-color: var(--primary-color); margin: 8px 0;padding: 8px; margin-bottom: 3rem;">
+                <h3 style="color: var(--c); text-align: center;">Four Year B. Tech Courses and Approved Intake</h3>
+            </div>
+            <table class="lab-info">
+                <tr>
+                    <td>Course</td>
+                    <td>Approved Intake</td>
+                </tr>
+                <tr>
+                    <td>Computer Science and Engineering</td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>Computer Science & Business Systems</td>
+                    <td>60</td>
+                </tr>
+            </table>
+            <div class="overview">
+                <div style="border-radius: 8px; background-color: var(--primary-color); margin: 8px 0;padding: 8px; margin-bottom: 3rem;">
+                    <h3 style="color: var(--c); text-align: center;">Overview of Departmental Infrastructure</h3>
+                </div>
+                <h4>Class / Tutorial Rooms / Seminar Rooms.</h4>
+                <h4>HOD's Room & Departmental Office.</h4>
+                <h4>Faculty Rooms.</h4>
+                <h4>Amenities Area.</h4>
+            </div>
+            <div style="border-radius: 8px; background-color: var(--primary-color); margin: 8px 0;padding: 8px; margin-bottom: 3rem;">
+                <h3 style="color: var(--c); text-align: center;">Laboratory Information</h3>
+            </div>
+            <table class="lab-info">
+                <tr>
+                    <th>Lab Name</th>
+                    <th>No. of Computers with Configuration</th>
+                </tr>
+                <tr>
+                    <td>DATA STRUCTURE LABORATORY</td>
+                    <td>41 HP Computers, Fedora 23, GCC Compiler, JDK, Visual Algos, jdoodle portal, a2oj portal</td>
+                </tr>
+                <tr>
+                    <td>COMPUTER ARCHITECTURE LABORATORY</td>
+                    <td>42 HP Computers, Fedora 23, Digital Logic Design, Comp Arch Simulation using HASE III</td>
+                </tr>
+                <tr>
+                    <td>COMPUTER ENGINEERING LABORATORY</td>
+                    <td>41 HP Computers, Fedora 23, GCC Compiler, JDK, Python, R, jdoodle portal, a2oj portal</td>
+                </tr>
+                <tr>
+                    <td>GOOGLE INNOVATION LABORATORY</td>
+                    <td>41 HP Computers, Fedora 23, Android Studio, Flutter, Fuchsia</td>
+                </tr>
+                <tr>
+                    <td>NETWORK & CYBER SECURITY LABORATORY</td>
+                    <td>41 HP Computers, Fedora 23, NET-Simulator, Metasploit Framework, ZAP</td>
+                </tr>
+                <tr>
+                    <td>SYSTEM ENGINEERING LABORATORY</td>
+                    <td>42 HP Computers, Fedora 23, JDK, PHP/MySQL, Python, jdoodle portal, a2oj portal</td>
+                </tr>
+            </table>
+        </div>
+        <div style="background-color: rgb(193, 223, 255); margin: 0; padding: 10PX;">
+            <h3 style="text-align: center; color: var(--n);">
+                DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING,
+                ACADEMY OF TECHNOLOGY</h3>
+        </div>
+        <div class="footer-container">
+            <div class="footer-company-box d-flex flex-column justify-content-center align-items-center text-center">
+                <div class="logo ">
+                    <img src="logo.png"  alt="logo">
+                </div>
+                <a href="#" class="logo"><span>Academy Of Technology</span></a>
+                <p class="fw-bold d-flex flex-column"><span>AEDCONAGAR, HOOGHLY-712121</span> <span>WEST BENGAL, INDIA</span></p>
+                <li><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;<a class="fs-6" >+91-9564324510</a></li>
+                <li><i class="fa-regular fa-envelope"></i>&nbsp;&nbsp;<a class="fs-6">support@aot.edu.in</a></li>
+                <div class="footer-social">
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="footer-link-box">
+                    <strong>Important Links</strong>
+                    <ul>
+                        <li><a href="">Teaching Learning Cntre</a></li>
+                        <li><a href="#">Anti-Ragging Cell</a></li>
+                        <li><a href="#">Placement Cell</a></li>
+                        <li><a href="#">Talent Transformation Cell</a></li>
+                        <li><a href="#">Placed Students List</a></li>
+                    </ul>
+                </div>       
+                <div class="footer-link-box">
+                    <strong>Quick Links</strong>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Digital Library</a></li>
+                    </ul>
+                </div>  
+            </div> 
+        </div>
+    </footer>
+    <script src="cse.js"></script>
+    <script>
             let mybutton = document.getElementById("myBtn");
             // When the user scrolls down 20px from the top of the document, show the button
             window.onscroll = function() {scrollFunction()};
@@ -293,6 +445,7 @@
             // Call initializeTheme() to set the initial theme on page load
             initializeTheme();
     </script>
+    <script src="script.js"></script>
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
