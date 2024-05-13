@@ -1092,6 +1092,9 @@ iframe{
 #myBtn:hover{
     background-color: var(--hover-imp);
 }
+.comment-form{
+    margin-top: 4.3rem;
+}
   .contact-form{
     width: 450px;
     background-color: var(--light);
@@ -1120,7 +1123,8 @@ iframe{
     background-color: var(--light);
   }
   textarea{
-    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
     padding: 15px;
     outline: none;
     border: none;

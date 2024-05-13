@@ -12,15 +12,38 @@
     font-weight: 600;
     display: flex;
     border-radius: 8px;
-    background-color: rgb(193, 223, 255);
+    background-color: rgb(224, 238, 252);
     border: 0.2px solid var(--bg-color-ligt);
     width: 30%;
     max-width: 350px;
     min-width: 280px;
     margin: 1.3rem;
 }
+div{
+    transition: opacity 1.2s ease; /* Apply transition effect to opacity property */
+    transition: all ease 1.2s;
+}
+/* CSS animation to gradually fade in the .feature elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to .feature elements */
+div .animate {
+    animation: fadeIn 1.2s ease forwards; /* Run the fadeIn animation once */
+}
 .feature.active {
-    background-color: rgb(109, 179, 253);
+    background-color: var(--primary-color);
+    color: #fff;
+    transition: all ease 1.2s;
+}
+.feature.active i{
+    color: #fff;
 }
 .hidden {
     display: none;
