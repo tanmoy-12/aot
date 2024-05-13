@@ -246,9 +246,11 @@ li{
     height:70px; 
 }
 .logo-text{
+    font-family: 'Book Antiqua', serif;
     top: 12px;
     position: relative;
     color: #01002b;
+    font-weight: 700;
 }
 .logo-text h5{
     font-weight: 600;

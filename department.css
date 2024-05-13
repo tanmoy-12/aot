@@ -202,7 +202,7 @@
     background-color: var(--bg-color-ligt);
 }
 .overview{
-    margin: 4rem;
+    margin: 4rem auto;
     text-align: center;
 }
 .f2 .hod{
@@ -241,7 +241,7 @@
 hr{
     opacity: 1 !important;
 }
-@media (min-width : 1048px){
+@media (max-width : 1048px){
     .cs-events{
         display: flex;
         flex-direction: column;
