@@ -185,12 +185,15 @@
     font-size: large;
     margin: 0 auto;
 }
+.lab-info table{
+    border: 1px solid var(--text);
+}
 .lab-info td{
-    border: 1px solid black;
+    border: 1px solid var(--text);
     padding: 8px;
 }
 .lab-info th {
-    border: 1px solid black;
+    border: 1px solid var(--text);
     background-color: var(--blue);
     color: var(--light);
 }

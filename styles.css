@@ -56,10 +56,11 @@ scrollbar-thumb {
     --light: #000000;
     --bg: #071e3f;
   }  */
-  canvas {
+canvas {
     display: block;
     background-color: var(--bg);
-}#particleCanvas {
+}
+#particleCanvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -158,7 +159,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--dark);
     padding: 10px;
     text-align: left;
 }
