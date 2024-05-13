@@ -191,6 +191,8 @@
 }
 .lab-info th {
     border: 1px solid black;
+    background-color: var(--blue);
+    color: var(--light);
 }
 .lab-info tr:nth-child(even) td {
     background-color: var(--bg-color-ligt);
