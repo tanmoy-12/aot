@@ -71,3 +71,82 @@
             document.getElementById(id).classList.add('active');
         }
     });
+
+
+    async function fetchFacultyData() {
+        try {
+            const response = await fetch('cse/faculty.json'); // Assuming JSON file name is faculty.json
+            const facultyData = await response.json(); // Parse JSON response
+
+            const facultyContainer = document.getElementById('facultyContainer');
+
+            // Loop through each faculty object and create corresponding HTML elements
+            facultyData.forEach(faculty => {
+                const facultyDiv = document.createElement('div');
+                facultyDiv.classList.add('faculty');
+
+                // Faculty image
+                const imageDiv = document.createElement('div');
+                imageDiv.classList.add('faculty-image');
+                const facultyImage = document.createElement('img');
+                facultyImage.src = `cse/faculty/${faculty.image}`;
+                imageDiv.appendChild(facultyImage);
+                facultyDiv.appendChild(imageDiv);
+
+                // Add horizontal rule
+                var hr1 = document.createElement('hr');
+                hr1.classList.add('hr', 'w-100');
+                hr1.style.color = 'var(--blue)';
+                hr1.style.margin = '1rem 0';
+                hr1.style.height = '10px';
+                facultyDiv.appendChild(hr1);
+
+                // Faculty name
+                const nameHeading = document.createElement('h5');
+                nameHeading.textContent = faculty.name;
+                facultyDiv.appendChild(nameHeading);
+
+                // Add horizontal rule
+                var hr1 = document.createElement('hr');
+                hr1.classList.add('hr', 'w-100');
+                hr1.style.color = 'var(--blue)';
+                hr1.style.margin = '1rem 0';
+                hr1.style.height = '10px';
+                facultyDiv.appendChild(hr1);
+
+                // Area of teaching
+                const areaTeaching = document.createElement('h5');
+                areaTeaching.textContent = faculty.areaOfTeaching;
+                facultyDiv.appendChild(areaTeaching);
+
+                // Subject
+                const subject = document.createElement('h5');
+                subject.textContent = faculty.subject;
+                subject.style.color = 'var(--blue)';
+                facultyDiv.appendChild(subject);
+
+                // Add horizontal rule
+                var hr1 = document.createElement('hr');
+                hr1.classList.add('hr', 'w-100');
+                hr1.style.color = 'var(--blue)';
+                hr1.style.margin = '1rem 0';
+                hr1.style.height = '10px';
+                facultyDiv.appendChild(hr1);
+
+                // Email
+                const email = document.createElement('h5');
+                email.innerHTML = `<i class="fa-solid fa-envelope"></i>&nbsp;${faculty.email}`;
+                email.style.color = 'var(--blue)';
+                facultyDiv.appendChild(email);
+
+                // Append faculty div to container
+                facultyContainer.appendChild(facultyDiv);
+            });
+
+        } catch (error) {
+            console.error('Error fetching faculty data:', error);
+        }
+    }
+
+    // Call the fetchFacultyData function when the page loads
+    fetchFacultyData();

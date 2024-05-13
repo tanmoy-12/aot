@@ -184,7 +184,6 @@
     border-collapse: collapse;
     font-size: large;
     margin: 0 auto;
-    text-align: center;
 }
 .lab-info td{
     border: 1px solid black;
@@ -199,4 +198,40 @@
 .overview{
     margin: 4rem;
     text-align: center;
+}
+.f2 .hod{
+    width: 90% !important;
+    max-width: 90% !important;
+}
+.faculties{
+    width: 90%;
+    margin: 2.6rem auto;
+}
+.faculty-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+.faculty{
+    width: 30%;
+    max-width: 350px;
+    min-width: 300px;
+    background-color: var(--bg-color-ligt);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8rem;
+}
+.faculty-image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+}
+hr{
+    opacity: 1 !important;
 }

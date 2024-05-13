@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Faculty Name 1",
+        "areaOfTeaching": "Area of Teaching 1",
+        "subject": "Subject 1",
+        "image": "faculty1.jpg",
+        "email": "faculty1.title@aot.edu.in"
+    },
+    {
+        "name": "Faculty Name 2",
+        "areaOfTeaching": "Area of Teaching 2",
+        "subject": "Subject 2",
+        "image": "faculty2.jpg",
+        "email": "faculty2.title@aot.edu.in"
+    },
+    {
+        "name": "Faculty Name 3",
+        "areaOfTeaching": "Area of Teaching 3",
+        "subject": "Subject 3",
+        "image": "faculty3.jpg",
+        "email": "faculty3.title@aot.edu.in"
+    },
+    {
+        "name": "Faculty Name 4",
+        "areaOfTeaching": "Area of Teaching 4",
+        "subject": "Subject 4",
+        "image": "faculty4.jpg",
+        "email": "faculty4.title@aot.edu.in"
+    }
+]
