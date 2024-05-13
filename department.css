@@ -279,3 +279,11 @@ hr{
         width: 600px;
     }
 }
+.career{
+    background-color: var(--bg-color-ligt);
+    margin: 3.1rem auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
