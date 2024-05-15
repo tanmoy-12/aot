@@ -52,13 +52,14 @@
             <div class="search-icon"  onclick="openSearchPopup()">
                 <i class="fa-solid fa-magnifying-glass"  onclick="openSearchPopup()"></i>
             </div>
-            <div class="search-popup" id="searchPopup">
-                <button class="close-button" onclick="closeSearchPopup()"><i class="fa-solid fa-xmark"></i></button>
-                <h1>Type Anything to Search</h1>
-                <div class="search-content">
-                    <input type="text" placeholder="Search...">
-                    <button onclick="">Search</button>
-                </div>
+        </div>
+        
+        <div class="search-popup" id="searchPopup">
+            <button class="close-button" onclick="closeSearchPopup()"><i class="fa-solid fa-xmark"></i></button>
+            <h1>Type Anything to Search</h1>
+            <div class="search-content">
+                <input type="text" placeholder="Search...">
+                <button onclick="">Search</button>
             </div>
         </div>
         <div class="navigation">
@@ -186,6 +187,9 @@
             </div>
             <ul class="sidebar">
                 <li id="exit" onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                <!-- <div class="admin-panel">
+                    <button style="border: none; font-size: larger; background-color: transparent; color: var(--text); font-weight: 500;" id="adminButton">Admin</button>
+                </div> -->
                 <li><a>Home</a></li>
                 <li><a>About us</a></li>
                 <li><a>Faculty</a></li>
@@ -207,7 +211,7 @@
                         </li>
                         <li><strong>Department</strong>
                             <ul class="sub-dropdowns">
-                                <li><a href="#">Computer Science & Engineering</a></li>
+                                <li><a href="department.html">Computer Science & Engineering</a></li>
                                 <li><a href="#">Computer Science & Business System</a></li>
                                 <li><a href="#">Electronics & Communication Engineering</a></li>
                                 <li><a href="#">Electronics & Electrical Engineering</a></li>
@@ -239,8 +243,11 @@
                         </li>
                         <li><strong>UG Syllabus</strong>
                             <ul class="sub-dropdowns">
-                                <li class="d-flex flex-row"><a href="CSE.pdf">CSE&nbsp; <a>|</a>  <a href="CSBS20.pdf">&nbsp;CSBS</a></li>
-                                <li class="d-flex flex-row"><a href="ECE.pdf">ECE&nbsp; <a>|</a> </a><a href="EEE.pdf">&nbsp;EEE |</a><a href="EE.pdf">&nbsp;EE</a></li>
+                                <li class="d-flex flex-row"><a href="CSE.pdf">CSE</a></li>
+                                <li><a href="CSBS20.pdf">CSBS</a></li>
+                                <li class="d-flex flex-row"><a href="ECE.pdf">ECE</a></li>
+                                <li><a href="EEE.pdf">EEE</a></a></li>
+                                <li><a href="EE.pdf">EE</a></li>
                                 <li><a href="ME.pdf">ME</a></li>
                             </ul>
                         </li>

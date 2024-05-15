@@ -8,17 +8,6 @@ function showSidebar() {
     sidebar.style.display = 'none';
     }
 
-    function showMenu() {
-        const menu = document.getElementByClassName('dropdowns'); // Get the dropdown menu element
-        menu.style.display = 'flex';
-        // Toggle the display property of the menu
-        // if (menu.style.display === 'none' || menu.style.display === '') {
-        //     menu.style.display = 'block'; // Show the menu if it's currently hidden
-        // } else {
-        //     menu.style.display = 'none'; // Hide the menu if it's currently visible
-        // }
-    }
-
 //JS Function to control dropdown services
 document.addEventListener('DOMContentLoaded', function() {
     const dropdownServices = document.querySelectorAll('.dropdown-services');

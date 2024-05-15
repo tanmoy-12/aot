@@ -535,7 +535,7 @@ li{
 .sidebar li{
     width: 100%;
     list-style: none;
-    padding: 8px 0 8px 20px;
+    padding: 8px 0 8px 0px;
     border-bottom: 1px dashed var(--bg-color-dark);
 }
 .sidebar a{
@@ -1417,7 +1417,35 @@ footer{
     .logo-text{
         top: 8px;
     }
-    
+    .dropdown a i{
+        position: absolute;
+        right: 0;
+    }
+    .sidebar li:first-child{
+        border-bottom: none;
+    }
+    .sidebar li:last-child{
+        border-bottom: none;
+    }
+    .sub-dropdowns li{
+        border-bottom: 0px;
+        background-color: var(--overlay);
+        border-radius: 6px;
+        padding-left: 0.6rem;
+        margin: 5px 0;
+    }
+    #mobile-dropdown-academic3 li{
+        background-color: var(--overlay);
+        border-radius: 6px;
+        padding-left: 0.6rem;
+        margin: 5px 0;
+    }
+    #mobile-dropdown-academic4 li{
+        background-color: var(--overlay);
+        border-radius: 6px;
+        padding-left: 0.6rem;
+        margin: 5px 0;
+    }
     .dropdowns ul{
         padding-left: 0 !important;
     }
@@ -1427,12 +1455,9 @@ footer{
         padding-left: 0;
         margin-top: 1rem;
     }
-    .dropdowns li:nth-last-child(1) {
-        border-bottom: 0;
+    .dropdowns li{
+        border-bottom: 0px;
     }
-    .sub-dropdowns li:nth-last-child(1) {
-        border-bottom: 0;
-    } 
     #academics{
         flex-direction: column;
         width: 95%;
@@ -1576,7 +1601,6 @@ footer{
 }
 @media (max-width:550px){
     .navbar{
-        background-color:;
         background: var(--bg-color-ligt);
     }
     .logo{
