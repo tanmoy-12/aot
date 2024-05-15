@@ -39,6 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+// Function to toggle the dropdown menu visibility
+function toggleDropdown(id) {
+    var dropdown = document.getElementById("mobile-dropdown-" + id);
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "flex";
+}
+
+// Function to toggle the visibility of sub-dropdowns
+function toggleSubDropdown(parentId) {
+    var subDropdown = document.querySelector('#' + parentId + ' .sub-dropdowns');
+    subDropdown.style.display = (subDropdown.style.display === "block") ? "none" : "flex";
+}
+  
 // Array of event data
 const events = [
     {

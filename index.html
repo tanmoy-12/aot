@@ -174,54 +174,50 @@
                 <li><a>About us</a></li>
                 <li><a>Faculty</a></li>
                 <li><a>Contact Us</a></li>
-                <li class="dropdown" id="academic">
-                    <a href="#" onclick="showMenu()">Faculty <i class="fas fa-angle-down arrow-icon"></i></a>
-                    <ul3
-                    id="academics">
-                        <li><a href="#" style="color: aliceblue !important">Faculty Data</a></li>
+                <li class="dropdown" id="academic1">
+                    <a href="#" onclick="toggleDropdown('academic1')">Faculty <i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic1">
+                        <li><a href="#">Faculty Data</a></li>
                         <li><a href="#">Faculty List</a></li>
                         <li><a href="#">Faculty Positions</a></li>
                         <li><a href="#">Career Benefits@AOT</a></li>
                     </ul>
                 </li>
-                <li class="dropdown" id="academic">
-                    <a href="#" onclick="showMenu()">Academics<i class="fas fa-angle-down arrow-icon"></i></a>
-                    <ul class="dropdowns" id="academics"style="display: none;">
-                            <ul>
-                                <li>Admission</li>
+                <li class="dropdown" id="academic2">
+                    <a href="#" onclick="toggleDropdown('academic2')">Academics <i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic2">
+                        <li><strong>Admission</strong>
+                            <ul class="sub-dropdowns">
                                 <li><a href="#">UG Admission</a></li>
                                 <li><a href="#">PG Admission</a></li>
-                                <li><a href="#">Regulations</a></li>
-                                <li><a href="#">Curriculum</a></li>  
-                                <li><a href="https://aot.edu.in/b-tech-fees-structure/">Fee Structure</a></li>
-                                <li><a href="https://aot.edu.in/documents-for-admission/">Documents</a></li>
-                                <li><a href="#">Program Structure</a></li>
                             </ul>
-                            <ul>
-                                <li>Resources</li>
+                        </li>
+                        <li><strong>Resources</strong>
+                            <ul class="sub-dropdowns">
                                 <li><a href="https://aot.edu.in/library/">Library</a></li>
-                                <li><a href=" http://182.74.215.198/moodle/">Moodle</a></li>
-                                <li><a href="Academic Calendar-Feb-2024  to 16-May-2024 (1).pdf">Academic Calendar</a></li>
-                                <li><a href="https://aot.edu.in/library/">MAR List</a></li>
+                                <li><a href="http://182.74.215.198/moodle/">Moodle</a></li>
                             </ul>
-                            <ul>
-                                <li>Department</li>
-                                <li><a href="#">Computer Science & Engineeering</a></li>
+                        </li>
+                        <li><strong>Department</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="#">Computer Science & Engineering</a></li>
                                 <li><a href="#">Computer Science & Business System</a></li>
-                                <li><a href="#">Electronics & Communication Engineeering</a></li>
-                                <li><a href="#">Electronics & Electrical Engineeering</a></li>
-                                <li><a href="#">Electrical Engineeering</a></li>
-                                <li><a href="#">Mechanical Engineeering</a></li>
-                                <li><a href="#">Engineeering Science</a></li>
+                                <li><a href="#">Electronics & Communication Engineering</a></li>
+                                <li><a href="#">Electronics & Electrical Engineering</a></li>
+                                <li><a href="#">Electrical Engineering</a></li>
+                                <li><a href="#">Mechanical Engineering</a></li>
+                                <li><a href="#">Engineering Science</a></li>
                             </ul>
-                            <ul>
-                                <li>Clubs@AOT</li>
+                        </li>
+                        <li><strong>Clubs@AOT</strong>
+                            <ul class="sub-dropdowns">
                                 <li><a href="https://aot.edu.in/ardour/">Ardour</a></li>
                                 <li><a href="https://aot.edu.in/analects/">Analects</a></li>
                                 <li><a href="https://aot.edu.in/agile/">Agile</a></li>
                                 <li><a href="https://aot.edu.in/acuity/">Acuity</a></li>
                                 <li><a href="https://aot.edu.in/acclivities/">Acclivities</a></li>
                             </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -532,6 +528,19 @@
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+        // Function to toggle the dropdown menu visibility
+        function toggleDropdown(id) {
+            var dropdown = document.getElementById("mobile-dropdown-" + id);
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+
+        // Function to toggle the visibility of sub-dropdowns
+        function toggleSubDropdown(parentId) {
+            var subDropdown = document.querySelector('#' + parentId + ' .sub-dropdowns');
+            subDropdown.style.display = (subDropdown.style.display === "block") ? "none" : "block";
+        }
+    </script>
     <script>
         function closeWelcome() {
             // Get the parent div element

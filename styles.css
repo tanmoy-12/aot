@@ -509,21 +509,28 @@ li{
 .sidebar ul:first-child{
     right: 0;
 }
+
 .sidebar{
     position: fixed;
-    top: 80px;
-    left: 0;
-    height: 100vh;
     width: 50%;
     z-index: 10;
     background-color: var(--bg-color-ligt);
-    box-shadow: -10px 0 10px var(--text);
     flex-direction: column;
     display: none;
     margin: 0 auto;
     padding: 0 1.3rem;
     align-items: flex-start;
     justify-content: flex-start;
+    top: 50%; /* Position the top edge at the vertical center */
+    left: 50%; /* Position the left edge at the horizontal center */
+    transform: translate(-50%, -50%); /* Center the div using translate */
+    width: 90%;
+    height: 80%;
+    overflow-y: auto; 
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px var(--bg-color-light);
+    transition: all ease 1.3s;
 }
 .sidebar li{
     width: 100%;
@@ -1036,8 +1043,8 @@ iframe{
   }
 
   .rotating-border {
-    height: 580px;
-    width: 480px;
+    height: 570px;
+    width: 90%;
     margin: 40px auto;
     display: flex;
     justify-content: center;
@@ -1096,7 +1103,7 @@ iframe{
     margin-top: 4.3rem;
 }
   .contact-form{
-    width: 450px;
+    width: 95%;
     background-color: var(--light);
     padding: 1rem;
     margin: 20px auto;
@@ -1410,18 +1417,22 @@ footer{
     .logo-text{
         top: 8px;
     }
-    .sidebar{
-        top: 74px;
-        width: 100%;
-        height: 400px;
-        overflow-y: scroll; 
-    }
+    
     .dropdowns ul{
         padding-left: 0 !important;
     }
-    .dropdowns{
+    .dropdowns {
         display: none;
+        flex-direction: column;
+        padding-left: 0;
+        margin-top: 1rem;
     }
+    .dropdowns li:nth-last-child(1) {
+        border-bottom: 0;
+    }
+    .sub-dropdowns li:nth-last-child(1) {
+        border-bottom: 0;
+    } 
     #academics{
         flex-direction: column;
         width: 95%;
