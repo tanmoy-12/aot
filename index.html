@@ -160,11 +160,27 @@
                 <div class="menu-toggler">
                     <h2 onclick="showSidebar()"><i class="fa-solid fa-bars"></i></h2>
                 </div>
+                <div class="toggle-container">
+                    <button class="theme-toggle-btn" onclick="toggleTheme()">
+                        <i class="fas fa-solid fa-moon"></i>
+                    </button>
+                </div>
                 <div class="logo">
                     <img src="logo.png" alt="logo">
                     <div class="logo-text">
                         <h5>ACADEMY OF TECHNOLOGY</h5>
                         <h6>Translate Your Vision Into Reality</h6>
+                    </div>
+                </div>
+                <div class="search-icon"  onclick="openSearchPopup()">
+                    <i class="fa-solid fa-magnifying-glass"  onclick="openSearchPopup()"></i>
+                </div>
+                <div class="search-popup" id="searchPopup">
+                    <button class="close-button" onclick="closeSearchPopup()"><i class="fa-solid fa-xmark"></i></button>
+                    <h1>Type Anything to Search</h1>
+                    <div class="search-content">
+                        <input type="text" placeholder="Search...">
+                        <button onclick="">Search</button>
                     </div>
                 </div>
             </div>
@@ -175,17 +191,8 @@
                 <li><a>Faculty</a></li>
                 <li><a>Contact Us</a></li>
                 <li class="dropdown" id="academic1">
-                    <a href="#" onclick="toggleDropdown('academic1')">Faculty <i class="fas fa-angle-down arrow-icon"></i></a>
+                    <a href="#" onclick="toggleDropdown('academic1')">Academics <i class="fas fa-angle-down arrow-icon"></i></a>
                     <ul class="dropdowns" id="mobile-dropdown-academic1">
-                        <li><a href="#">Faculty Data</a></li>
-                        <li><a href="#">Faculty List</a></li>
-                        <li><a href="#">Faculty Positions</a></li>
-                        <li><a href="#">Career Benefits@AOT</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" id="academic2">
-                    <a href="#" onclick="toggleDropdown('academic2')">Academics <i class="fas fa-angle-down arrow-icon"></i></a>
-                    <ul class="dropdowns" id="mobile-dropdown-academic2">
                         <li><strong>Admission</strong>
                             <ul class="sub-dropdowns">
                                 <li><a href="#">UG Admission</a></li>
@@ -218,6 +225,57 @@
                                 <li><a href="https://aot.edu.in/acclivities/">Acclivities</a></li>
                             </ul>
                         </li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="academic2">
+                    <a href="#" onclick="toggleDropdown('academic2')">Students<i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic2">
+                        <li><strong>Events</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="https://aotfiesta24.tech/">Techfest</a></li>
+                                <li><a href="#">Humatronics</a></li>
+                                <li><a href="#">Games Meet</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>UG Syllabus</strong>
+                            <ul class="sub-dropdowns">
+                                <li class="d-flex flex-row"><a href="CSE.pdf">CSE&nbsp; <a>|</a>  <a href="CSBS20.pdf">&nbsp;CSBS</a></li>
+                                <li class="d-flex flex-row"><a href="ECE.pdf">ECE&nbsp; <a>|</a> </a><a href="EEE.pdf">&nbsp;EEE |</a><a href="EE.pdf">&nbsp;EE</a></li>
+                                <li><a href="ME.pdf">ME</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>PG Syllabus</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="MCA20.pdf">MCA</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Career Services</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="#">Teaching Learning Centre</a></li>
+                                <li><a href="#">Talent Transformation Cell</a></li>
+                                <li><a href="#">Placement & Training Cell</a></li>
+                                <li><a href="#">Life@AOT</a></li>
+                                <li><a href="https://aot.edu.in/industry-4-0-2/">Industry 4.0 Centre</a></li>
+                                <li><a href="#">Campus Facilities</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="academic3">
+                    <a href="#" onclick="toggleDropdown('academic3')">Research<i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic3">
+                        <li><a href="#">Current Research</a></li>
+                        <li><a href="#">Past Research</a></li>
+                        <li><a href="#">Research Facilities</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="academic4">
+                    <a href="#" onclick="toggleDropdown('academic4')">Faculty <i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic4">
+                        <li><a href="#">Faculty Data</a></li>
+                        <li><a href="#">Faculty List</a></li>
+                        <li><a href="#">Faculty Positions</a></li>
+                        <li><a href="#">Career Benefits@AOT</a></li>
                     </ul>
                 </li>
             </ul>

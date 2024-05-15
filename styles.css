@@ -1575,6 +1575,22 @@ footer{
     }
 }
 @media (max-width:550px){
+    .navbar{
+        background-color:;
+        background: var(--bg-color-ligt);
+    }
+    .logo{
+        height: 36px;
+    }
+    .logo img{
+        height: 35px;
+    }
+    .logo-text h5{
+        font-size:11px;
+    }
+    .logo-text h6{
+        font-size: 9px;
+    }
     .director-message{
         padding: 1.5rem 0;
     }
