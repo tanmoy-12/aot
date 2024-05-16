@@ -526,10 +526,12 @@ li{
     transform: translate(-50%, -50%); /* Center the div using translate */
     width: 90%;
     height: 80%;
-    overflow-y: auto; 
+    overflow-y: auto;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;
     margin-top: 1rem;
     border-radius: 8px;
-    box-shadow: 4px 4px 4px var(--bg-color-light);
+    box-shadow: 8px 8px 8px var(--text);
     transition: all ease 1.3s;
 }
 .sidebar li{
@@ -1440,7 +1442,8 @@ footer{
         padding-left: 0.6rem;
         margin: 5px 0;
     }
-    #mobile-dropdown-academic4 li{
+    #mobile-dropdown-academic4 li
+    {
         background-color: var(--overlay);
         border-radius: 6px;
         padding-left: 0.6rem;
