@@ -299,13 +299,39 @@ li{
 }
 
 .search-content {
-    position: absolute;
+    position: relative;
     display: flex;
-    top: 20%;
+    /* top: 20%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     text-align: center;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    justify-content: center;
+    align-items: center;
+}
+.search-content input{
+    background-color: var(--c);
+    color: var(--n);
+}
+.search-content input:focus{
+    background-color: var(--c);
+    color: var(--n);
+}
+#searchResults{
+    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 70%;
+    overflow-y: auto;
+    margin: 0 auto;
+    justify-content: center;
+    font-size: large;
+}
+#searchResults div{
+    color: var(--c) !important;
+}
+#searchResults div strong{
+    color: var(--c) !important;
 }
 .close-button {
     position: absolute;
@@ -514,7 +540,7 @@ li{
     position: fixed;
     width: 50%;
     z-index: 10;
-    background-color: var(--overlay);
+    background-color: var(--primary-color);
     flex-direction: column;
     display: none;
     margin: 0 auto;
@@ -531,7 +557,6 @@ li{
     -ms-overflow-style: none;
     margin-top: 1rem;
     border-radius: 8px;
-    box-shadow: 8px 8px 8px var(--text);
     transition: all ease 1.3s;
 }
 .sidebar li{
@@ -539,6 +564,12 @@ li{
     list-style: none;
     padding: 8px 0 8px 0px;
     border-bottom: 1px dashed var(--bg-color-dark);
+}
+.sidebar li a{
+    color: var(--c) !important;
+}
+.sidebar li i{
+    color: var(--c) !important;
 }
 .sidebar a{
     width: 100%;
@@ -670,15 +701,6 @@ li{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-@media (max-width: 450px) {
-    .read-more-btn {
-        display: inline;
-    }
-    #read-about{
-        display: none;
-    }
 }
 .right-about-us{
     padding: 3rem 1.5rem;
@@ -1058,7 +1080,7 @@ iframe{
   }
   .faq button[aria-expanded='true'] + .faq-content {
     opacity: 1;
-    max-height: 9em;
+    max-height: 14em;
     transition: all 200ms linear;
     will-change: opacity, max-height;
   }
@@ -1133,11 +1155,24 @@ iframe{
 #myBtn:hover{
     background-color: var(--hover-imp);
 }
+#typing-text {
+    border-right: 0.15em solid orange;
+    animation: caret 1s steps(1) infinite;
+    color: var(--c);
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
 .comment-form{
-    margin-top: 4.3rem;
+    margin: 4.3rem auto;
+    max-width: 536px;
 }
   .contact-form{
     width: 95%;
+    max-width: 450px;
     background-color: var(--light);
     padding: 1rem;
     margin: 20px auto;
@@ -1670,6 +1705,9 @@ footer{
     .footer-company-box{
         padding: 0;
     }
+    .faq .faq-content p {
+        margin: 1em 0;
+    }
 }
 @media (max-width:450px){
     .director-message{
@@ -1683,6 +1721,10 @@ footer{
     }
     .message-text{
         width: 100%;
+    }
+    .photos{
+        height: 300px;
+        overflow-y: auto;
     }
     .photos img{
         width: 120px;
@@ -1718,6 +1760,12 @@ footer{
     }
     #r1{
         flex-direction: column !important;
+    }
+    .read-more-btn {
+        display: inline;
+    }
+    #read-about{
+        display: none;
     }
 }
 

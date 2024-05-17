@@ -404,4 +404,3 @@ function toggleReadMore() {
         readMoreBtn.textContent = 'Read More';
     }
 }
-  

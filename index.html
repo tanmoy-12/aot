@@ -36,9 +36,9 @@
                 </div>
             </div>
             <div class="nav-elements">
-                <li><a>Home</a></li>
-                <li><a href="">About us</a></li>
-                <li><a>Contact Us</a></li>
+                <li><a id="home-link" href="#">Home</a></li>
+                <li><a id="about-link" href="#">About us</a></li>
+                <li><a id="contact-link" href="#">Contact Us</a></li>
                 <!-- <button style="border: none; font-size: larger; background-color: transparent; color: var(--text); font-weight: 500;" id="adminButton">Admin</button> -->
                 <div class="admin-panel">
                     <button style="border: none; font-size: larger; background-color: transparent; color: var(--text); font-weight: 500;" id="adminButton">Admin</button>
@@ -56,12 +56,98 @@
         
         <div class="search-popup" id="searchPopup">
             <button class="close-button" onclick="closeSearchPopup()"><i class="fa-solid fa-xmark"></i></button>
-            <h1>Type Anything to Search</h1>
+            <h1 style="color: var(--c); height: 60px;">Type <span id="typing-text"></span> to Search</h1>
             <div class="search-content">
-                <input type="text" placeholder="Search...">
-                <button onclick="">Search</button>
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="performSearch()">Search</button>
             </div>
+            <div id="searchResults"></div>
         </div>
+        
+        <script>
+            // Typing animation logic
+            document.addEventListener('DOMContentLoaded', function() {
+                const typingTextElement = document.getElementById('typing-text');
+                const texts = ["keywords", "Quick Links", "Faculty Name", "Faculty Age"];
+                let textIndex = 0;
+                let charIndex = 0;
+                const typingSpeed = 100;
+                const erasingSpeed = 50;
+                const delayBetweenTexts = 2000;
+        
+                function typeText() {
+                    if (charIndex < texts[textIndex].length) {
+                        typingTextElement.textContent += texts[textIndex].charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeText, typingSpeed);
+                    } else {
+                        setTimeout(eraseText, delayBetweenTexts);
+                    }
+                }
+        
+                function eraseText() {
+                    if (charIndex > 0) {
+                        typingTextElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+                        charIndex--;
+                        setTimeout(eraseText, erasingSpeed);
+                    } else {
+                        textIndex = (textIndex + 1) % texts.length;
+                        setTimeout(typeText, typingSpeed);
+                    }
+                }
+        
+                setTimeout(typeText, delayBetweenTexts);
+            });
+        
+            // Search functionality
+            async function performSearch() {
+                const searchInput = document.getElementById('searchInput').value.trim();
+                const searchResults = document.getElementById('searchResults');
+                searchResults.innerHTML = '';
+        
+                if (searchInput === '') {
+                    searchResults.innerHTML = 'Please enter a search term.';
+                    return;
+                }
+        
+                // Check if the input is a URL
+                if (isValidURL(searchInput)) {
+                    window.location.href = searchInput;
+                    return;
+                }
+        
+                try {
+                    const response = await fetch('facultyData.json');
+                    const data = await response.json();
+                    const results = data.filter(item => Object.values(item).some(value => value.toLowerCase().includes(searchInput.toLowerCase())));
+        
+                    if (results.length > 0) {
+                        results.forEach(result => {
+                            const resultItem = document.createElement('div');
+                            resultItem.innerHTML = `<strong>${result.Name}</strong><br>${result.Designation}<br>${result["Highest Qualification"]}<br>${result.Experience}`;
+                            searchResults.appendChild(resultItem);
+                        });
+                    } else {
+                        searchResults.innerHTML = 'Results Not Found';
+                    }
+                } catch (error) {
+                    searchResults.innerHTML = 'Error fetching data';
+                }
+            }
+        
+            function isValidURL(string) {
+                try {
+                    new URL(string);
+                    return true;
+                } catch (_) {
+                    return false;
+                }
+            }
+        
+            function closeSearchPopup() {
+                document.getElementById('searchPopup').style.display = 'none';
+            }
+        </script>
         <div class="navigation">
             <div class="menu">
                 <li class="dropdown-services" id="academic">
@@ -407,7 +493,7 @@
                 </div>
             </div>
         </div>
-        <div class="about-us">
+        <div class="about-us" id="about-us-section">
             <div class="left-about-us">
                 <h2>| ABOUT US</h2>
                 <p id="about-us-text">Academy of Technology (AOT), established in 2003, is a prestigious self-financed engineering college situated in Adisaptagram, Hooghly, West Bengal, India.<span id="read-about"> AOT is committed to translating vision into reality by providing quality education and fostering innovation. Affiliated with the Maulana Abul Kalam Azad University of Technology, AOT offers Bachelor of Technology (B.Tech) programs at the undergraduate level, along with Master of Computer Applications (MCA) and Master of Business Administration (MBA) programs at the postgraduate level. All academic programs are approved by the All India Council for Technical Education (AICTE). AOT actively promotes innovation through various initiatives, and its team, Buzz 6, secured the first rank in the AICTE Smart India Hackathon (SIH) 2023.</span></p>
@@ -564,7 +650,7 @@
                 </div>
             </div>
     </div>
-    <div class="comment-form">
+    <div class="comment-form" id="contact-us-section">
             <h2 class="text-center p-2">Have A Question? Leave Your Doubt Here</h2>
             <div class="rotating-border">
                 <div class="contact-form" action="">
@@ -593,6 +679,45 @@
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const homeLink = document.getElementById('home-link');
+            const aboutLink = document.getElementById('about-link');
+            const contactLink = document.getElementById('contact-link');
+    
+            homeLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("Home link clicked. Reloading page.");
+                location.reload();
+            });
+    
+            aboutLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("About link clicked. Scrolling to About Us section.");
+                smoothScroll(document.getElementById('about-us-section'));
+            });
+    
+            contactLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log("Contact link clicked. Scrolling to Contact Us section.");
+                smoothScroll(document.getElementById('contact-us-section'));
+            });
+    
+            function smoothScroll(target) {
+                console.log("Initiating smooth scroll to target:", target);
+                const headerOffset = 70; // Adjust this value if you have a fixed header
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+                console.log("Scrolling to position:", offsetPosition);
+    
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    </script>
     <script>
         // Function to toggle the dropdown menu visibility
         function toggleDropdown(id) {
@@ -780,41 +905,6 @@
                 // Animate the slider
                 animateSlider(slider, itemHeight);
             });
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const aboutLink = document.querySelector('.nav-elements li:nth-child(2) a');
-                const contactLink = document.querySelector('.nav-elements li:nth-child(3) a');
-                aboutLink.addEventListener('click', function (event) {
-                        // Scroll to the about us section
-                        const aboutSection = document.querySelector('.about-us');
-                        if (aboutSection) {
-                            aboutSection.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }
-                        // Prevent default link behavior
-                        event.preventDefault();
-                    });
-                if (aboutLink && contactLink) {
-                    
-
-                    contactLink.addEventListener('click', function (event) {
-                        // Scroll to the footer
-                        const footerSection = document.querySelector('footer');
-                        if (footerSection) {
-                            footerSection.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }
-                        // Prevent default link behavior
-                        event.preventDefault();
-                    });
-                } else {
-                    console.error('Navigation links not found.');
-                }
-            });
-
         </script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
