@@ -328,6 +328,7 @@ li{
     margin: 0 auto;
     justify-content: center;
     font-size: large;
+    color: var(--c);
 }
 #searchResults div{
     color: var(--c) !important;

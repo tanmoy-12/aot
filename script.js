@@ -404,3 +404,85 @@ function toggleReadMore() {
         readMoreBtn.textContent = 'Read More';
     }
 }
+// Typing animation logic
+document.addEventListener('DOMContentLoaded', function() {
+    const typingTextElement = document.getElementById('typing-text');
+    const texts = ["keywords", "Quick Links", "Faculty Name", "Faculty Age"];
+    let textIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 100;
+    const erasingSpeed = 50;
+    const delayBetweenTexts = 2000;
+
+    function typeText() {
+        if (charIndex < texts[textIndex].length) {
+            typingTextElement.textContent += texts[textIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeText, typingSpeed);
+        } else {
+            setTimeout(eraseText, delayBetweenTexts);
+        }
+    }
+
+    function eraseText() {
+        if (charIndex > 0) {
+            typingTextElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(eraseText, erasingSpeed);
+        } else {
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(typeText, typingSpeed);
+        }
+    }
+
+    setTimeout(typeText, delayBetweenTexts);
+});
+
+// Search functionality
+async function performSearch() {
+    const searchInput = document.getElementById('searchInput').value.trim();
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = '';
+
+    if (searchInput === '') {
+        searchResults.innerHTML = 'Please enter a search term.';
+        return;
+    }
+
+    // Check if the input is a URL
+    if (isValidURL(searchInput)) {
+        window.location.href = searchInput;
+        return;
+    }
+
+    try {
+        const response = await fetch('facultyData.json');
+        const data = await response.json();
+        const results = data.filter(item => Object.values(item).some(value => value.toLowerCase().includes(searchInput.toLowerCase())));
+
+        if (results.length > 0) {
+            results.forEach(result => {
+                const resultItem = document.createElement('div');
+                resultItem.innerHTML = `<strong>${result.Name}</strong><br>${result.Designation}<br>${result["Highest Qualification"]}<br>${result.Experience}`;
+                searchResults.appendChild(resultItem);
+            });
+        } else {
+            searchResults.innerHTML = 'Results Not Found';
+        }
+    } catch (error) {
+        searchResults.innerHTML = 'Error fetching data';
+    }
+}
+
+function isValidURL(string) {
+    try {
+        new URL(string);
+        return true;
+    } catch (_) {
+        return false;
+    }
+}
+
+function closeSearchPopup() {
+    document.getElementById('searchPopup').style.display = 'none';
+}
