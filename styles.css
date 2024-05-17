@@ -1713,6 +1713,9 @@ footer{
     }
 }
 @media (max-width:450px){
+    .search-content{
+        max-width: 290px;
+    }
     .director-message{
         flex-direction: column;
     }
