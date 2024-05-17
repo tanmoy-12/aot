@@ -51,14 +51,15 @@
             <div class="search-icon"  onclick="openSearchPopup()">
                 <i class="fa-solid fa-magnifying-glass"  onclick="openSearchPopup()"></i>
             </div>
-            <div class="search-popup" id="searchPopup">
-                <button class="close-button" onclick="closeSearchPopup()"><i class="fa-solid fa-xmark"></i></button>
-                <h1>Type Anything to Search</h1>
-                <div class="search-content">
-                    <input type="text" placeholder="Search...">
-                    <button onclick="">Search</button>
-                </div>
+        </div>
+        <div class="search-popup" id="searchPopup">
+            <button class="close-button" onclick="closeSearchPopup()"><i class="fa-solid fa-xmark"></i></button>
+            <h1 style="color: var(--c); height: 60px;">Type <span id="typing-text"></span> to Search</h1>
+            <div class="search-content">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button onclick="performSearch()">Search</button>
             </div>
+            <div id="searchResults"></div>
         </div>
         <div class="navigation">
             <div class="menu">
@@ -95,6 +96,127 @@
                 </li>
             </div>
         </div>
+        <!-- Mobile Navbar Toggle Button -->
+        <nav id="mobile-view">
+            <div class="navbar">
+                <div class="menu-toggler">
+                    <h2 onclick="showSidebar()"><i class="fa-solid fa-bars"></i></h2>
+                </div>
+                <div class="toggle-container">
+                    <button class="theme-toggle-btn" onclick="toggleTheme()">
+                        <i class="fas fa-solid fa-moon"></i>
+                    </button>
+                </div>
+                <div class="logo">
+                    <img src="logo.png" alt="logo">
+                    <div class="logo-text">
+                        <h5>ACADEMY OF TECHNOLOGY</h5>
+                        <h6>Translate Your Vision Into Reality</h6>
+                    </div>
+                </div>
+                <div class="search-icon"  onclick="openSearchPopup()">
+                    <i class="fa-solid fa-magnifying-glass"  onclick="openSearchPopup()"></i>
+                </div>
+            </div>
+            <ul class="sidebar">
+                <li id="exit" onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                <!-- <div class="admin-panel">
+                    <button style="border: none; font-size: larger; background-color: transparent; color: var(--text); font-weight: 500;" id="adminButton">Admin</button>
+                </div> -->
+                <li><a id="home-link" href="https://tanmoy-12.github.io/aot/">Home</a></li>
+                <li class="dropdown" id="academic1">
+                    <a href="#" onclick="toggleDropdown('academic1')">Academics <i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic1">
+                        <li><strong>Admission</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="#">UG Admission</a></li>
+                                <li><a href="#">PG Admission</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Resources</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="https://aot.edu.in/library/">Library</a></li>
+                                <li><a href="http://182.74.215.198/moodle/">Moodle</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Department</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="department.html">Computer Science & Engineering</a></li>
+                                <li><a href="#">Computer Science & Business System</a></li>
+                                <li><a href="#">Electronics & Communication Engineering</a></li>
+                                <li><a href="#">Electronics & Electrical Engineering</a></li>
+                                <li><a href="#">Electrical Engineering</a></li>
+                                <li><a href="#">Mechanical Engineering</a></li>
+                                <li><a href="#">Engineering Science</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Clubs@AOT</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="https://aot.edu.in/ardour/">Ardour</a></li>
+                                <li><a href="https://aot.edu.in/analects/">Analects</a></li>
+                                <li><a href="https://aot.edu.in/agile/">Agile</a></li>
+                                <li><a href="https://aot.edu.in/acuity/">Acuity</a></li>
+                                <li><a href="https://aot.edu.in/acclivities/">Acclivities</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="academic2">
+                    <a href="#" onclick="toggleDropdown('academic2')">Students<i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic2">
+                        <li><strong>Events</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="https://aotfiesta24.tech/">Techfest</a></li>
+                                <li><a href="#">Humatronics</a></li>
+                                <li><a href="#">Games Meet</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>UG Syllabus</strong>
+                            <ul class="sub-dropdowns">
+                                <li class="d-flex flex-row"><a href="CSE.pdf">CSE</a></li>
+                                <li><a href="CSBS20.pdf">CSBS</a></li>
+                                <li class="d-flex flex-row"><a href="ECE.pdf">ECE</a></li>
+                                <li><a href="EEE.pdf">EEE</a></a></li>
+                                <li><a href="EE.pdf">EE</a></li>
+                                <li><a href="ME.pdf">ME</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>PG Syllabus</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="MCA20.pdf">MCA</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>Career Services</strong>
+                            <ul class="sub-dropdowns">
+                                <li><a href="#">Teaching Learning Centre</a></li>
+                                <li><a href="#">Talent Transformation Cell</a></li>
+                                <li><a href="#">Placement & Training Cell</a></li>
+                                <li><a href="#">Life@AOT</a></li>
+                                <li><a href="https://aot.edu.in/industry-4-0-2/">Industry 4.0 Centre</a></li>
+                                <li><a href="#">Campus Facilities</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="academic3">
+                    <a href="#" onclick="toggleDropdown('academic3')">Research<i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic3">
+                        <li><a href="#">Current Research</a></li>
+                        <li><a href="#">Past Research</a></li>
+                        <li><a href="#">Research Facilities</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="academic4">
+                    <a href="#" onclick="toggleDropdown('academic4')">Faculty <i class="fas fa-angle-down arrow-icon"></i></a>
+                    <ul class="dropdowns" id="mobile-dropdown-academic4">
+                        <li><a href="#">Faculty Data</a></li>
+                        <li><a href="#">Faculty List</a></li>
+                        <li><a href="#">Faculty Positions</a></li>
+                        <li><a href="#">Career Benefits@AOT</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
         <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-angles-up"></i></button>
         <div id="scroll-progress"></div>
         <div id="pc-view" class="gap"></div>
@@ -160,14 +282,6 @@
                     </div>
                 </div>
             </div>
-            <h1 class="text-center" style="color: var(--text);">Recent News</h1>
-            <div class="cs-events">
-                <div class="latest-banner">
-                    <img src="cse/banner.jpg">
-                </div>
-                <div class="cs-news-data">
-                </div>
-            </div>
             <h1 class="text-center" style="color: var(--text);">Recent Events and Talks</h1>
             <div class="talks">
                 <div class="talk">
@@ -205,6 +319,14 @@
                     </div>
                 </div>
             </div>
+            <h1 class="text-center" style="color: var(--text);">Recent News</h1>
+            <div class="cs-events">
+                <div class="latest-banner">
+                    <img src="cse/banner.jpg">
+                </div>
+                <div class="cs-news-data">
+                </div>
+            </div>
             <div class="about">
                 <h3 class="text-center">About Department of Computer Science and Engineering</h3>
                 <div class="line"></div>
@@ -212,7 +334,8 @@
                     <img src="cse/dept_image.jpg">
                 </div>
                 <p>
-                    The Department of Computer Science & Engineering at AOT University, established in July 2003 under the leadership of Prof. Prosenjit Das, offers a dynamic 4-year B.Tech programme focusing on data science, artificial intelligence, and cybersecurity. Our department boasts modern facilities including dedicated class and tutorial rooms, seminar spaces, faculty rooms, and specialized laboratories equipped with high-performance HP computers. We provide hands-on learning experiences in areas such as Data Structures, Computer Architecture, Google Innovation, Network & Cyber Security, and System Engineering. Our infrastructure includes Sun Ultrasparc IIIi and IBM X-Series servers, complemented by licensed software like Oracle, MATLAB, Java JDK, and Adobe Creative Suite. For inquiries and collaborations, please contact us at hod_cse@aot.edu.in.</p>
+                    The Department of Computer Science & Engineering at AOT University, established in July 2003 under the leadership of Prof. Prosenjit Das, offers a dynamic 4-year B.Tech programme focusing on data science, artificial intelligence, and cybersecurity. <span id="read-about">Our department boasts modern facilities including dedicated class and tutorial rooms, seminar spaces, faculty rooms, and specialized laboratories equipped with high-performance HP computers. We provide hands-on learning experiences in areas such as Data Structures, Computer Architecture, Google Innovation, Network & Cyber Security, and System Engineering. Our infrastructure includes Sun Ultrasparc IIIi and IBM X-Series servers, complemented by licensed software like Oracle, MATLAB, Java JDK, and Adobe Creative Suite. For inquiries and collaborations, please contact us at hod_cse@aot.edu.in.</span></p>
+                    <span class="read-more-btn" onclick="toggleReadMore()">Read More</span>
             </div>
         </div>
         <div class="f2 hidden">
@@ -311,6 +434,7 @@
             <h6>Want To Join Us. Don't Wait. Go & Check It Out.&nbsp;<a href="https://aot.edu.in/career-aot/" style="color: var(--blue) !important;">Read More</a></h6>
             <button style="background-color: var(--primary-color);border-radius: 6px; padding: 0.5rem 0.8rem; border: 0;"><a style="font-size: large; color: var(--c)!important;" href="AOT-Application-Format.doc">Application Format</a></button>
         </div>
+        <script src="script.js"></script>
     <script src="cse.js"></script>
     <script>
         // JavaScript to add 'animate' class to '.feature' elements on page load
@@ -321,7 +445,59 @@
             });
         });
     </script>
-    
+    <script>
+            function openSearchPopup() {
+                var searchPopup = document.getElementById('searchPopup');
+                searchPopup.style.display = 'block';
+            }
+
+            function closeSearchPopup() {
+                var searchPopup = document.getElementById('searchPopup');
+                searchPopup.style.display = 'none';
+            }
+            function search() {
+                // Add your search functionality here
+                // For example, fetch search results based on input value
+                var searchInput = document.querySelector('.search-content input').value;
+                console.log('Performing search for:', searchInput);
+            }
+    </script>
+    <script>
+        // Typing animation logic
+document.addEventListener('DOMContentLoaded', function() {
+    const typingTextElement = document.getElementById('typing-text');
+    const texts = ["keywords", "Quick Links", "Faculty Name", "Faculty Age"];
+    let textIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 100;
+    const erasingSpeed = 50;
+    const delayBetweenTexts = 2000;
+
+    function typeText() {
+        if (charIndex < texts[textIndex].length) {
+            typingTextElement.textContent += texts[textIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeText, typingSpeed);
+        } else {
+            setTimeout(eraseText, delayBetweenTexts);
+        }
+    }
+
+    function eraseText() {
+        if (charIndex > 0) {
+            typingTextElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(eraseText, erasingSpeed);
+        } else {
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(typeText, typingSpeed);
+        }
+    }
+
+    setTimeout(typeText, delayBetweenTexts);
+});
+
+    </script>
     <script>
             let mybutton = document.getElementById("myBtn");
             // When the user scrolls down 20px from the top of the document, show the button
@@ -444,7 +620,7 @@
                 <a href="index.html"><img src="logo.png"  alt="logo"></a>
             </div>
             <a href="index.html" class="logo"><span>Academy Of Technology</span></a>
-            <p class="fw-bold d-flex flex-column"><span>AEDCONAGAR, HOOGHLY-712121</span> <span>WEST BENGAL, INDIA</span></p>
+            <p class="fw-bold d-flex flex-column" id="r1"><span>AEDCONAGAR, HOOGHLY-712121</span> <span>WEST BENGAL, INDIA</span></p>
             <li><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;<a class="fs-6" >+91-9564324510</a></li>
             <li><i class="fa-regular fa-envelope"></i>&nbsp;&nbsp;<a class="fs-6">support@aot.edu.in</a></li>
             <div class="footer-social">

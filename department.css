@@ -16,7 +16,6 @@
     border: 0.2px solid var(--bg-color-ligt);
     width: 30%;
     max-width: 350px;
-    min-width: 280px;
     margin: 1.3rem;
 }
 div{
@@ -286,4 +285,87 @@ hr{
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem;
+}
+@media (max-width:950px){
+    .hod-details{
+        flex-direction: column;
+    }
+    .hodimage{
+        width: 100%;
+    }
+    .hod-content{
+        width: 100%;
+    }
+    .hod-content h4{
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+    .feature{
+        width: 250px !important;
+        margin: 0.5rem;
+        padding: 0.6rem;
+    }
+    .feature i{
+        font-size: 25px;
+    }
+    .feature h5{
+        font-size: 16px;
+    }
+}
+@media (max-width:750px){
+    .talk{
+        width: 70%;
+    }
+    .latest-banner img{
+        transform: scale(0.8);
+    }
+    .about{
+        width: 96%;
+    }
+    .career{
+        flex-direction: column;
+    }
+}
+@media (max-width:550px){
+    #read-about{
+        display: none;
+    }
+    .read-more-btn {
+        display: inline !important;
+    }
+    .feature{
+        flex-grow: calc(-3);
+    }
+    .latest-banner img{
+        transform: scale(0.7);
+    }
+    .features{
+        flex-wrap: wrap;
+    }
+    .feature{
+        width: 60%;
+    }
+}
+@media (max-width:450px){
+    .cs-events{
+        width: 98%;
+    }
+    .cs-news p{
+        font-size: small;
+    }
+    .dept-image{
+        width: 250px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    .talk{
+        width: 98%;
+    }
+    .latest-banner{
+        margin-bottom: 0.5rem;
+        transform: scale(0.75);
+    }
+    .career{
+        text-align: center;
+    }
 }
