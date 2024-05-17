@@ -650,6 +650,36 @@ li{
 .left-about-us h2{
     font-weight: 600
 }
+.left-about-us {
+    position: relative;
+    margin: 20px;
+}
+
+.left-about-us p {
+    margin: 0;
+}
+
+.read-more-btn {
+    display: none;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.left-about-us p.truncated {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 450px) {
+    .read-more-btn {
+        display: inline;
+    }
+    #read-about{
+        display: none;
+    }
+}
 .right-about-us{
     padding: 3rem 1.5rem;
     border: none;
@@ -895,7 +925,8 @@ iframe{
     text-align: center;
   }
   .customer-bg{
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.954), transparent), linear-gradient(to bottom, rgba(0, 0, 0, 0.937), transparent), url("bg1.jpg");
+    /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0.954), transparent), linear-gradient(to bottom, rgba(0, 0, 0, 0.937), transparent), url("bg1.jpg"); */
+    background-color: var(--blue);
     background-repeat: no-repeat;
     position: absolute;
     height: 200px;
@@ -914,16 +945,17 @@ iframe{
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: var(--c);
+    color: var(--bg);
     width: 173px;
   }
   .customer-card i{
-    color: var(--hover-imp);
+    color: var(--bg);
     font-size: 48px;
   }
   .customer-card h2{
     font-size: 42px;
     margin: 15px;
+    color: var(--bg);
   }
 .container-faq-gallery{
     display: flex;
@@ -1656,6 +1688,37 @@ footer{
     .photos img{
         width: 120px;
         height: 100px;
+    }
+    .news{
+        width: 270px;
+    }
+    .news-image{
+        height: 190px;
+    }
+    .news-text{
+        font-size: small;
+    }
+    .news-text h5{
+        font-size: 16px;
+    }
+    .news-text p{
+        font-size: 12px;
+    }
+    .customer-bg{
+        margin-bottom: 80px;
+        height: 160px;
+    }
+    .customer-card{
+        width: 25%;
+    }
+    .customer-card i{
+        font-size: 30px;
+    }
+    .customer-card h3{
+        font-size: 20px;
+    }
+    #r1{
+        flex-direction: column !important;
     }
 }
 

@@ -391,7 +391,17 @@ document.getElementById('logoutButton').addEventListener('click', function() {
       alert('Announcements saved successfully!');
   });
 
-
-
-
+//Read More Button
+function toggleReadMore() {
+    const readAbout = document.getElementById('read-about');
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    
+    if (readAbout.style.display === 'none' || readAbout.style.display === '') {
+        readAbout.style.display = 'inline';
+        readMoreBtn.textContent = 'Read Less';
+    } else {
+        readAbout.style.display = 'none';
+        readMoreBtn.textContent = 'Read More';
+    }
+}
   
