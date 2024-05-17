@@ -662,7 +662,7 @@ li{
 .read-more-btn {
     display: none;
     cursor: pointer;
-    color: blue;
+    color: var(--blue);
     text-decoration: underline;
 }
 
