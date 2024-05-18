@@ -58,4 +58,4 @@
 
 🔗 Visit the website and explore our features, designed to keep you updated and informed about all the activities and news within the college. Whether you're looking for faculty information or the latest events, we've got you covered!
 
-!<img src="logo.png">(https://via.placeholder.com/150)
+!<img src="logo.png" height="100px">
