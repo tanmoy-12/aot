@@ -1,50 +1,61 @@
-Topic : Intra College Website Design
-Basic Theme Colors : White & Blue
-Admin Panel Password : admin
+# 🌐 Intra College Website Design
 
---------------------------------Home Page----------------------------------
+**Basic Theme Colors**: ⚪️ White & 🔵 Blue  
+**Admin Panel Password**: 🔑 `admin`
 
-Functionalities:
+---
 
-1. News Slider where data is loaded from a JSON file
-2. Complete functional Search bar where anyone can search any faculty data
-3. Functional & Responsive Navbar
-4. Complete Functional Announcements & Events Section
-5. Comment Form for Users to post their issues
-6. Complete Functional Theme Changing Button
-7. FAQ Questions With Photo Gallery Feature
-8. Rotating Top Recruiters Banner
+## 🏠 Home Page
 
-Special Features:
+### Functionalities:
+1. 📰 **News Slider**: Data loaded from a JSON file.
+2. 🔍 **Search Bar**: Complete and functional, allowing searches for any faculty data.
+3. 📋 **Navbar**: Fully functional and responsive.
+4. 📢 **Announcements & Events Section**: Fully functional.
+5. 💬 **Comment Form**: Users can post their issues.
+6. 🎨 **Theme Changing Button**: Fully functional.
+7. 📸 **FAQ Questions with Photo Gallery Feature**.
+8. 🎡 **Top Recruiters Banner**: Rotating.
 
-1. Animated Mesh Design background
-2. Animated News Slider 
-3. Back To Top Button on scrolling the page
-4. Working Scroll Progress Bar on the top of the page
-5. Fully Working Admin Panel & Password is admin & admin panel can be viewed in pc only to enhance security
-6. Search Typing Animation in Search Bar
-7. After changing theme the data is stored in the browser local storage, so on refreshing the page wouldn't change the theme. The theme should be changed manually.
+### Special Features:
+1. 🌈 **Animated Mesh Design Background**.
+2. 📰 **Animated News Slider**.
+3. ⬆️ **Back To Top Button**: Appears when scrolling the page.
+4. 📊 **Scroll Progress Bar**: Displays progress at the top of the page.
+5. 🔐 **Admin Panel**: Fully functional, accessible only on PC for enhanced security.
+6. ✍️ **Search Typing Animation** in the Search Bar.
+7. 🔄 **Persistent Theme**: Theme settings are stored in local storage, maintaining user preferences across sessions.
 
---------------------------------Department Page----------------------------------
+---
 
-Functionalities:
+## 📚 Department Page
 
-1. The page is divided into three main sections (Academic Programmes, Faculties, Infrastructure)
-2. Recent Events and Talks arranged by Academy Of Technology
-3. Latest News about what happenings in the institute
-4. User can navigate to those Three section of the page by clicking on respective tabs
-5. Job Application Form in the end of the page
+### Functionalities:
+1. 📑 **Three Main Sections**:
+   - Academic Programmes
+   - Faculties
+   - Infrastructure
+2. 🎓 **Recent Events and Talks**: Organized by the Academy of Technology.
+3. 📰 **Latest News**: Updates on institute happenings.
+4. 🔗 **Navigation Tabs**: Quickly jump to the main sections of the page.
+5. 📝 **Job Application Form**: Located at the end of the page.
 
-Special Features:
+### Special Features:
+1. 🔄 **Dynamically Loaded Faculty Data**: From a JSON file.
+2. 🔄 **Dynamically Loaded News Data**: From a JSON file.
 
-1. Dynamically Loaded Faculty Data From a JSON File
-2. Dynamically Loaded News Data From a JSON File
+---
 
-Team Name : PHOENIX
+## 🔥 Team PHOENIX
 
-Team Members :
-
-1.Tanmoy Chanda
+### Team Members:
+1. Tanmoy Chanda
 2. Debayan Das
 3. Hrishikesh Mandal
 4. Dip Bhattacharyya
+
+---
+
+🔗 Visit the website and explore our features, designed to keep you updated and informed about all the activities and news within the college. Whether you're looking for faculty information or the latest events, we've got you covered!
+
+![Logo](https://via.placeholder.com/150)
