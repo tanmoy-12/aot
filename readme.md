@@ -1,7 +1,7 @@
 # 🌐 Intra College Website Design
 
 **Basic Theme Colors**: ⚪️ White & 🔵 Blue  
-**Admin Panel Password**: 🔑 `admin`
+<h1>**Admin Panel Password**: 🔑 `admin`</h1>
 
 ---
 
