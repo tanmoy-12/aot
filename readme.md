@@ -1,6 +1,6 @@
 Topic : Intra College Website Design
 Basic Theme Colors : White & Blue
-<h1>Admin Panel Password : amin</h1>
+Admin Panel Password : admin
 
 --------------------------------Home Page----------------------------------
 
